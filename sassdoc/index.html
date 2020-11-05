@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Scss-collection - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Scss-collection - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>A collection of SCSS mixins and functions</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://bitbucket.org/felix_berlin/scss-collection#readme">Scss-collection - v1.0.0</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="typo"><a href="#typo">typo</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="typo-mixin"><a href="#typo-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="typo" data-name="font-smoothing" data-type="mixin"><a href="#typo-mixin-font-smoothing">font-smoothing</a></li><li class="sidebar__item sassdoc__item" data-group="typo" data-name="font-face" data-type="mixin"><a href="#typo-mixin-font-face">font-face</a></li><li class="sidebar__item sassdoc__item" data-group="typo" data-name="fluid-typo" data-type="mixin"><a href="#typo-mixin-fluid-typo">fluid-typo</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="select-style" data-type="mixin"><a href="#undefined-mixin-select-style">select-style</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="target-anchor-offset" data-type="mixin"><a href="#undefined-mixin-target-anchor-offset">target-anchor-offset</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="breakpoint-down" data-type="mixin"><a href="#undefined-mixin-breakpoint-down">breakpoint-down</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="breakpoint-up" data-type="mixin"><a href="#undefined-mixin-breakpoint-up">breakpoint-up</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="line-on-sides" data-type="mixin"><a href="#undefined-mixin-line-on-sides">line-on-sides</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="overlay" data-type="mixin"><a href="#undefined-mixin-overlay">overlay</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="str-replace" data-type="function"><a href="#undefined-function-str-replace">str-replace</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="typo"><div class="container">typo</div></h1><section class="main__sub-section" id="typo-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="typo-mixin-font-smoothing"><h3 class="item__heading"><a class="item__name" href="#mixin-font-smoothing">font-smoothing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-smoothing($value: true) { 
+  @if $value==true {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+ }" data-collapsed="@mixin font-smoothing($value: true) { ... }"><code>@mixin font-smoothing($value: true) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Font Smoothing</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Bool</code></td><td data-label="default"><code>true</code></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section><section class="main__item container item" id="typo-mixin-font-face"><h3 class="item__heading"><a class="item__name" href="#mixin-font-face">font-face</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { 
+  $src: null;
+
+  $extmods: (
+    eot: &#39;?iefix&#39;,
+    svg: &#39;#&#39; + str-replace($name, &#39; &#39;, &#39;_&#39;),
+  );
+
+  $formats: (
+    otf: &#39;opentype&#39;,
+    ttf: &#39;truetype&#39;,
+  );
+
+  @each $ext in $exts {
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext
+    );
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append(
+      $src,
+      url(quote($path + &#39;.&#39; + $extmod)) format(quote($format)),
+      comma
+    );
+  }
+
+  @font-face {
+    font-family: quote($name);
+    @if index($exts, &#39;eot&#39;) {
+      src: local($name), url($path + &#39;.eot&#39;), $src;
+    } @else {
+      src: local($name), $src;
+    }
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+  }
+ }" data-collapsed="@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { ... }"><code>@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Adds fonts with the orginal @font-face rule Attention! When you use Laravel Mix your fonts path begins at the mix.config file location</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$name</code></th><td data-label="desc"><p>Font-Name</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$path</code></th><td data-label="desc"><p>Path to font</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$weight</code></th><td data-label="desc"><p>Font-Weight</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$style</code></th><td data-label="desc"><p>Font-Style</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>null</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$exts</code></th><td data-label="desc"><p>Font-Formats to add</p></td><td data-label="type"><code>List</code></td><td data-label="default"><code>eot woff2 woff ttf svg</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include font-face(
+  &#39;Open Sans&#39;,
+  &#39;#{$path-to-fonts}/opensans/Light/OpenSans-Light&#39;,
+  300,
+  normal,
+  woff2 woff
+);</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-str-replace"><code>str-replace</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6">https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Jonathan Neal extended by Felix Scholze</p></li></ul></section><section class="main__item container item item--deprecated" id="typo-mixin-fluid-typo"><h3 class="item__heading"><a class="item__name" href="#mixin-fluid-typo">fluid-typo</a></h3><div class="item__deprecated"><strong>Deprecated!</strong><p>fluid-typo is deprecated! Please use rfs instead.</p></div><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fluid-typo($font-unit: rem, $min-font-size: 14, $max-font-size: 20, $min-screen-size: 400, $max-screen-size: 980) { 
+  @error &#39;fluid-typo is deprecated! Please use rfs instead.&#39;;
+  font-size: calc(
+    #{$min-font-size}#{$font-unit} + (#{$max-font-size} - #{$min-font-size}) * (
+        100vw - #{$min-screen-size}px
+      ) / (#{$max-screen-size} - #{$min-screen-size})
+  );
+ }" data-collapsed="@mixin fluid-typo($font-unit: rem, $min-font-size: 14, $max-font-size: 20, $min-screen-size: 400, $max-screen-size: 980) { ... }"><code>@mixin fluid-typo($font-unit: rem, $min-font-size: 14, $max-font-size: 20, $min-screen-size: 400, $max-screen-size: 980) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Responsive And Fluid Typography With vh And vw Units</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-unit</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>rem</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$min-font-size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>14</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$max-font-size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>20</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$min-screen-size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>400</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$max-screen-size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>980</code></td></tr></tbody></table><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>fluid-typo is deprecated! Please use rfs instead.</p></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://www.smashingmagazine.com/2016/05/fluid-typography/">https://www.smashingmagazine.com/2016/05/fluid-typography/</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Michael Riethmuller</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-select-style"><h3 class="item__heading"><a class="item__name" href="#mixin-select-style">select-style</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin select-style($bg-color: $black, $color: $white, $selector: *) { 
+  @if type-of($bg-color) != color {
+    @error &#39;❌  ===&gt; #{$bg-color} is not a color&#39;;
+  }
+  @if type-of($color) != color {
+    @error &#39;❌  ===&gt; #{$color} is not a color&#39;;
+  }
+  #{$selector} {
+    &amp;::selection {
+      color: $color;
+      background: $bg-color;
+    }
+  }
+ }" data-collapsed="@mixin select-style($bg-color: $black, $color: $white, $selector: *) { ... }"><code>@mixin select-style($bg-color: $black, $color: $white, $selector: *) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Styles for selected elements</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bg-color</code></th><td data-label="desc"><p>Background-color</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>$black</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>Text-color</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code>$white</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$selector</code></th><td data-label="desc"><p>Selector</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>*</code></td></tr></tbody></table><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>❌ ===&gt; #{$bg-color} is not a color</p></li><li><p>❌ ===&gt; #{$color} is not a color</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section><section class="main__item container item" id="undefined-mixin-target-anchor-offset"><h3 class="item__heading"><a class="item__name" href="#mixin-target-anchor-offset">target-anchor-offset</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin target-anchor-offset($offset) { 
+  :target {
+    &amp;:before {
+      display: block;
+      height: $offset;
+      margin-top: -($offset);
+      content: &#39;&#39;;
+    }
+  }
+ }" data-collapsed="@mixin target-anchor-offset($offset) { ... }"><code>@mixin target-anchor-offset($offset) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Adds an offset for the targeted link(s)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$offset</code></th><td data-label="desc"><p>the offset in any value</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section><section class="main__item container item" id="undefined-mixin-breakpoint-down"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-down">breakpoint-down</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-down($breakpoint) { 
+  @media (max-width: #{$breakpoint}) {
+    @content;
+  }
+ }" data-collapsed="@mixin breakpoint-down($breakpoint) { ... }"><code>@mixin breakpoint-down($breakpoint) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Custom @media breakpoint (max-width)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoint</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section><section class="main__item container item" id="undefined-mixin-breakpoint-up"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-up">breakpoint-up</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-up($breakpoint) { 
+  @media (min-width: #{$breakpoint}) {
+    @content;
+  }
+ }" data-collapsed="@mixin breakpoint-up($breakpoint) { ... }"><code>@mixin breakpoint-up($breakpoint) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Custom @media breakpoint (min-width)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoint</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section><section class="main__item container item" id="undefined-mixin-line-on-sides"><h3 class="item__heading"><a class="item__name" href="#mixin-line-on-sides">line-on-sides</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin line-on-sides($space-between-lines: 1.5rem, $line-color: #000, $line-width: 2px) { 
+  @if type-of($line-color) != color {
+    @error &#39;❌  ===&gt; #{$line-color} is not a color.&#39;;
+  }
+  @if type-of($space-between-lines) != number {
+    @error &#39;❌  ===&gt; #{$space-between-lines} is not a number.&#39;;
+  }
+  @if type-of($line-width) != number {
+    @error &#39;❌  ===&gt; #{$line-width} is not a number.&#39;;
+  }
+
+  display: flex;
+  align-items: center;
+  @content;
+
+  &amp;:before,
+  &amp;:after {
+    position: static;
+    display: block;
+    flex-grow: 1;
+    width: auto;
+    border-bottom: $line-width solid $line-color;
+    content: &#39;&#39;;
+  }
+
+  &amp;:before {
+    margin-right: $space-between-lines;
+  }
+
+  &amp;:after {
+    margin-left: $space-between-lines;
+  }
+ }" data-collapsed="@mixin line-on-sides($space-between-lines: 1.5rem, $line-color: #000, $line-width: 2px) { ... }"><code>@mixin line-on-sides($space-between-lines: 1.5rem, $line-color: #000, $line-width: 2px) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Adds two lines between an element. There is an example <a href="https://css-tricks.com/line-on-sides-headers/">https://css-tricks.com/line-on-sides-headers/</a></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$space-between-lines</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1.5rem</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$line-color</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#000; color: #fff">#000</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$line-width</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>2px</code></td></tr></tbody></table><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>❌ ===&gt; #{$line-color} is not a color.</p></li><li><p>❌ ===&gt; #{$space-between-lines} is not a number.</p></li><li><p>❌ ===&gt; #{$line-width} is not a number.</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section><section class="main__item container item" id="undefined-mixin-overlay"><h3 class="item__heading"><a class="item__name" href="#mixin-overlay">overlay</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin overlay($overlay-type, $overlay-size, $parent-element, $overlay-element, $overlay-bg-color, $valite-type: (hover,static), $valite-size: (full, free)) { 
+  // Validate varialbes
+  $valite-type: (hover, static);
+  $valite-size: (full, free);
+  @if not index($valite-size, $overlay-size) {
+    @error &#39;❌  ===&gt; #{$overlay-size} is not a valite option for overlay-size. Please use: #{$valite-size}&#39;;
+  }
+  @if not index($valite-type, $overlay-type) {
+    @error &#39;❌  ===&gt; #{$overlay-type} is not a valite option for overlay-type. Please use: #{$valite-type}&#39;;
+  }
+
+  .#{$parent-element} {
+    position: relative;
+    @if $overlay-type == hover {
+      &amp;:hover {
+        .#{$overlay-element} {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @if $overlay-type == hover {
+    .#{$overlay-element} {
+      opacity: 0;
+      transition: 0.5s ease;
+    }
+  }
+
+  .#{$overlay-element} {
+    @if $overlay-size == full {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $overlay-bg-color;
+      height: 100%;
+      width: 100%;
+      @content;
+    }
+    @if $overlay-size == free {
+      position: absolute;
+      background: $overlay-bg-color;
+      @content;
+    }
+  }
+ }" data-collapsed="@mixin overlay($overlay-type, $overlay-size, $parent-element, $overlay-element, $overlay-bg-color, $valite-type: (hover,static), $valite-size: (full, free)) { ... }"><code>@mixin overlay($overlay-type, $overlay-size, $parent-element, $overlay-element, $overlay-bg-color, $valite-type: (hover,static), $valite-size: (full, free)) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Adds an overlay</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$overlay-type</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$overlay-size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$parent-element</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$overlay-element</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$overlay-bg-color</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$valite-type</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default"><code>(hover,static)</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$valite-size</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>String</code></td><td data-label="default"><code>(full, free)</code></td></tr></tbody></table><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>❌ ===&gt; #{$overlay-size} is not a valite option for overlay-size. Please use: #{$valite-size}</p></li><li><p>❌ ===&gt; #{$overlay-type} is not a valite option for overlay-type. Please use: #{$valite-type}</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-str-replace"><h3 class="item__heading"><a class="item__name" href="#function-str-replace">str-replace</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function str-replace($string, $search, $replace) { 
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+ }" data-collapsed="@function str-replace($string, $search, $replace) { ... }"><code>@function str-replace($string, $search, $replace) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Replace <code>$search</code> with <code>$replace</code> in <code>$string</code> Used on our SVG icon backgrounds for custom forms.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc"><p>Initial string</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$search</code></th><td data-label="desc"><p>Substring to replace</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$replace</code></th><td data-label="desc"><p>(&#39;&#39;) - New value</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>Updated string</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include str-replace($var, &#39;&#39;, &#39;_&#39;);</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#typo-mixin-font-face"><code>font-face</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://bitbucket.org/felix_berlin/scss-collection#readme">Scss-collection</a><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
