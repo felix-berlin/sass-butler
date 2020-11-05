@@ -1,0 +1,24 @@
+{
+  "name": "scss-collection",
+  "version": "1.0.0",
+  "description": "A collection of SCSS mixins and functions",
+  "main": "scss-collection.scss",
+  "scripts": {
+    "sassDoc": "node_modules/.bin/sassdoc mixins/ functions/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/felix_berlin/scss-collection.git"
+  },
+  "keywords": [
+    "scss",
+    "mixin",
+    "function"
+  ],
+  "author": "Felix Scholze",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/felix_berlin/scss-collection#readme",
+  "dependencies": {
+    "sassdoc": "^2.7.3"
+  }
+}
