@@ -1,0 +1,108 @@
+/// Font Smoothing
+/// @param {Bool} $value [true]
+/// @group typo
+/// @author Felix Scholze
+@mixin font-smoothing($value: true) {
+  @if $value==true {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+/// Adds fonts with the orginal @font-face rule
+/// Attention!
+/// When you use Laravel Mix your fonts path begins at the mix.config file location
+///
+/// @param {String} $name Font-Name
+/// @param {String} $path Path to font
+/// @param {Number} $weight [null] Font-Weight
+/// @param {String} $style [null] Font-Style
+/// @param {List} $exts [eot woff2 woff ttf svg] Font-Formats to add
+/// @group typo
+/// @author Jonathan Neal extended by Felix Scholze
+/// @link https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+/// @since v1.0.0
+///
+/// @example
+///    @include font-face(
+///      'Open Sans',
+///      '#{$path-to-fonts}/opensans/Light/OpenSans-Light',
+///      300,
+///      normal,
+///      woff2 woff
+///    );
+///
+@mixin font-face(
+  $name,
+  $path,
+  $weight: null,
+  $style: null,
+  $exts: eot woff2 woff ttf svg,
+  $display: swap
+) {
+  $src: null;
+
+  $extmods: (
+    eot: '?iefix',
+    svg: '#' + str-replace($name, ' ', '_'),
+  );
+
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype',
+  );
+
+  @each $ext in $exts {
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext
+    );
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append(
+      $src,
+      url(quote($path + '.' + $extmod)) format(quote($format)),
+      comma
+    );
+  }
+
+  @font-face {
+    font-family: quote($name);
+    @if index($exts, 'eot') {
+      src: local($name), url($path + '.eot'), $src;
+    } @else {
+      src: local($name), $src;
+    }
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+  }
+}
+
+/// Responsive And Fluid Typography With vh And vw Units
+/// @param {Number} $font-unit [rem]
+/// @param {Number} $min-font-size [14]
+/// @param {Number} $max-font-size [20]
+/// @param {Number} $min-screen-size [400]
+/// @param {Number} $max-screen-size [980]
+/// @group typo
+/// @author Michael Riethmuller
+/// @link https://www.smashingmagazine.com/2016/05/fluid-typography/
+/// @deprecated fluid-typo is deprecated! Please use rfs instead.
+@mixin fluid-typo(
+  $font-unit: rem,
+  $min-font-size: 14,
+  $max-font-size: 20,
+  $min-screen-size: 400,
+  $max-screen-size: 980
+) {
+  @error 'fluid-typo is deprecated! Please use rfs instead.';
+  font-size: calc(
+    #{$min-font-size}#{$font-unit} + (#{$max-font-size} - #{$min-font-size}) * (
+        100vw - #{$min-screen-size}px
+      ) / (#{$max-screen-size} - #{$min-screen-size})
+  );
+}

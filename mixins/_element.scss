@@ -1,0 +1,108 @@
+/// Adds two lines between an element.
+/// There is an example https://css-tricks.com/line-on-sides-headers/
+/// @param {Number} $space-between-lines [1.5rem]
+/// @param {Color} $line-color [#000]
+/// @param {Number} $line-width [2px]
+/// @author Felix Scholze
+/// @since v1.0.0
+@mixin line-on-sides(
+  $space-between-lines: 1.5rem,
+  $line-color: #000,
+  $line-width: 2px
+) {
+  @if type-of($line-color) != color {
+    @error '❌  ===> #{$line-color} is not a color.';
+  }
+  @if type-of($space-between-lines) != number {
+    @error '❌  ===> #{$space-between-lines} is not a number.';
+  }
+  @if type-of($line-width) != number {
+    @error '❌  ===> #{$line-width} is not a number.';
+  }
+
+  display: flex;
+  align-items: center;
+  @content;
+
+  &:before,
+  &:after {
+    position: static;
+    display: block;
+    flex-grow: 1;
+    width: auto;
+    border-bottom: $line-width solid $line-color;
+    content: '';
+  }
+
+  &:before {
+    margin-right: $space-between-lines;
+  }
+
+  &:after {
+    margin-left: $space-between-lines;
+  }
+}
+
+/// Adds an overlay
+/// @param {String} $overlay-type
+/// @param {String} $overlay-size
+/// @param {String} $parent-element
+/// @param {String} $overlay-element
+/// @param {Color} $overlay-bg-color
+/// @param {String} $valite-type [(hover,static)]
+/// @param {String} $valite-size [(full, free)]
+/// @content
+/// @author Felix Scholze
+/// @since v1.0.0
+@mixin overlay(
+  $overlay-type,
+  $overlay-size,
+  $parent-element,
+  $overlay-element,
+  $overlay-bg-color
+) {
+  // Validate varialbes
+  $valite-type: (hover, static);
+  $valite-size: (full, free);
+  @if not index($valite-size, $overlay-size) {
+    @error '❌  ===> #{$overlay-size} is not a valite option for overlay-size. Please use: #{$valite-size}';
+  }
+  @if not index($valite-type, $overlay-type) {
+    @error '❌  ===> #{$overlay-type} is not a valite option for overlay-type. Please use: #{$valite-type}';
+  }
+
+  .#{$parent-element} {
+    position: relative;
+    @if $overlay-type == hover {
+      &:hover {
+        .#{$overlay-element} {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @if $overlay-type == hover {
+    .#{$overlay-element} {
+      opacity: 0;
+      transition: 0.5s ease;
+    }
+  }
+
+  .#{$overlay-element} {
+    @if $overlay-size == full {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $overlay-bg-color;
+      height: 100%;
+      width: 100%;
+      @content;
+    }
+    @if $overlay-size == free {
+      position: absolute;
+      background: $overlay-bg-color;
+      @content;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+/// Styles for selected elements
+/// @param {Color} $bg-color [$black] Background-color
+/// @param {Color} $color [$white] Text-color
+/// @param {String} $selector [*] Selector
+/// @author Felix Scholze
+/// @since v1.0.0
+@mixin select-style($bg-color: $black, $color: $white, $selector: '*') {
+  @if type-of($bg-color) != color {
+    @error '❌  ===> #{$bg-color} is not a color';
+  }
+  @if type-of($color) != color {
+    @error '❌  ===> #{$color} is not a color';
+  }
+  #{$selector} {
+    &::selection {
+      color: $color;
+      background: $bg-color;
+    }
+  }
+}
+
+/// Adds an offset for the targeted link(s)
+/// @param {Number} $offset the offset in any value
+/// @author Felix Scholze
+/// @since v1.0.0
+@mixin target-anchor-offset($offset) {
+  :target {
+    &:before {
+      display: block;
+      height: $offset;
+      margin-top: -($offset);
+      content: '';
+    }
+  }
+}
