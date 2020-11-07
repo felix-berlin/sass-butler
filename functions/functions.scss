@@ -1,5 +1,5 @@
 @use "sass:string";
-@use 'type-checking';
+@forward 'type-checking';
 
 /// Replace `$search` with `$replace` in `$string`
 /// Used on our SVG icon backgrounds for custom forms.

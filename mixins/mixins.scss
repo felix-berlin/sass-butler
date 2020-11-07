@@ -1,4 +1,4 @@
-@use 'basic';
-@use 'font';
-@use 'breakpoint';
-@use 'element';
+@forward 'basic';
+@forward 'font';
+@forward 'breakpoint';
+@forward 'element';

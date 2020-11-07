@@ -1,6 +1,6 @@
 {
   "name": "scss-collection",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A collection of my standart SCSS mixins and functions",
   "main": "scss-collection.scss",
   "scripts": {
