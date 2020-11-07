@@ -1,11 +1,13 @@
+@use 'type-checking';
+
 /// Replace `$search` with `$replace` in `$string`
 /// Used on our SVG icon backgrounds for custom forms.
 ///
-/// @author Hugo Giraudel
 /// @param {String} $string - Initial string
 /// @param {String} $search - Substring to replace
 /// @param {String} $replace ('') - New value
 /// @return {String} - Updated string
+/// @author Hugo Giraudel
 /// @since v1.0.0
 ///
 /// @example
@@ -21,6 +23,28 @@
         $search,
         $replace
       );
+  }
+
+  @return $string;
+}
+
+/// Requires the use of quotes around data URIs.
+/// @param {String} $string - SVG code
+/// @return {String} - SCSS compiled output after URL-encoding
+/// @author Kevin Weber
+/// @link https://codepen.io/kevinweber/pen/dXWoRw
+/// @since v1.0.0
+///
+@function escape-svg($string) {
+  @if str-index($string, 'data:image/svg+xml') {
+    @each $char, $encoded in $escaped-characters {
+      // Do not escape the url brackets
+      @if str-index($string, 'url(') == 1 {
+        $string: url('#{str-replace(str-slice($string, 6, -3), $char, $encoded)}');
+      } @else {
+        $string: str-replace($string, $char, $encoded);
+      }
+    }
   }
 
   @return $string;
