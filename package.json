@@ -1,7 +1,7 @@
 {
   "name": "scss-collection",
   "version": "1.0.0",
-  "description": "A collection of SCSS mixins and functions",
+  "description": "A collection of my standart SCSS mixins and functions",
   "main": "scss-collection.scss",
   "scripts": {
     "sassDoc": "node_modules/.bin/sassdoc mixins/ functions/"
