@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+@use "../functions/functions";
+
 /// Font Smoothing
 /// @param {Bool} $antialiased [true]
 /// @group Typo
@@ -48,7 +53,7 @@
 
   $extmods: (
     eot: '?iefix',
-    svg: '#' + str-replace($name, ' ', '_'),
+    svg: '#' + functions.str-replace($name, ' ', '_'),
   );
 
   $formats: (
@@ -58,21 +63,21 @@
 
   @each $ext in $exts {
     $extmod: if(
-      map-has-key($extmods, $ext),
-      $ext + map-get($extmods, $ext),
+      map.has-key($extmods, $ext),
+      $ext + map.get($extmods, $ext),
       $ext
     );
-    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-    $src: append(
+    $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+    $src: list.append(
       $src,
-      url(quote($path + '.' + $extmod)) format(quote($format)),
+      url(string.quote($path + '.' + $extmod)) format(string.quote($format)),
       comma
     );
   }
 
   @font-face {
-    font-family: quote($name);
-    @if index($exts, 'eot') {
+    font-family: string.quote($name);
+    @if list.index($exts, 'eot') {
       src: local($name), url($path + '.eot'), $src;
     } @else {
       src: local($name), $src;

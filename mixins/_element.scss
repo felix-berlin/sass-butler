@@ -1,3 +1,8 @@
+@use "sass:list";
+@use "sass:meta";
+@use "../functions/functions";
+@use "../functions/type-checking";
+
 /// Adds two lines between an element.
 /// There is an example https://css-tricks.com/line-on-sides-headers/
 /// @param {Number} $space-between-lines [1.5rem]
@@ -11,13 +16,13 @@
   $line-color: #000,
   $line-width: 2px
 ) {
-  @if type-of($line-color) != color {
+  @if meta.type-of($line-color) != color {
     @error '❌  ===> #{$line-color} is not a color.';
   }
-  @if type-of($space-between-lines) != number {
+  @if meta.type-of($space-between-lines) != number {
     @error '❌  ===> #{$space-between-lines} is not a number.';
   }
-  @if type-of($line-width) != number {
+  @if meta.type-of($line-width) != number {
     @error '❌  ===> #{$line-width} is not a number.';
   }
 
@@ -66,10 +71,10 @@
   // Validate varialbes
   $valite-type: (hover, static);
   $valite-size: (full, free);
-  @if not index($valite-size, $overlay-size) {
+  @if not list.index($valite-size, $overlay-size) {
     @error '❌  ===> #{$overlay-size} is not a valite option for overlay-size. Please use: #{$valite-size}';
   }
-  @if not index($valite-type, $overlay-type) {
+  @if not list.index($valite-type, $overlay-type) {
     @error '❌  ===> #{$overlay-type} is not a valite option for overlay-type. Please use: #{$valite-type}';
   }
 
@@ -145,10 +150,10 @@
 ) {
   // Validate varialbes
   $valite-type: (file, data);
-  @if not index($valite-type, $data-type) {
+  @if not list.index($valite-type, $data-type) {
     @error '❌  ===> #{$data-type} is not a valite option for data-type. Please use: #{$valite-type}';
   }
-  @if is-number($spacing-multiplicator) == false {
+  @if type-checking.is-number($spacing-multiplicator) == false {
     @error '❌  ===> #{$spacing-multiplicator} is not a number.';
   }
 
@@ -178,7 +183,7 @@
             background-image: url('#{$path}');
           }
           @if $data-type == 'data' {
-            background-image: escape-svg($path);
+            background-image: functions.escape-svg($path);
           }
         }
       }
