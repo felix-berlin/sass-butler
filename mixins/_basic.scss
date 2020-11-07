@@ -6,7 +6,7 @@
 /// @group Basic
 /// @author Felix Scholze
 /// @since v1.0.0
-@mixin select-style($bg-color: $black, $color: $white, $selector: '*') {
+@mixin select-style($bg-color: #000, $color: #fff, $selector: '*') {
   @if meta.type-of($bg-color) != color {
     @error '❌  ===> #{$bg-color} is not a color';
   }
