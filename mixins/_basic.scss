@@ -27,7 +27,7 @@
 /// @since v1.0.0
 @mixin target-anchor-offset($offset) {
   :target {
-    &:before {
+    &::before {
       display: block;
       height: $offset;
       margin-top: -($offset);
