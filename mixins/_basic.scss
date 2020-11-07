@@ -2,6 +2,7 @@
 /// @param {Color} $bg-color [$black] Background-color
 /// @param {Color} $color [$white] Text-color
 /// @param {String} $selector [*] Selector
+/// @group Basic
 /// @author Felix Scholze
 /// @since v1.0.0
 @mixin select-style($bg-color: $black, $color: $white, $selector: '*') {
@@ -21,6 +22,7 @@
 
 /// Adds an offset for the targeted link(s)
 /// @param {Number} $offset the offset in any value
+/// @group Basic
 /// @author Felix Scholze
 /// @since v1.0.0
 @mixin target-anchor-offset($offset) {

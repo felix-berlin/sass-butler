@@ -1,15 +1,16 @@
 /// Font Smoothing
-/// @param {Bool} $value [true]
-/// @group typo
+/// @param {Bool} $antialiased [true]
+/// @group Typo
 /// @author Felix Scholze
-@mixin font-smoothing($value: true) {
-  @if $value==true {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/// @link https://nickbulljs.medium.com/3-css-font-properties-you-need-to-use-in-2020-1e60c415b8a8
+/// @since v1.0.0
+@mixin font-smoothing($antialiased: true) {
+  @if $antialiased == true {
+    -webkit-font-smoothing: antialiased; // Safari | Best of Retina displays
   } @else {
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased; // Best for non Retina displays
   }
+  -moz-osx-font-smoothing: grayscale; // Firefox
 }
 
 /// Adds fonts with the orginal @font-face rule
@@ -21,7 +22,7 @@
 /// @param {Number} $weight [null] Font-Weight
 /// @param {String} $style [null] Font-Style
 /// @param {List} $exts [eot woff2 woff ttf svg] Font-Formats to add
-/// @group typo
+/// @group Typo
 /// @author Jonathan Neal extended by Felix Scholze
 /// @link https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
 /// @since v1.0.0
@@ -88,7 +89,7 @@
 /// @param {Number} $max-font-size [20]
 /// @param {Number} $min-screen-size [400]
 /// @param {Number} $max-screen-size [980]
-/// @group typo
+/// @group Typo
 /// @author Michael Riethmuller
 /// @link https://www.smashingmagazine.com/2016/05/fluid-typography/
 /// @deprecated fluid-typo is deprecated! Please use rfs instead.
@@ -105,4 +106,22 @@
         100vw - #{$min-screen-size}px
       ) / (#{$max-screen-size} - #{$min-screen-size})
   );
+}
+
+/// Adds font-icons using a pseudo element
+/// @param {String} $class
+/// @param {String} $icon-code
+/// @param {String} $font-family
+/// @content Any other styles
+/// @group Typo
+/// @author Felix Scholze
+/// @since v1.0.0
+@mixin icon-font($class, $pseudo, $icon-code, $font-family) {
+	.icon-#{$class} {
+		&::#{$pseudo} {
+			content: #{"'\\"}#{$icon-code + "'"};
+			font-family: $font-family;
+			@content;
+		}
+	}
 }

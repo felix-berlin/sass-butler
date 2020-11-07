@@ -3,6 +3,7 @@
 /// @param {Number} $space-between-lines [1.5rem]
 /// @param {Color} $line-color [#000]
 /// @param {Number} $line-width [2px]
+/// @group Element
 /// @author Felix Scholze
 /// @since v1.0.0
 @mixin line-on-sides(
@@ -51,7 +52,8 @@
 /// @param {Color} $overlay-bg-color
 /// @param {String} $valite-type [(hover,static)]
 /// @param {String} $valite-size [(full, free)]
-/// @content
+/// @content Add addtional styles
+/// @group Element
 /// @author Felix Scholze
 /// @since v1.0.0
 @mixin overlay(
@@ -103,6 +105,83 @@
       position: absolute;
       background: $overlay-bg-color;
       @content;
+    }
+  }
+}
+
+/// Custom bullets for lists with different image types (as file or inline svg)
+///
+/// @param {List} $path-and-color-name [''] Path to image file, color name
+/// @param {String} $data-type ['file'] Choose between image file or svg inline data
+/// @param {Number} $bullet-size [1rem] Defines the bullet size and distance to the text
+/// @param {Number} $spacing-multiplicator [1.5] Defines the spacing bequeen bullet and text ($bullet-size * $spacing-multiplicator)
+/// @param {String} $list [ul] Class of the unored list
+/// @param {String} $list-item [li] Class of the list item
+/// @todo build a version for icon fonts
+/// @group Element
+/// @author Felix Scholze
+/// @since v1.0.0
+///
+/// @example
+///   Image as file
+///   $icons: '#{$path-to-img}/icons/ok-sign-b.svg'blue,
+///           '#{$path-to-img}/icons/ok-sign.svg'white;
+///   @include list-style-image($icons, 'file', 1.2rem, 1.7, '.icon-list');
+///
+///   Image as inline svg
+///   $list-icon-color-primary: $primary;
+///   $list-icon-primary: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M1631.23 1749.44l-6.26-7.15 2.76-2.87 3.67 4.3 10.3-9.01 2.79 2.79zM1634 1726a15 15 0 1015 15 14.993 14.993 0 00-15-15' transform='translate(-1619 -1726)' fill='#{$list-icon-color-primary}' fill-rule='evenodd'/></svg>");
+///   $list-icons: $list-icon-primary blue, $list-icon-primary white;
+///   @include list-style-image($list-icons, 'data', 1.2rem, 1.7, '.icon-list');
+///
+
+@mixin list-style-image(
+  $path-and-color-name: '',
+  $data-type: 'file',
+  $bullet-size: 1rem,
+  $spacing-multiplicator: 1.5,
+  $list: ul,
+  $list-item: li
+) {
+  // Validate varialbes
+  $valite-type: (file, data);
+  @if not index($valite-type, $data-type) {
+    @error '❌  ===> #{$data-type} is not a valite option for data-type. Please use: #{$valite-type}';
+  }
+  @if is-number($spacing-multiplicator) == false {
+    @error '❌  ===> #{$spacing-multiplicator} is not a number.';
+  }
+
+  #{$list} {
+    padding-left: 0;
+    list-style: none;
+    #{$list-item} {
+      position: relative;
+      padding-left: $bullet-size * $spacing-multiplicator;
+      &:before {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: $bullet-size;
+        height: $bullet-size;
+        background-position: center;
+        background-size: contain;
+        content: '';
+      }
+    }
+  }
+  @each $path, $color-mod in $path-and-color-name {
+    #{$list + '--' + $color-mod} {
+      #{$list-item} {
+        &:before {
+          @if $data-type == 'file' {
+            background-image: url('#{$path}');
+          }
+          @if $data-type == 'data' {
+            background-image: escape-svg($path);
+          }
+        }
+      }
     }
   }
 }

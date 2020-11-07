@@ -1,5 +1,6 @@
 /// Custom @media breakpoint (max-width)
 /// @param {Number} $breakpoint
+/// @group Breakpoint
 /// @author Felix Scholze
 /// @since v1.0.0
 @mixin breakpoint-down($breakpoint) {
@@ -10,6 +11,7 @@
 
 /// Custom @media breakpoint (min-width)
 /// @param {Number} $breakpoint
+/// @group Breakpoint
 /// @author Felix Scholze
 /// @since v1.0.0
 @mixin breakpoint-up($breakpoint) {
