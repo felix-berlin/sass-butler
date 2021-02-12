@@ -1,6 +1,6 @@
 {
   "name": "scss-collection",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "A collection of my standart SCSS mixins and functions",
   "main": "scss-collection.scss",
   "scripts": {
@@ -20,11 +20,11 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/felix_berlin/scss-collection#readme",
   "devDependencies": {
-    "prettier": "^2.1.2",
+    "prettier": "^2.2.1",
     "sassdoc": "^2.7.3",
-    "stylelint": "^13.7.2",
+    "stylelint": "^13.10.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.18.0"
+    "stylelint-scss": "^3.19.0"
   }
 }
