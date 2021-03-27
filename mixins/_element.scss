@@ -1,7 +1,7 @@
-@use "sass:list";
-@use "sass:meta";
-@use "../functions/functions";
-@use "../functions/type-checking";
+@use 'sass:list';
+@use 'sass:meta';
+@use '../functions/functions';
+@use '../functions/type-checking';
 
 /// Adds two lines between an element.
 /// There is an example https://css-tricks.com/line-on-sides-headers/
