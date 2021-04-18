@@ -1,7 +1,7 @@
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:string';
-@use '../functions/functions';
+@use '../functions';
 
 /// Font Smoothing
 /// @param {Bool} $antialiased [true]
