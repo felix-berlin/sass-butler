@@ -35,12 +35,12 @@ In the rest of your project you don't add the module via `node_modules` anymore 
 ```
   _my-module.scss
 
-  @use external as breakpoint;
+  @use external as break;
 
   .my-selector {
 
     // lg === 1200px not 1260px
-    @include breakpoint(lg) {
+    @include break.breakpoint(lg) {
       padding: 12px 0 1rem 0;
     }
   }
