@@ -1,0 +1,191 @@
+@use 'sass:list';
+@use 'sass:meta';
+@use '../functions';
+
+/// Adds two lines between an element.
+/// There is an example https://css-tricks.com/line-on-sides-headers/
+/// @param {Number} $space-between-lines [1.5rem]
+/// @param {Color} $line-color [#000]
+/// @param {Number} $line-width [2px]
+/// @group Element
+/// @author Felix Scholze
+/// @since v1.0.0
+@mixin line-on-sides(
+  $space-between-lines: 1.5rem,
+  $line-color: #000,
+  $line-width: 2px
+) {
+  @if meta.type-of($line-color) != color {
+    @error '❌  ===> #{$line-color} is not a color.';
+  }
+  @if meta.type-of($space-between-lines) != number {
+    @error '❌  ===> #{$space-between-lines} is not a number.';
+  }
+  @if meta.type-of($line-width) != number {
+    @error '❌  ===> #{$line-width} is not a number.';
+  }
+
+  display: flex;
+  align-items: center;
+  @content;
+
+  &::before,
+  &::after {
+    position: static;
+    display: block;
+    flex-grow: 1;
+    width: auto;
+    border-bottom: $line-width solid $line-color;
+    content: '';
+  }
+
+  &::before {
+    margin-right: $space-between-lines;
+  }
+
+  &::after {
+    margin-left: $space-between-lines;
+  }
+}
+
+/// Adds an overlay
+/// @param {String} $overlay-type
+/// @param {String} $overlay-size
+/// @param {String} $parent-element
+/// @param {String} $overlay-element
+/// @param {Color} $overlay-bg-color
+/// @param {String} $valite-type [(hover,static)]
+/// @param {String} $valite-size [(full, free)]
+/// @content Add addtional styles
+/// @group Element
+/// @author Felix Scholze
+/// @since v1.0.0
+@mixin overlay(
+  $overlay-type,
+  $overlay-size,
+  $parent-element,
+  $overlay-element,
+  $overlay-bg-color
+) {
+  // Validate varialbes
+  $valite-type: (hover, static);
+  $valite-size: (full, free);
+  @if not list.index($valite-size, $overlay-size) {
+    @error '❌  ===> #{$overlay-size} is not a valite option for overlay-size. Please use: #{$valite-size}';
+  }
+  @if not list.index($valite-type, $overlay-type) {
+    @error '❌  ===> #{$overlay-type} is not a valite option for overlay-type. Please use: #{$valite-type}';
+  }
+
+  .#{$parent-element} {
+    position: relative;
+    @if $overlay-type == hover {
+      &:hover {
+        .#{$overlay-element} {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @if $overlay-type == hover {
+    .#{$overlay-element} {
+      opacity: 0;
+      transition: 0.5s ease;
+    }
+  }
+
+  .#{$overlay-element} {
+    @if $overlay-size == full {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $overlay-bg-color;
+      height: 100%;
+      width: 100%;
+      @content;
+    }
+    @if $overlay-size == free {
+      position: absolute;
+      background: $overlay-bg-color;
+      @content;
+    }
+  }
+}
+
+/// Custom bullets for lists with different image types (as file or inline svg)
+///
+/// @param {List} $path-and-color-name [''] Path to image file, color name
+/// @param {String} $data-type ['file'] Choose between image file or svg inline data
+/// @param {Number} $bullet-size [1rem] Defines the bullet size and distance to the text
+/// @param {Number} $spacing-multiplicator [1.5] Defines the spacing bequeen bullet and text ($bullet-size * $spacing-multiplicator)
+/// @param {String} $list [ul] Class of the unored list
+/// @param {String} $list-item [li] Class of the list item
+/// @todo build a version for icon fonts
+/// @group Element
+/// @author Felix Scholze
+/// @since v1.0.0
+///
+/// @example
+///   Image as file
+///   $icons: '#{$path-to-img}/icons/ok-sign-b.svg'blue,
+///           '#{$path-to-img}/icons/ok-sign.svg'white;
+///   @include list-style-image($icons, 'file', 1.2rem, 1.7, '.icon-list');
+///
+///   Image as inline svg
+///   $list-icon-color-primary: $primary;
+///   $list-icon-primary: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M1631.23 1749.44l-6.26-7.15 2.76-2.87 3.67 4.3 10.3-9.01 2.79 2.79zM1634 1726a15 15 0 1015 15 14.993 14.993 0 00-15-15' transform='translate(-1619 -1726)' fill='#{$list-icon-color-primary}' fill-rule='evenodd'/></svg>");
+///   $list-icons: $list-icon-primary blue, $list-icon-primary white;
+///   @include list-style-image($list-icons, 'data', 1.2rem, 1.7, '.icon-list');
+///
+
+@mixin list-style-image(
+  $path-and-color-name: '',
+  $data-type: 'file',
+  $bullet-size: 1rem,
+  $spacing-multiplicator: 1.5,
+  $list: ul,
+  $list-item: li
+) {
+  // Validate varialbes
+  $valite-type: (file, data);
+  @if not list.index($valite-type, $data-type) {
+    @error '❌  ===> #{$data-type} is not a valite option for data-type. Please use: #{$valite-type}';
+  }
+  @if type-checking.is-number($spacing-multiplicator) == false {
+    @error '❌  ===> #{$spacing-multiplicator} is not a number.';
+  }
+
+  #{$list} {
+    padding-left: 0;
+    list-style: none;
+    #{$list-item} {
+      position: relative;
+      padding-left: $bullet-size * $spacing-multiplicator;
+      &::before {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: $bullet-size;
+        height: $bullet-size;
+        background-position: center;
+        background-size: contain;
+        content: '';
+      }
+    }
+  }
+  @each $path, $color-mod in $path-and-color-name {
+    #{$list + '--' + $color-mod} {
+      #{$list-item} {
+        &::before {
+          @if $data-type == 'file' {
+            background-image: url('#{$path}');
+          }
+          @if $data-type == 'data' {
+            background-image: functions.escape-svg($path);
+          }
+        }
+      }
+    }
+  }
+}
