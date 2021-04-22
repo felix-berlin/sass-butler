@@ -2,15 +2,38 @@
 @use 'sass:map';
 @use 'sass:list';
 
-@use '../variables/structure' as structur;
+// Breakpoint Vars
+$xxs: 375px !default; // Smartphone Portrait
+$xs: 568px !default; // Smartphone Landscape
+$sm: 768px !default; // Tablet Portrait
+$md: 1024px !default; // Tablet Landscape
+$lg: 1260px !default; // Kleinerer Desktop
+$xlg: 1440px !default; // Widescreen
+$fhd: 1920px !default; // Full HD
+
+// Breakpoint Map
+$breakpoints: (
+  'xxs': $xxs,
+  'xs': $xs,
+  'sm': $sm,
+  'md': $md,
+  'lg': $lg,
+  'xlg': $xlg,
+  'fhd': $fhd,
+) !default;
 
 /// Breakpoint Mixin using breakpoint map
 /// @param {String} $breakpoint Breakpoint key from the breakpoints map
 /// @param {String} $direction ['min'] Breakpoint direction min or max
+/// @param {Map} $breakpoint-map [$breakpoints] All breakpoint vars in one map
 /// @group Breakpoint
 /// @author Felix Scholze
 /// @since v1.1.0
-@mixin breakpoint($breakpoint, $direction: 'min') {
+@mixin breakpoint(
+  $breakpoint,
+  $direction: 'min',
+  $breakpoint-map: $breakpoints
+) {
   // Error handling
   $validDirection: (min, max);
 
@@ -20,12 +43,12 @@
   }
 
   // Gebe einen Fehler aus wenn es den Breakpoint nicht in der Map gibt
-  @if map.has-key(structur.$breakpoints, $breakpoint) != true {
-    @error '❌  ===> #{$breakpoint} is not valid breakpoint. Please use: #{map.keys(structur.$breakpoints)}';
+  @if map.has-key($breakpoint-map, $breakpoint) != true {
+    @error '❌  ===> #{$breakpoint} is not valid breakpoint. Please use: #{map.keys($breakpoint-map)}';
   }
 
   // Suche und gebe den Key aus der Breakpoints Map wieder
-  $getBreakpoints: map.get(structur.$breakpoints, $breakpoint);
+  $getBreakpoints: map.get($breakpoint-map, $breakpoint);
 
   @if $direction == 'min' {
     @media (min-width: $getBreakpoints) {

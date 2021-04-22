@@ -1,6 +1,6 @@
 {
   "name": "scss-collection",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "license": "ISC",
   "description": "A collection of useful SCSS mixins and functions",
   "homepage": "https://scss-collection.kasimir.dev",
