@@ -1,0 +1,18 @@
+$xxs: 375px !default; // Smartphone Portrait
+$xs: 568px !default; // Smartphone Landscape
+$sm: 768px !default; // Tablet Portrait
+$md: 1024px !default; // Tablet Landscape
+$lg: 1260px !default; // Kleinerer Desktop
+$xlg: 1440px !default; // Widescreen
+$fhd: 1920px !default; // Full HD
+
+// Breakpoint Map
+$breakpoints: (
+  'xxs': $xxs,
+  'xs': $xs,
+  'sm': $sm,
+  'md': $md,
+  'lg': $lg,
+  'xlg': $xlg,
+  'fhd': $fhd,
+) !default;
