@@ -23,28 +23,26 @@ Here is an example how you can deal with it:
 
 Create a new file and load the breakpoint mixin from the `node_modules` with the `@forward` function. Similar to the `@use` function you can overwrite predefined vars with `with()`.
 
-```
-  _external.scss
+```scss
+// _external.scss
 
-  // Add your own breakpoints
-  @forward '@felix-berlin/scss-collection/mixins/breakpoint' with ($lg: 1200px);
+// Add your own breakpoints
+@forward '@felix-berlin/scss-collection/mixins/breakpoint' with ($lg: 1200px);
 ```
 
 In the rest of your project you don't add the module via `node_modules` anymore but load the customized module `_external.scss` with `@use`.
 
-```
-  _my-module.scss
+```scss
+// _my-module.scss
 
-  @use external as break;
+@use external as break;
 
-  .my-selector {
-
-    // lg === 1200px not 1260px
-    @include break.breakpoint(lg) {
-      padding: 12px 0 1rem 0;
-    }
+.my-selector {
+  // lg === 1200px not 1260px
+  @include break.breakpoint(lg) {
+    padding: 12px 0 1rem 0;
   }
-
+}
 ```
 
 ## Documentation
