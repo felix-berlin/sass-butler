@@ -1,0 +1,35 @@
+@use 'sass:meta';
+
+/// Strip the unit from a number.
+///
+/// @param {Number} $number
+/// @return {Number}
+/// @group Number
+/// @since v1.3.0
+///
+/// @example
+///    @debug strip-unit(3rem);
+///    //=> 3
+///
+@function strip-unit($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+/// Invert a number.
+///
+/// @param {Number} $number
+/// @return {Number}
+/// @group Number
+/// @since v1.3.0
+///
+/// @example
+///    @debug number-invert(7);
+///    //=> -7
+///
+@function number-invert($number) {
+  @if meta.type-of($number) != number {
+    @error '❌  ===> #{$number} is not a number';
+  }
+
+  @return $number * -1;
+}

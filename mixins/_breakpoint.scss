@@ -29,6 +29,17 @@ $breakpoints: (
 /// @group Breakpoint
 /// @author Felix Scholze
 /// @since v1.1.0
+///
+/// @example
+///    .my-selector {
+///      @include breakpoint(lg) {...}
+///    }
+///
+/// @example css - Output CSS
+///    @media (min-width: 1260px) {
+///       .my-selector {...}
+///    }
+///
 @mixin breakpoint(
   $breakpoint,
   $direction: 'min',

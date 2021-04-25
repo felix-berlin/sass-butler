@@ -1,4 +1,6 @@
 @use 'sass:meta';
+@use '../functions/numbers' as numb;
+
 /// Styles for selected elements
 /// @param {Color} $bg-color [$black] Background-color
 /// @param {Color} $color [$white] Text-color
@@ -31,7 +33,7 @@
     &::before {
       display: block;
       height: $offset;
-      margin-top: -($offset);
+      margin-top: number-invert($offset);
       content: '';
     }
   }

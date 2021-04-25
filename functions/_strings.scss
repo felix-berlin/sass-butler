@@ -1,6 +1,78 @@
 @use 'sass:string';
+@use 'sass:meta';
 @use '../variables/variables' as vars;
 @forward 'type-checking';
+
+/// Check if `$string` starts with the given `$substring`.
+///
+/// @parameter {String} $string - String to check
+/// @parameter {String} $substring - Substring to search for at the start of `$string`
+/// @return {Boolean}
+/// @group String
+/// @author Felix Scholze
+/// @since v1.3.0
+///
+/// @example
+///   @debug str-starts-with('hello world', 'hello');
+///   //=> true
+///
+@function str-starts-with($string, $substring) {
+  @if meta.type-of($string) != string {
+    @error '❌  ===> #{$string} is not a string';
+  }
+  @if meta.type-of($substring) != string {
+    @error '❌  ===> #{$substring} is not a string';
+  }
+
+  @return string.index($string, $substring) == 1;
+}
+
+/// Check if `$string` ends with the given `$substring`.
+///
+/// @param {String} $string - String to check
+/// @param {String} $substring - Substring to search for the end of `$string`
+/// @return {Boolean}
+/// @group String
+/// @author Felix Scholze
+/// @since v1.3.0
+///
+/// @example
+///    @debug str-ends-with('hello world', 'world');
+///
+@function str-ends-with($string, $substring) {
+  @if meta.type-of($string) != string {
+    @error '❌  ===> #{$string} is not a string';
+  }
+  @if meta.type-of($substring) != string {
+    @error '❌  ===> #{$substring} is not a string';
+  }
+
+  @return string.slice($string, string.length($substring) * -1) == $substring;
+}
+
+/// Check if `$string` contains the given `$substring`.
+///
+/// @param {String} $string - String to check
+/// @param {String} $substring - Substring to search for in `$string`
+/// @return {Boolean}
+/// @group String
+/// @author Felix Scholze
+/// @since v1.3.0
+///
+/// @example
+///   @debug str-contains('i love SCSS', 'SCSS');
+///   //=> true
+///
+@function str-contains($string, $substring) {
+  @if meta.type-of($string) != string {
+    @error '❌  ===> #{$string} is not a string';
+  }
+  @if meta.type-of($substring) != string {
+    @error '❌  ===> #{$substring} is not a string';
+  }
+
+  @return string.index($string, $substring) != null;
+}
 
 /// Replace `$search` with `$replace` in `$string`
 /// Used on our SVG icon backgrounds for custom forms.
@@ -14,9 +86,18 @@
 /// @since v1.0.0
 ///
 /// @example
-///    @include str-replace($var, '', '_');
+///    $string: 'I hate SCSS!';
+///    @include str-replace($string, 'hate', 'love');
+///    //=> I love SCSS!
 ///
 @function str-replace($string, $search, $replace: '') {
+  @if meta.type-of($string) != string {
+    @error '❌  ===> #{$string} is not a string';
+  }
+  @if meta.type-of($substring) != string {
+    @error '❌  ===> #{$substring} is not a string';
+  }
+
   $index: string.index($string, $search);
 
   @if $index {
@@ -45,6 +126,10 @@
 ///    background-image: escape-svg($icon);
 ///
 @function escape-svg($string) {
+  @if meta.type-of($string) != string {
+    @error '❌  ===> #{$string} is not a string';
+  }
+
   @if string.index($string, 'data:image/svg+xml') {
     @each $char, $encoded in vars.$escaped-characters {
       // Do not escape the url brackets

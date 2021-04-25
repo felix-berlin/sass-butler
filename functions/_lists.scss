@@ -1,0 +1,44 @@
+@use 'sass:list';
+@use 'sass:meta';
+
+/// Get the first `$list` element
+///
+/// @param {List} $list
+/// @return {*}
+/// @group List
+/// @author Felix Scholze
+/// @since v1.3.0
+///
+/// @example
+///    $my-list(1, 2, 3, 4, 5)
+///    @debug first-of-list($my-list);
+///    //=> 1
+///
+@function first-of-list($list) {
+  @if meta.type-of($list) != list {
+    @error '❌  ===> #{$list} is not a list';
+  }
+
+  @return list.nth($list, -1);
+}
+
+/// Get the last `$list` element
+///
+/// @param {List} $list
+/// @return {*}
+/// @group List
+/// @author Felix Scholze
+/// @since v1.3.0
+///
+/// @example
+///    $my-list(1, 2, 3, 4, 5)
+///    @debug last-of-list($my-list);
+///    //=> 5
+///
+@function last-of-list($list) {
+  @if meta.type-of($list) != list {
+    @error '❌  ===> #{$list} is not a list';
+  }
+
+  @return list.nth($list, -1);
+}

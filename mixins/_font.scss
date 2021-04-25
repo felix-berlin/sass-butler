@@ -97,7 +97,7 @@
 /// @group Typo
 /// @author Michael Riethmuller
 /// @link https://www.smashingmagazine.com/2016/05/fluid-typography/
-/// @deprecated fluid-typo is deprecated! Please use rfs instead.
+/// @deprecated fluid-typo is deprecated!.
 @mixin fluid-typo(
   $font-unit: rem,
   $min-font-size: 14,
@@ -105,12 +105,17 @@
   $min-screen-size: 400,
   $max-screen-size: 980
 ) {
-  @error 'fluid-typo is deprecated! Please use rfs instead.';
+  @error 'fluid-typo is deprecated.';
+
+  /* stylelint-disable */
+
   font-size: calc(
     #{$min-font-size}#{$font-unit} + (#{$max-font-size} - #{$min-font-size}) * (
         100vw - #{$min-screen-size}px
       ) / (#{$max-screen-size} - #{$min-screen-size})
   );
+
+  /* stylelint-enable */
 }
 
 /// Adds font-icons using a pseudo element

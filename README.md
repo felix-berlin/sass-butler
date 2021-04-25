@@ -14,9 +14,59 @@ I recommend to use release tags.
 
 This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-module-system-is-launched). Therefore your build tool or taskrunner have to support Dart Sass 1.23.0 or above.
 
+### Sass support
+
+| Sass Compiler | Support |
+| ------------- | ------- |
+| Dart Sass     | ✅      |
+| Lib Sass      | ❌      |
+| Ruby Sass     | ⚰️      |
+
 ## Usage
 
-### Override Module Config
+### Import all at once or all individually
+
+Single import of the used functionalities.
+
+_Recommended for more precise namespaces_.
+
+```scss
+@use './node_modules/@felix-berlin/scss-collection/functions/first-of-list' as fol;
+```
+
+import all functions at once:
+
+```scss
+@use './node_modules/@felix-berlin/scss-collection/functions' as mixins;
+```
+
+### How to import
+
+```scss
+@use './node_modules/@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+```
+
+With `sass-loader`:
+
+```scss
+@use '~@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+```
+
+With `webpack mix`:
+
+```js
+  .sass('resources/assets/styles/app.scss', 'styles', {
+    sassOptions: {
+      includePaths: ['./node_modules'],
+    },
+  })
+```
+
+```scss
+@use '@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+```
+
+### Override module config
 
 Some of the module comes with "global" config vars and maps (breakpoint mixin). This may be a problem since you can only overwrite once with `with()`.
 Here is an example how you can deal with it:
@@ -55,3 +105,7 @@ You can find the documention at: [https://scss-collection.kasimir.dev](https://s
 
 Run following command:
 `npm run sassDoc`
+
+### Online tools for testing
+
+[Sassmeister](https://www.sassmeister.com) is a great online tool for compiling and testing your Scss/Sass code.
