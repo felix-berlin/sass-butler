@@ -31,25 +31,25 @@ Single import of the used functionalities.
 _Recommended for more precise namespaces_.
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/functions/first-of-list' as fol;
+@use './node_modules/scss-collection/functions/first-of-list' as fol;
 ```
 
 import all functions at once:
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/functions' as mixins;
+@use './node_modules/scss-collection/functions' as functions;
 ```
 
 ### How to import
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use './node_modules/scss-collection/mixis/breakpoint' as breakpoint;
 ```
 
 With `sass-loader`:
 
 ```scss
-@use '~@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use '~scss-collection/mixis/breakpoint' as breakpoint;
 ```
 
 With `webpack mix`:
@@ -63,7 +63,7 @@ With `webpack mix`:
 ```
 
 ```scss
-@use '@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use 'scss-collection/mixis/breakpoint' as breakpoint;
 ```
 
 ### Override module config
