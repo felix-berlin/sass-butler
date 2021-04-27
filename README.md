@@ -4,8 +4,8 @@
 
 ## Installation
 
-```
-npm install https://github.com/felix-berlin/scss-collection (#commit, #branch or #(release)tag)
+```bash
+npm install https://github.com/felix-berlin/scss-collection.git (#commit, #branch or #(release)tag)
 ```
 
 I recommend to use release tags.
@@ -31,25 +31,25 @@ Single import of the used functionalities.
 _Recommended for more precise namespaces_.
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/functions/first-of-list' as fol;
+@use './node_modules/scss-collection/functions/first-of-list' as fol;
 ```
 
 import all functions at once:
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/functions' as mixins;
+@use './node_modules/scss-collection/functions' as functions;
 ```
 
 ### How to import
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use './node_modules/scss-collection/mixis/breakpoint' as breakpoint;
 ```
 
 With `sass-loader`:
 
 ```scss
-@use '~@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use '~scss-collection/mixis/breakpoint' as breakpoint;
 ```
 
 With `webpack mix`:
@@ -63,7 +63,7 @@ With `webpack mix`:
 ```
 
 ```scss
-@use '@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use 'scss-collection/mixis/breakpoint' as breakpoint;
 ```
 
 ### Override module config
@@ -77,7 +77,7 @@ Create a new file and load the breakpoint mixin from the `node_modules` with the
 // _external.scss
 
 // Add your own breakpoints
-@forward '@felix-berlin/scss-collection/mixins/breakpoint' with ($lg: 1200px);
+@forward 'scss-collection/mixins/breakpoint' with ($lg: 1200px);
 ```
 
 In the rest of your project you don't add the module via `node_modules` anymore but load the customized module `_external.scss` with `@use`.
