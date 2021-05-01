@@ -94,8 +94,8 @@
   @if meta.type-of($string) != string {
     @error '❌  ===> #{$string} is not a string';
   }
-  @if meta.type-of($substring) != string {
-    @error '❌  ===> #{$substring} is not a string';
+  @if meta.type-of($search) != string {
+    @error '❌  ===> #{$search} is not a string';
   }
 
   $index: string.index($string, $search);

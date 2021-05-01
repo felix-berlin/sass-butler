@@ -15,10 +15,6 @@
 ///    map-collect($map-1, $map-2, $map-3);
 ///
 @function map-collect($maps...) {
-  @if meta.type-of($maps) != map {
-    @error '❌  ===> #{$maps} is not a map';
-  }
-
   $collection: ();
 
   @each $map in $maps {
