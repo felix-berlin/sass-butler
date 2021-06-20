@@ -1,5 +1,7 @@
 # SCSS Collection
 
+![GitHub all releases](https://img.shields.io/github/downloads/felix-berlin/scss-collection/total?style=flat-square)
+
 > A collection of useful SCSS mixins and functions
 
 ## Installation
