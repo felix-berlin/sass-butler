@@ -1,6 +1,7 @@
 # SCSS Collection
 
 ![GitHub all releases](https://img.shields.io/github/downloads/felix-berlin/scss-collection/total?style=flat-square)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/felix-berlin/scss-collection/CI/master?label=build%20docs%20website&style=flat-square)
 
 > A collection of useful SCSS mixins and functions
 
