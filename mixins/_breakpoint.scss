@@ -1,4 +1,4 @@
-// Sass Funktionen
+// Sass functions
 @use 'sass:map';
 @use 'sass:list';
 
@@ -46,19 +46,19 @@ $breakpoints: (
   $breakpoint-map: $breakpoints
 ) {
   // Error handling
-  $validDirection: (min, max);
+  $validDirection: ('min', 'max');
 
-  // Gebe einen Fehler aus wenn die Breakpointrichtung nicht stimmt
+  // Give an error if the breakpoint direction is not correct
   @if not list.index($validDirection, $direction) {
     @error '❌  ===> #{$direction} is not a valite option for direction. Please use: #{$validDirection}';
   }
 
-  // Gebe einen Fehler aus wenn es den Breakpoint nicht in der Map gibt
+  // Give an error if the breakpoint does not exist in the map
   @if map.has-key($breakpoint-map, $breakpoint) != true {
     @error '❌  ===> #{$breakpoint} is not valid breakpoint. Please use: #{map.keys($breakpoint-map)}';
   }
 
-  // Suche und gebe den Key aus der Breakpoints Map wieder
+  // Search and return the key from the breakpoints map
   $getBreakpoints: map.get($breakpoint-map, $breakpoint);
 
   @if $direction == 'min' {
@@ -68,7 +68,7 @@ $breakpoints: (
   }
 
   @if $direction == 'max' {
-    @media (max-width: $getBreakpoints) {
+    @media (max-width: $getBreakpoints - 1) {
       @content;
     }
   }

@@ -31,6 +31,7 @@
 /// @author Jonathan Neal extended by Felix Scholze
 /// @link https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
 /// @since v1.0.0
+/// @deprecated font-face-old is deprecated!.
 ///
 /// @example
 ///    @include font-face(
@@ -41,7 +42,7 @@
 ///      woff2 woff
 ///    );
 ///
-@mixin font-face(
+@mixin font-face-old(
   $name,
   $path,
   $weight: null,
@@ -132,6 +133,64 @@
 			content: #{"'\\"}#{$icon-code + "'"};
 			font-family: $font-family;
 			@content;
+		}
+	}
+}
+
+
+/// Adds fonts via @font-face
+///
+/// @param {String} $name Font-Name
+/// @param {String} $path Path to font
+/// @param {Number} $weight [null] Font-Weight
+/// @param {String} $version [null] Font Version
+/// @param {String} $unicode-range [''] Unicode Range
+/// @param {String} $style [null] Font-Style
+/// @param {List} $exts [woff2 woff] Font-Formats to add
+/// @param {String} $display [swap] Display
+/// @group Typo
+/// @author Felix Scholze
+/// @since v1.4.0
+///
+/// @example
+///    @include font-face(
+///      'Open Sans',
+///      '#{$path-to-fonts}/opensans/Light/OpenSans-Light',
+///      400,
+///      1.0,
+///      '',
+///      normal,
+///      woff2 woff,
+///    );
+///
+@mixin font-face(
+	$name,
+	$path,
+	$weight: null,
+	$version: null,
+	$unicode-range: '',
+	$style: normal,
+	$exts: woff2 woff,
+	$display: swap
+) {
+	$src: null;
+
+	@if $version {
+		$version: '?v=' + $version;
+	}
+
+	@each $ext in $exts {
+		$src: list.append($src, url('#{$path + '.' + $ext + $version}') format(string.quote($ext)), comma);
+	}
+
+	@font-face {
+		font-family: string.quote($name);
+		src: local($name), $src;
+		font-weight: $weight;
+		font-style: $style;
+		font-display: $display;
+		@if $unicode-range {
+			unicode-range: string.unquote($unicode-range);
 		}
 	}
 }

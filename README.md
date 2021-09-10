@@ -35,25 +35,25 @@ Single import of the used functionalities.
 _Recommended for more precise namespaces_.
 
 ```scss
-@use './node_modules/scss-collection/functions/first-of-list' as fol;
+@use './node_modules/sassy-scss/functions/first-of-list' as fol;
 ```
 
 import all functions at once:
 
 ```scss
-@use './node_modules/scss-collection/functions' as functions;
+@use './node_modules/sassy-scss/functions' as functions;
 ```
 
 ### How to import
 
 ```scss
-@use './node_modules/scss-collection/mixis/breakpoint' as breakpoint;
+@use './node_modules/sassy-scss/mixis/breakpoint' as breakpoint;
 ```
 
 With `sass-loader`:
 
 ```scss
-@use '~scss-collection/mixis/breakpoint' as breakpoint;
+@use '~sassy-scss/mixis/breakpoint' as breakpoint;
 ```
 
 With `webpack mix`:
@@ -67,7 +67,7 @@ With `webpack mix`:
 ```
 
 ```scss
-@use 'scss-collection/mixis/breakpoint' as breakpoint;
+@use 'sassy-scss/mixis/breakpoint' as breakpoint;
 ```
 
 ### Override module config
@@ -81,7 +81,7 @@ Create a new file and load the breakpoint mixin from the `node_modules` with the
 // _external.scss
 
 // Add your own breakpoints
-@forward 'scss-collection/mixins/breakpoint' with ($lg: 1200px);
+@forward 'sassy-scss/mixins/breakpoint' with ($lg: 1200px);
 ```
 
 In the rest of your project you don't add the module via `node_modules` anymore but load the customized module `_external.scss` with `@use`.
