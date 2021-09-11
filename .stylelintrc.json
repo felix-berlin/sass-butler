@@ -1,6 +1,14 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
-  "plugins": ["stylelint-scss"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-idiomatic-order",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-a11y"
+  ],
   "rules": {
     "declaration-colon-newline-after": null,
     "value-list-comma-newline-after": null,
@@ -35,6 +43,11 @@
           "function"
         ]
       }
-    ]
+    ],
+    "plugin/declaration-block-no-ignored-properties": true,
+    "a11y/media-prefers-reduced-motion": true,
+    "a11y/no-outline-none": true,
+    "a11y/selector-pseudo-class-focus": true,
+    "a11y/no-obsolete-element": true
   }
 }
