@@ -101,7 +101,7 @@ In the rest of your project you don't add the module via `node_modules` anymore 
 
 ## Documentation
 
-You can find the documention at: [https://scss-collection.kasimir.dev](https://scss-collection.kasimir.dev)
+You can find the documention at: [https://sassy-scss.kasimir.dev](https://sassy-scssn.kasimir.dev)
 
 > The documentation is updated automatically with each commit on the master branch.
 
