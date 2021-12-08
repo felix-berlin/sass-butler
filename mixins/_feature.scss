@@ -13,35 +13,31 @@
 ///    );
 ///
 @mixin feature($feature: '') {
-  // Error handling
-  $validFeature: ('motion', 'no-motion', 'dark', 'light');
+	// Error handling
+	$valid-feature: ('motion', 'no-motion', 'dark', 'light');
 
-  // Give an error if the feature is not present
-  @if not list.index($validFeature, $feature) {
-    @error '❌  ===> #{$feature} is not a valite option for feature. Please use: #{$validFeature}';
-  }
-
-  @if $feature == 'no-motion' {
-    @media (prefers-reduced-motion: reduce) {
-      @content;
-    }
-  }
-
-  @if $feature == 'motion' {
-    @media (prefers-reduced-motion: no-preference) {
-      @content;
-    }
-  }
-
-  @if $feature == 'dark' {
-    @media (prefers-color-scheme: dark) {
-      @content;
-    }
-  }
-
-  @if $feature == 'light' {
-    @media (prefers-color-scheme: light) {
-      @content;
-    }
-  }
+	// Give an error if the feature is not present
+	@if not list.index($valid-feature, $feature) {
+		@error '❌  ===> #{$feature} is not a valite option for feature. Please use: #{$valid-feature}';
+	}
+	@if $feature == 'no-motion' {
+		@media (prefers-reduced-motion: reduce) {
+			@content;
+		}
+	}
+	@if $feature == 'motion' {
+		@media (prefers-reduced-motion: no-preference) {
+			@content;
+		}
+	}
+	@if $feature == 'dark' {
+		@media (prefers-color-scheme: dark) {
+			@content;
+		}
+	}
+	@if $feature == 'light' {
+		@media (prefers-color-scheme: light) {
+			@content;
+		}
+	}
 }

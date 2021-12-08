@@ -12,7 +12,7 @@
 ///    //=> 3
 ///
 @function strip-unit($number) {
-  @return $number / ($number * 0 + 1);
+	@return $number / ($number * 0 + 1);
 }
 
 /// Invert a number.
@@ -27,9 +27,9 @@
 ///    //=> -7
 ///
 @function number-invert($number) {
-  @if meta.type-of($number) != number {
-    @error '❌  ===> #{$number} is not a number';
-  }
+	@if meta.type-of($number) != number {
+		@error '❌  ===> #{$number} is not a number';
+	}
 
-  @return $number * -1;
+	@return $number * -1;
 }

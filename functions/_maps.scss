@@ -15,10 +15,11 @@
 ///    map-collect($map-1, $map-2, $map-3);
 ///
 @function map-collect($maps...) {
-  $collection: ();
+	$collection: ();
 
-  @each $map in $maps {
-    $collection: map.merge($collection, $map);
-  }
-  @return $collection;
+	@each $map in $maps {
+		$collection: map.merge($collection, $map);
+	}
+
+	@return $collection;
 }

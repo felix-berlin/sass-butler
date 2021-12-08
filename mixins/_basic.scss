@@ -9,18 +9,18 @@
 /// @author Felix Scholze
 /// @since v1.0.0
 @mixin select-style($bg-color: #000, $color: #fff, $selector: '*') {
-  @if meta.type-of($bg-color) != color {
-    @error '❌  ===> #{$bg-color} is not a color';
-  }
-  @if meta.type-of($color) != color {
-    @error '❌  ===> #{$color} is not a color';
-  }
-  #{$selector} {
-    &::selection {
-      color: $color;
-      background: $bg-color;
-    }
-  }
+	@if meta.type-of($bg-color) != color {
+		@error '❌  ===> #{$bg-color} is not a color';
+	}
+	@if meta.type-of($color) != color {
+		@error '❌  ===> #{$color} is not a color';
+	}
+	#{$selector} {
+		&::selection {
+			background: $bg-color;
+			color: $color;
+		}
+	}
 }
 
 /// Adds an offset for the targeted link(s)
@@ -29,12 +29,12 @@
 /// @author Felix Scholze
 /// @since v1.0.0
 @mixin target-anchor-offset($offset) {
-  :target {
-    &::before {
-      display: block;
-      height: $offset;
-      margin-top: number-invert($offset);
-      content: '';
-    }
-  }
+	:target {
+		&::before {
+			content: '';
+			display: block;
+			height: $offset;
+			margin-top: number-invert($offset);
+		}
+	}
 }

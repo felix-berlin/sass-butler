@@ -10,14 +10,16 @@
 /// @link https://nickbulljs.medium.com/3-css-font-properties-you-need-to-use-in-2020-1e60c415b8a8
 /// @since v1.0.0
 @mixin font-smoothing($antialiased: true) {
-  @if $antialiased == true {
-    -webkit-font-smoothing: antialiased; // Safari | Best of Retina displays
-  } @else {
-    -webkit-font-smoothing: subpixel-antialiased; // Best for non Retina displays
-  }
-  -moz-osx-font-smoothing: grayscale; // Firefox
+	-moz-osx-font-smoothing: grayscale; // Firefox
+
+	@if $antialiased == true {
+		-webkit-font-smoothing: antialiased; // Safari | Best of Retina displays
+	} @else {
+		-webkit-font-smoothing: subpixel-antialiased; // Best for non Retina displays
+	}
 }
 
+/* stylelint-disable function-url-quotes */
 /// Adds fonts with the orginal @font-face rule
 /// Attention!
 /// When you use Laravel Mix your fonts path begins at the mix.config file location
@@ -43,51 +45,48 @@
 ///    );
 ///
 @mixin font-face-old(
-  $name,
-  $path,
-  $weight: null,
-  $style: null,
-  $exts: eot woff2 woff ttf svg,
-  $display: swap
+	$name,
+	$path,
+	$weight: null,
+	$style: null,
+	$exts: eot woff2 woff ttf svg,
+	$display: swap
 ) {
-  $src: null;
+	$src: null;
+	$extmods: (
+		'eot': '?iefix',
+		'svg': '#' + functions.str-replace($name, ' ', '_'),
+	);
+	$formats: (
+		'otf': 'opentype',
+		'ttf': 'truetype',
+	);
 
-  $extmods: (
-    eot: '?iefix',
-    svg: '#' + functions.str-replace($name, ' ', '_'),
-  );
+	@each $ext in $exts {
+		$extmod: if(
+			map.has-key($extmods, $ext),
+			$ext + map.get($extmods, $ext),
+			$ext
+		);
+		$format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+		$src: list.append($src, url(string.quote($path + '.' + $extmod)) format(string.quote($format)), comma);
+	}
 
-  $formats: (
-    otf: 'opentype',
-    ttf: 'truetype',
-  );
+	@font-face {
+		font-weight: $weight;
+		font-style: $style;
+		font-family: string.quote($name);
+		font-display: $display;
 
-  @each $ext in $exts {
-    $extmod: if(
-      map.has-key($extmods, $ext),
-      $ext + map.get($extmods, $ext),
-      $ext
-    );
-    $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
-    $src: list.append(
-      $src,
-      url(string.quote($path + '.' + $extmod)) format(string.quote($format)),
-      comma
-    );
-  }
-
-  @font-face {
-    font-family: string.quote($name);
-    @if list.index($exts, 'eot') {
-      src: local($name), url($path + '.eot'), $src;
-    } @else {
-      src: local($name), $src;
-    }
-    font-weight: $weight;
-    font-style: $style;
-    font-display: $display;
-  }
+		@if list.index($exts, 'eot') {
+			src: local($name), url($path + '.eot'), $src;
+		} @else {
+			src: local($name), $src;
+		}
+	}
 }
+
+/* stylelint-enable function-url-quotes */
 
 /// Responsive And Fluid Typography With vh And vw Units
 /// @param {Number} $font-unit [rem]
@@ -100,23 +99,23 @@
 /// @link https://www.smashingmagazine.com/2016/05/fluid-typography/
 /// @deprecated fluid-typo is deprecated!.
 @mixin fluid-typo(
-  $font-unit: rem,
-  $min-font-size: 14,
-  $max-font-size: 20,
-  $min-screen-size: 400,
-  $max-screen-size: 980
+	$font-unit: rem,
+	$min-font-size: 14,
+	$max-font-size: 20,
+	$min-screen-size: 400,
+	$max-screen-size: 980
 ) {
-  @error 'fluid-typo is deprecated.';
+	@error 'fluid-typo is deprecated.';
 
-  /* stylelint-disable */
+	/* stylelint-disable */
 
-  font-size: calc(
-    #{$min-font-size}#{$font-unit} + (#{$max-font-size} - #{$min-font-size}) * (
-        100vw - #{$min-screen-size}px
-      ) / (#{$max-screen-size} - #{$min-screen-size})
-  );
+	font-size: calc(
+		#{$min-font-size}#{$font-unit} + (#{$max-font-size} - #{$min-font-size}) * (
+				100vw - #{$min-screen-size}px
+			) / (#{$max-screen-size} - #{$min-screen-size})
+	);
 
-  /* stylelint-enable */
+	/* stylelint-enable */
 }
 
 /// Adds font-icons using a pseudo element
@@ -180,15 +179,20 @@
 	}
 
 	@each $ext in $exts {
-		$src: list.append($src, url('#{$path + '.' + $ext + $version}') format(string.quote($ext)), comma);
+		$src: list.append(
+			$src,
+			url('#{$path + '.' + $ext + $version}') format(string.quote($ext)),
+			comma
+		);
 	}
 
 	@font-face {
-		font-family: string.quote($name);
-		src: local($name), $src;
 		font-weight: $weight;
 		font-style: $style;
+		font-family: string.quote($name);
+		src: local($name), $src;
 		font-display: $display;
+
 		@if $unicode-range {
 			unicode-range: string.unquote($unicode-range);
 		}
