@@ -9,7 +9,7 @@
 ## Installation
 
 ```bash
-npm install https://github.com/felix-berlin/scss-collection.git (#commit, #branch or #(release)tag)
+npm i @felix_berlin/sassy-scss
 ```
 
 I recommend to use release tags.
@@ -81,7 +81,9 @@ Create a new file and load the breakpoint mixin from the `node_modules` with the
 // _external.scss
 
 // Add your own breakpoints
-@forward 'sassy-scss/mixins/breakpoint' with ($lg: 1200px);
+@forward 'sassy-scss/mixins/breakpoint' with (
+  $lg: 1200px
+);
 ```
 
 In the rest of your project you don't add the module via `node_modules` anymore but load the customized module `_external.scss` with `@use`.
