@@ -13,8 +13,6 @@
 npm i @felix_berlin/sassy-scss
 ```
 
-I recommend to use release tags.
-
 ## Requirements
 
 This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-module-system-is-launched). Therefore your build tool or taskrunner have to support Dart Sass 1.23.0 or above.
