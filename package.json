@@ -1,6 +1,6 @@
 {
   "name": "@felix_berlin/sassy-scss",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "license": "ISC",
   "description": "A collection of useful SCSS mixins and functions",
   "homepage": "https://scss-collection.kasimir.dev",
@@ -33,15 +33,15 @@
   ],
   "devDependencies": {
     "@felix_berlin/stylelint-config-felix-berlin": "^1.0.0",
-    "postcss": "^8.4.4",
-    "postcss-scss": "^4.0.2",
+    "postcss": "^8.4.6",
+    "postcss-scss": "^4.0.3",
     "sassdoc": "^2.7.3",
-    "stylelint": "^14.1.0",
+    "stylelint": "^14.5.0",
     "stylelint-a11y": "^1.2.3",
-    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard": "^25.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
     "stylelint-order": "^5.0.0",
-    "stylelint-scss": "^4.0.1"
+    "stylelint-scss": "^4.1.0"
   }
 }
