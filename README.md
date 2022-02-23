@@ -77,7 +77,7 @@ Here is an example how you can deal with it:
 Create a new file and load the breakpoint mixin from the `node_modules` with the `@forward` function. Similar to the `@use` function you can overwrite predefined vars with `with()`.
 
 ```scss
-// _external.scss
+// _custom-breakpoints.scss
 
 // Add your own breakpoints
 @forward 'sassy-scss/mixins/breakpoint' with (
@@ -90,7 +90,7 @@ In the rest of your project you don't add the module via `node_modules` anymore 
 ```scss
 // _my-module.scss
 
-@use external as break;
+@use 'custom-breakpoints' as break;
 
 .my-selector {
   // lg === 1200px not 1260px
