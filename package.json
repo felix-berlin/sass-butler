@@ -34,7 +34,7 @@
   "devDependencies": {
     "@felix_berlin/stylelint-config-felix-berlin": "^1.0.0",
     "postcss": "^8.4.6",
-    "postcss-scss": "^4.0.3",
+    "postcss-scss": "4.0.4",
     "sassdoc": "^2.7.3",
     "stylelint": "14.8.2",
     "stylelint-a11y": "^1.2.3",
