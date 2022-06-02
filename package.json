@@ -32,16 +32,16 @@
     "utilities"
   ],
   "devDependencies": {
-    "@felix_berlin/stylelint-config-felix-berlin": "^1.0.0",
+    "@felix_berlin/stylelint-config-felix-berlin": "1.0.0",
     "postcss": "8.4.14",
     "postcss-scss": "4.0.4",
     "sassdoc": "2.7.4",
     "stylelint": "14.8.5",
-    "stylelint-a11y": "^1.2.3",
-    "stylelint-config-standard": "^25.0.0",
+    "stylelint-a11y": "1.2.3",
+    "stylelint-config-standard": "25.0.0",
     "stylelint-config-standard-scss": "4.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
-    "stylelint-order": "^5.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "2.5.0",
+    "stylelint-order": "5.0.0",
     "stylelint-scss": "4.2.0"
   }
 }
