@@ -1,14 +1,27 @@
-@use '../functions/numbers' as num;
-@use '../functions/converters' as conv;
+@use 'sass:math';
+@use '../functions' as fn;
+@use '../mixins' as mx;
 
 .test-random-num {
-	padding: num.random-num(10, 20) + px;
+	padding: fn.random-num(10, 20) + px;
 }
 
 .test-number-invert {
-	padding: num.number-invert(10) + px;
+	padding: fn.number-invert(10) + px;
 }
 
 .test-px-to-rem {
-	padding: conv.px-to-rem(10);
+	padding: fn.px-to-rem(16);
+}
+
+.test-breakpoints-min {
+	@include mx.breakpoint('lg') {
+		padding: 12px;
+	}
+}
+
+.test-breakpoints-max {
+	@include mx.breakpoint('lg', 'max') {
+		padding: 15px;
+	}
 }

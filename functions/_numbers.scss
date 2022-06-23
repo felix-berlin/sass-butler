@@ -53,8 +53,11 @@
 ///    //=> random number between 3 and 45
 ///
 @function random-num($min, $max) {
-	@if not check.is-number($number) {
-		@error '❌  ===> #{$number} is not a number';
+	@if not check.is-number($min) {
+		@error '❌  ===> $min: #{$min} is not a number';
+	}
+	@if not check.is-number($max) {
+		@error '❌  ===> $max: #{$max} is not a number';
 	}
 
 	$random-num: $min + math.floor(math.random() * (($max - $min) + 1));

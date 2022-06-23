@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use './type-checking' as check;
 
 /// Convert pixel value to rem value.
 ///
@@ -13,5 +14,12 @@
 ///    //=> 0.625rem
 ///
 @function px-to-rem($px, $base: 16) {
-	@return math.div($px, $base) + rem;
+	@if not math.is-unitless($px) {
+		@error '❌  ===> Pixel: #{$px} has a unit';
+	}
+	@if not math.is-unitless($base) {
+		@error '❌  ===> Base Pixel: #{$base} has a unit';
+	}
+
+	@return math.div($px, $base) * 1rem;
 }

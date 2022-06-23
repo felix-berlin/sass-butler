@@ -1,15 +1,19 @@
 // Sass functions
 @use 'sass:map';
 @use 'sass:list';
+@use 'sass:math';
+@use 'sass:string';
+@use '../functions' as fn;
 
 // Breakpoint Vars
-$xxs: 375px !default; // Smartphone Portrait
-$xs: 568px !default; // Smartphone Landscape
-$sm: 768px !default; // Tablet Portrait
-$md: 1024px !default; // Tablet Landscape
-$lg: 1260px !default; // Kleinerer Desktop
-$xlg: 1440px !default; // Widescreen
-$fhd: 1920px !default; // Full HD
+$xxs: fn.px-to-rem(375) !default; // Smartphone Portrait
+$xs: fn.px-to-rem(568) !default; // Smartphone Landscape
+$sm: fn.px-to-rem(768) !default; // Tablet Portrait
+$md: fn.px-to-rem(1024) !default; // Tablet Landscape
+$lg: fn.px-to-rem(1260) !default; // Kleinerer Desktop
+$xlg: fn.px-to-rem(1440) !default; // Widescreen
+$fhd: fn.px-to-rem(1920) !default; // Full HD
+$uhd: fn.px-to-rem(2560) !default; // UHD
 
 // Breakpoint Map
 $breakpoints: (
@@ -20,12 +24,14 @@ $breakpoints: (
 	'lg': $lg,
 	'xlg': $xlg,
 	'fhd': $fhd,
+	'uhd': $uhd,
 ) !default;
 
 /// Breakpoint Mixin using breakpoint map
 /// @param {String} $breakpoint Breakpoint key from the breakpoints map
 /// @param {String} $direction ['min'] Breakpoint direction min or max
 /// @param {Map} $breakpoint-map [$breakpoints] All breakpoint vars in one map
+/// @param {Number} $max-overlap [1]
 /// @group Breakpoint
 /// @author Felix Scholze
 /// @since v1.1.0
@@ -43,7 +49,8 @@ $breakpoints: (
 @mixin breakpoint(
 	$breakpoint,
 	$direction: 'min',
-	$breakpoint-map: $breakpoints
+	$breakpoint-map: $breakpoints,
+	$max-overlap: 1,
 ) {
 	// Error handling
 	$valid-direction: ('min', 'max');
@@ -53,7 +60,7 @@ $breakpoints: (
 
 	// Give an error if the breakpoint direction is not correct
 	@if not list.index($valid-direction, $direction) {
-		@error '❌  ===> #{$direction} is not a valite option for direction. Please use: #{$valid-direction}';
+		@error '❌  ===> #{$direction} is not a valid option for direction. Please use: #{$valid-direction}';
 	}
 
 	// Give an error if the breakpoint does not exist in the map
@@ -66,7 +73,7 @@ $breakpoints: (
 		}
 	}
 	@if $direction == 'max' {
-		@media (max-width: $get-breakpoints - 1) {
+		@media (max-width: $get-breakpoints - $max-overlap) {
 			@content;
 		}
 	}

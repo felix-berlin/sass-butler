@@ -20,7 +20,8 @@
     "sassDoc": "sassdoc mixins/ functions/",
     "lint": "stylelint \"**/*.{sass,scss}\"",
     "lint:fix": "stylelint \"**/*.{sass,scss}\" --fix",
-    "test": "sass --watch tests/tests.scss:tests/dist/tests.css"
+    "test": "sass tests/tests.scss:tests/dist/tests.css",
+    "test:watch": "sass --watch tests/tests.scss:tests/dist/tests.css"
   },
   "keywords": [
     "scss",
