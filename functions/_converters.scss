@@ -4,9 +4,14 @@
 ///
 /// @param {Number} $px
 /// @param {Number} $base [16]
-/// @group Converters
+/// @group Converter
 /// @author Felix Scholze
 /// @since v1.6.0
+///
+/// @example
+///    @debug px-to-rem(10);
+///    //=> 0.625rem
+///
 @function px-to-rem($px, $base: 16) {
 	@return math.div($px, $base) + rem;
 }

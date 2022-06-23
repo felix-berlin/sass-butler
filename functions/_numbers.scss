@@ -1,5 +1,6 @@
 @use 'sass:meta';
 @use 'sass:math';
+@use './type-checking' as check;
 
 /// Strip the unit from a number.
 ///
@@ -13,6 +14,10 @@
 ///    //=> 3
 ///
 @function strip-unit($number) {
+	@if not check.is-number($number) {
+		@error '❌  ===> #{$number} is not a number';
+	}
+
 	@return $number / ($number * 0 + 1);
 }
 
@@ -28,7 +33,7 @@
 ///    //=> -7
 ///
 @function number-invert($number) {
-	@if meta.type-of($number) != number {
+	@if not check.is-number($number) {
 		@error '❌  ===> #{$number} is not a number';
 	}
 
@@ -48,6 +53,10 @@
 ///    //=> random number between 3 and 45
 ///
 @function random-num($min, $max) {
+	@if not check.is-number($number) {
+		@error '❌  ===> #{$number} is not a number';
+	}
+
 	$random-num: $min + math.floor(math.random() * (($max - $min) + 1));
 
 	@return $random-num;

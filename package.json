@@ -19,7 +19,8 @@
   "scripts": {
     "sassDoc": "sassdoc mixins/ functions/",
     "lint": "stylelint \"**/*.{sass,scss}\"",
-    "lint:fix": "stylelint \"**/*.{sass,scss}\" --fix"
+    "lint:fix": "stylelint \"**/*.{sass,scss}\" --fix",
+    "test": "sass --watch tests/tests.scss:tests/dist/tests.css"
   },
   "keywords": [
     "scss",
@@ -42,5 +43,8 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "4.2.0"
+  },
+  "dependencies": {
+    "sass": "^1.53.0"
   }
 }

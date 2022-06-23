@@ -1,8 +1,7 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-standard-scss",
-    "@felix_berlin/stylelint-config-felix-berlin"
+    "stylelint-config-standard-scss"
   ],
   "plugins": ["stylelint-declaration-block-no-ignored-properties"],
   "customSyntax": "postcss-scss",

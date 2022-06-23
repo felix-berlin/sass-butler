@@ -1,0 +1,14 @@
+@use '../functions/numbers' as num;
+@use '../functions/converters' as conv;
+
+.test-random-num {
+	padding: num.random-num(10, 20) + px;
+}
+
+.test-number-invert {
+	padding: num.number-invert(10) + px;
+}
+
+.test-px-to-rem {
+	padding: conv.px-to-rem(10);
+}
