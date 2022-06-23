@@ -1,14 +1,17 @@
-# SCSS Collection
+# Sassy 😜 SCSS
+
+![npm](https://img.shields.io/npm/dm/@felix_berlin/sassy-scss?logo=npm&style=flat-square)
+![npm (scoped)](https://img.shields.io/npm/v/@felix_berlin/sassy-scss?logo=npm&style=flat-square)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/felix-berlin/scss-collection/CI/master?label=build%20docs%20website&style=flat-square)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felix-berlin/scss-collection?style=flat-square)
 
 > A collection of useful SCSS mixins and functions
 
 ## Installation
 
+```bash
+npm i @felix_berlin/sassy-scss
 ```
-npm install https://github.com/felix-berlin/scss-collection (#commit, #branch or #(release)tag)
-```
-
-I recommend to use release tags.
 
 ## Requirements
 
@@ -31,25 +34,25 @@ Single import of the used functionalities.
 _Recommended for more precise namespaces_.
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/functions/first-of-list' as fol;
+@use './node_modules/sassy-scss/functions/first-of-list' as fol;
 ```
 
 import all functions at once:
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/functions' as mixins;
+@use './node_modules/sassy-scss/functions' as functions;
 ```
 
 ### How to import
 
 ```scss
-@use './node_modules/@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use './node_modules/sassy-scss/mixis/breakpoint' as breakpoint;
 ```
 
 With `sass-loader`:
 
 ```scss
-@use '~@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use '~sassy-scss/mixis/breakpoint' as breakpoint;
 ```
 
 With `webpack mix`:
@@ -63,7 +66,7 @@ With `webpack mix`:
 ```
 
 ```scss
-@use '@felix-berlin/scss-collection/mixis/breakpoint' as breakpoint;
+@use 'sassy-scss/mixis/breakpoint' as breakpoint;
 ```
 
 ### Override module config
@@ -74,10 +77,12 @@ Here is an example how you can deal with it:
 Create a new file and load the breakpoint mixin from the `node_modules` with the `@forward` function. Similar to the `@use` function you can overwrite predefined vars with `with()`.
 
 ```scss
-// _external.scss
+// _custom-breakpoints.scss
 
 // Add your own breakpoints
-@forward '@felix-berlin/scss-collection/mixins/breakpoint' with ($lg: 1200px);
+@forward 'sassy-scss/mixins/breakpoint' with (
+  $lg: 1200px
+);
 ```
 
 In the rest of your project you don't add the module via `node_modules` anymore but load the customized module `_external.scss` with `@use`.
@@ -85,7 +90,7 @@ In the rest of your project you don't add the module via `node_modules` anymore 
 ```scss
 // _my-module.scss
 
-@use external as break;
+@use 'custom-breakpoints' as break;
 
 .my-selector {
   // lg === 1200px not 1260px
@@ -97,7 +102,7 @@ In the rest of your project you don't add the module via `node_modules` anymore 
 
 ## Documentation
 
-You can find the documention at: [https://scss-collection.kasimir.dev](https://scss-collection.kasimir.dev)
+You can find the documention at: [https://sassy-scss.kasimir.dev](https://sassy-scssn.kasimir.dev)
 
 > The documentation is updated automatically with each commit on the master branch.
 

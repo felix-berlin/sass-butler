@@ -15,11 +15,11 @@
 ///    //=> 1
 ///
 @function first-of-list($list) {
-  @if meta.type-of($list) != list {
-    @error '❌  ===> #{$list} is not a list';
-  }
+	@if meta.type-of($list) != list {
+		@error '❌  ===> #{$list} is not a list';
+	}
 
-  @return list.nth($list, -1);
+	@return list.nth($list, -1);
 }
 
 /// Get the last `$list` element
@@ -36,9 +36,9 @@
 ///    //=> 5
 ///
 @function last-of-list($list) {
-  @if meta.type-of($list) != list {
-    @error '❌  ===> #{$list} is not a list';
-  }
+	@if meta.type-of($list) != list {
+		@error '❌  ===> #{$list} is not a list';
+	}
 
-  @return list.nth($list, -1);
+	@return list.nth($list, -1);
 }

@@ -1,4 +1,4 @@
-// Sass Funktionen
+// Sass functions
 @use 'sass:map';
 @use 'sass:list';
 
@@ -13,13 +13,13 @@ $fhd: 1920px !default; // Full HD
 
 // Breakpoint Map
 $breakpoints: (
-  'xxs': $xxs,
-  'xs': $xs,
-  'sm': $sm,
-  'md': $md,
-  'lg': $lg,
-  'xlg': $xlg,
-  'fhd': $fhd,
+	'xxs': $xxs,
+	'xs': $xs,
+	'sm': $sm,
+	'md': $md,
+	'lg': $lg,
+	'xlg': $xlg,
+	'fhd': $fhd,
 ) !default;
 
 /// Breakpoint Mixin using breakpoint map
@@ -41,35 +41,33 @@ $breakpoints: (
 ///    }
 ///
 @mixin breakpoint(
-  $breakpoint,
-  $direction: 'min',
-  $breakpoint-map: $breakpoints
+	$breakpoint,
+	$direction: 'min',
+	$breakpoint-map: $breakpoints
 ) {
-  // Error handling
-  $validDirection: (min, max);
+	// Error handling
+	$valid-direction: ('min', 'max');
 
-  // Gebe einen Fehler aus wenn die Breakpointrichtung nicht stimmt
-  @if not list.index($validDirection, $direction) {
-    @error '❌  ===> #{$direction} is not a valite option for direction. Please use: #{$validDirection}';
-  }
+	// Search and return the key from the breakpoints map
+	$get-breakpoints: map.get($breakpoint-map, $breakpoint);
 
-  // Gebe einen Fehler aus wenn es den Breakpoint nicht in der Map gibt
-  @if map.has-key($breakpoint-map, $breakpoint) != true {
-    @error '❌  ===> #{$breakpoint} is not valid breakpoint. Please use: #{map.keys($breakpoint-map)}';
-  }
+	// Give an error if the breakpoint direction is not correct
+	@if not list.index($valid-direction, $direction) {
+		@error '❌  ===> #{$direction} is not a valite option for direction. Please use: #{$valid-direction}';
+	}
 
-  // Suche und gebe den Key aus der Breakpoints Map wieder
-  $getBreakpoints: map.get($breakpoint-map, $breakpoint);
-
-  @if $direction == 'min' {
-    @media (min-width: $getBreakpoints) {
-      @content;
-    }
-  }
-
-  @if $direction == 'max' {
-    @media (max-width: $getBreakpoints) {
-      @content;
-    }
-  }
+	// Give an error if the breakpoint does not exist in the map
+	@if map.has-key($breakpoint-map, $breakpoint) != true {
+		@error '❌  ===> #{$breakpoint} is not valid breakpoint. Please use: #{map.keys($breakpoint-map)}';
+	}
+	@if $direction == 'min' {
+		@media (min-width: $get-breakpoints) {
+			@content;
+		}
+	}
+	@if $direction == 'max' {
+		@media (max-width: $get-breakpoints - 1) {
+			@content;
+		}
+	}
 }

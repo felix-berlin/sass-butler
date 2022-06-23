@@ -9,7 +9,7 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-number($value) {
-  @return meta.type-of($value) == 'number';
+	@return meta.type-of($value) == 'number';
 }
 
 /// Check if its a time value
@@ -19,7 +19,7 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-time($value) {
-  @return is-number($value) and list.index('ms' 's', math.unit($value)) != null;
+	@return is-number($value) and list.index('ms' 's', math.unit($value)) != null;
 }
 
 /// Check if its a duration value
@@ -29,7 +29,7 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-duration($value) {
-  @return is-time($value);
+	@return is-time($value);
 }
 
 /// Check if its a angle value
@@ -39,8 +39,8 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-angle($value) {
-  @return is-number($value) and
-    list.index('deg' 'rad' 'grad' 'turn', math.unit($value)) != null;
+	@return is-number($value) and
+		list.index('deg' 'rad' 'grad' 'turn', math.unit($value)) != null;
 }
 
 /// Check if its a frequency value
@@ -50,8 +50,7 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-frequency($value) {
-  @return is-number($value) and list.index('Hz' 'kHz', math.unit($value)) !=
-    null;
+	@return is-number($value) and list.index('Hz' 'kHz', math.unit($value)) != null;
 }
 
 /// Check if its a integer value
@@ -61,7 +60,7 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-integer($value) {
-  @return is-number($value) and math.round($value) == $value;
+	@return is-number($value) and math.round($value) == $value;
 }
 
 /// Check if its a relative-length value
@@ -71,9 +70,8 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-relative-length($value) {
-  @return is-number($value) and
-    list.index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', math.unit($value))
-    != null;
+	@return is-number($value) and
+		list.index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', math.unit($value)) != null;
 }
 
 /// Check if its a absolute-length value
@@ -83,8 +81,8 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-absolute-length($value) {
-  @return is-number($value) and
-    list.index('cm' 'mm' 'in' 'px' 'pt' 'pc', math.unit($value)) != null;
+	@return is-number($value) and
+		list.index('cm' 'mm' 'in' 'px' 'pt' 'pc', math.unit($value)) != null;
 }
 
 /// Check if its a percentage value
@@ -94,7 +92,7 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-percentage($value) {
-  @return is-number($value) and math.unit($value) == '%';
+	@return is-number($value) and math.unit($value) == '%';
 }
 
 /// Check if its a length value
@@ -104,7 +102,7 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-length($value) {
-  @return is-relative-length($value) or is-absolute-length($value);
+	@return is-relative-length($value) or is-absolute-length($value);
 }
 
 /// Check if its a resolution value
@@ -114,8 +112,8 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-resolution($value) {
-  @return is-number($value) and
-    list.index('dpi' 'dpcm' 'dppx', math.unit($value)) != null;
+	@return is-number($value) and
+		list.index('dpi' 'dpcm' 'dppx', math.unit($value)) != null;
 }
 
 /// Check if its a position value
@@ -125,6 +123,6 @@
 /// @link https://css-tricks.com/snippets/sass/advanced-type-checking/
 /// @since v1.0.0
 @function is-position($value) {
-  @return is-length($value) or is-percentage($value) or
-    list.index('top' 'right' 'bottom' 'left' 'center', $value) != null;
+	@return is-length($value) or is-percentage($value) or
+		list.index('top' 'right' 'bottom' 'left' 'center', $value) != null;
 }

@@ -1,0 +1,23 @@
+@use 'sass:color';
+@use 'sass:string';
+
+/// Convert HEX colors to R, G, B values
+/// @param {Color} $color
+/// @return {String}
+/// @group Color
+/// @author Felix Scholze
+/// @since v1.5.0
+@function hex-to-rgb-values($color) {
+	@return color.red($color) + ', ' + color.green($color) + ', ' + color.blue($color);
+}
+
+/// Convert HEX colors to RGB (space-separated values)
+/// @param {Color} $color - HEX color
+/// @param {Number} $alpha - Alpha
+/// @return {String}
+/// @group Color
+/// @author Felix Scholze
+/// @since v1.5.0
+@function hex-to-rgb($color, $alpha: false) {
+	@return string.unquote('rgb') + '(' + (color.red($color) color.green($color) color.blue($color)) + if($alpha, ' / ' + $alpha, '') + ')';
+}
