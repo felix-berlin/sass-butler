@@ -1,0 +1,12 @@
+@use 'sass:math';
+
+/// Convert pixel value to rem value.
+///
+/// @param {Number} $px
+/// @param {Number} $base [16]
+/// @group Converters
+/// @author Felix Scholze
+/// @since v1.6.0
+@function px-to-rem($px, $base: 16) {
+	@return math.div($px, $base) + rem;
+}

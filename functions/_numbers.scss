@@ -1,4 +1,5 @@
 @use 'sass:meta';
+@use 'sass:math';
 
 /// Strip the unit from a number.
 ///
@@ -32,4 +33,22 @@
   }
 
   @return $number * -1;
+}
+
+/// Generate a random number between min and max.
+///
+/// @param {Number} $min
+/// @param {Number} $max
+/// @return {Number}
+/// @group Number
+/// @since v1.6.0
+///
+/// @example
+///    @debug random-num(3, 45);
+///    //=> random number between 3 and 45
+///
+@function random-num($min, $max) {
+	$random-num: $min + math.floor(math.random() * (($max - $min) + 1));
+
+	@return $random-num;
 }
