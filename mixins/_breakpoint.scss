@@ -31,7 +31,7 @@ $breakpoints: (
 /// @param {String} $breakpoint Breakpoint key from the breakpoints map
 /// @param {String} $direction ['min'] Breakpoint direction min or max
 /// @param {Map} $breakpoint-map [$breakpoints] All breakpoint vars in one map
-/// @param {Number} $max-overlap [1]
+/// @param {Number} $max-overlap [1] How much should the max-width breakpoint overlap the min-width one?
 /// @group Breakpoint
 /// @author Felix Scholze
 /// @since v1.1.0
@@ -41,8 +41,8 @@ $breakpoints: (
 ///      @include breakpoint(lg) {...}
 ///    }
 ///
-/// @example css - Output CSS
-///    @media (min-width: 1260px) {
+/// @example CSS - Output CSS
+///    @media (min-width: 78.75rem) {
 ///       .my-selector {...}
 ///    }
 ///

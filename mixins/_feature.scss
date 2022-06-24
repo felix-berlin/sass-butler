@@ -18,7 +18,7 @@
 
 	// Give an error if the feature is not present
 	@if not list.index($valid-feature, $feature) {
-		@error '❌  ===> #{$feature} is not a valite option for feature. Please use: #{$valid-feature}';
+		@error '❌  ===> #{$feature} is not a valide option for feature. Please use: #{$valid-feature}';
 	}
 	@if $feature == 'no-motion' {
 		@media (prefers-reduced-motion: reduce) {

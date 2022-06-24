@@ -56,7 +56,7 @@
 /// @param {Color} $overlay-bg-color
 /// @param {String} $valite-type [(hover,static)]
 /// @param {String} $valite-size [(full, free)]
-/// @content Add addtional styles
+/// @content Add additional styles
 /// @group Element
 /// @author Felix Scholze
 /// @since v1.0.0
@@ -67,7 +67,7 @@
 	$overlay-element,
 	$overlay-bg-color
 ) {
-	// Validate varialbes
+	// Validate variables
 	$valite-type: (hover, static);
 	$valite-size: (full, free);
 
@@ -121,8 +121,8 @@
 /// @param {List} $path-and-color-name [''] Path to image file, color name
 /// @param {String} $data-type ['file'] Choose between image file or svg inline data
 /// @param {Number} $bullet-size [1rem] Defines the bullet size and distance to the text
-/// @param {Number} $spacing-multiplicator [1.5] Defines the spacing bequeen bullet and text ($bullet-size * $spacing-multiplicator)
-/// @param {String} $list [ul] Class of the unored list
+/// @param {Number} $spacing-multiplicator [1.5] Defines the spacing between bullet and text ($bullet-size * $spacing-multiplicator)
+/// @param {String} $list [ul] Class of the unordered list
 /// @param {String} $list-item [li] Class of the list item
 /// @todo build a version for icon fonts
 /// @group Element
