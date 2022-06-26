@@ -15,9 +15,6 @@
 	$line-color: #000,
 	$line-width: 2px
 ) {
-	display: flex;
-	align-items: center;
-
 	@if meta.type-of($line-color) != color {
 		@error '❌  ===> #{$line-color} is not a color.';
 	}
@@ -27,6 +24,10 @@
 	@if meta.type-of($line-width) != number {
 		@error '❌  ===> #{$line-width} is not a number.';
 	}
+
+	display: flex;
+	align-items: center;
+
 	@content;
 
 	&::before,
