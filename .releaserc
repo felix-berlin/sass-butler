@@ -4,7 +4,14 @@
   },
   "tagFormat": "v${version}",
   "plugins": [
-
+    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/changelog",
+      {
+          "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines."
+      }
+    ],
+    "@semantic-release/npm"
   ],
-  "dryRun": true,
+  "dryRun": true
 }
