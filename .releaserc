@@ -1,0 +1,10 @@
+{
+  "release": {
+    "branches": ["master"]
+  },
+  "tagFormat": "v${version}",
+  "plugins": [
+
+  ],
+  "dryRun": true,
+}
