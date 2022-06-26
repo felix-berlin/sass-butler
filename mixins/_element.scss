@@ -68,14 +68,14 @@
 	$overlay-bg-color
 ) {
 	// Validate variables
-	$valite-type: (hover, static);
-	$valite-size: (full, free);
+	$valide-type: (hover, static);
+	$valide-size: (full, free);
 
-	@if not list.index($valite-size, $overlay-size) {
-		@error '❌  ===> #{$overlay-size} is not a valite option for overlay-size. Please use: #{$valite-size}';
+	@if not list.index($valide-size, $overlay-size) {
+		@error '❌  ===> #{$overlay-size} is not a valide option for overlay-size. Please use: #{$valide-size}';
 	}
-	@if not list.index($valite-type, $overlay-type) {
-		@error '❌  ===> #{$overlay-type} is not a valite option for overlay-type. Please use: #{$valite-type}';
+	@if not list.index($valide-type, $overlay-type) {
+		@error '❌  ===> #{$overlay-type} is not a valide option for overlay-type. Please use: #{$valide-type}';
 	}
 	@if $overlay-type == hover {
 		.#{$overlay-element} {
@@ -146,18 +146,18 @@
 	$path-and-color-name: '',
 	$data-type: 'file',
 	$bullet-size: 1rem,
-	$spacing-multiplicator: 1.5,
+	$spacing-multiplier: 1.5,
 	$list: ul,
 	$list-item: li
 ) {
-	// Validate varialbes
+	// Validate variables
 	$valite-type: (file, data);
 
 	@if not list.index($valite-type, $data-type) {
 		@error '❌  ===> #{$data-type} is not a valite option for data-type. Please use: #{$valite-type}';
 	}
-	@if type-checking.is-number($spacing-multiplicator) == false {
-		@error '❌  ===> #{$spacing-multiplicator} is not a number.';
+	@if type-checking.is-number($spacing-multiplier) == false {
+		@error '❌  ===> #{$spacing-multiplier} is not a number.';
 	}
 
 	@each $path, $color-mod in $path-and-color-name {
@@ -180,7 +180,7 @@
 		list-style: none;
 		#{$list-item} {
 			position: relative;
-			padding-left: $bullet-size * $spacing-multiplicator;
+			padding-left: $bullet-size * $spacing-multiplier;
 
 			&::before {
 				content: '';
