@@ -22,7 +22,8 @@
     "lint:fix": "stylelint \"**/*.{sass,scss}\" --fix",
     "test": "sass tests/tests.scss:tests/dist/tests.css",
     "test:watch": "sass --watch tests/tests.scss:tests/dist/tests.css",
-    "release": "semantic-release --branches master"
+    "release": "semantic-release --branches master",
+    "prepare": "husky install"
   },
   "keywords": [
     "scss",
