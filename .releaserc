@@ -22,7 +22,7 @@
         {"path": "functions/**", "label": "SCSS functions"},
         {"path": "mixins/**", "label": "SCSS mixins"},
         {"path": "variables/**", "label": "SCSS variables"},
-        ["package.json", "package-lock.json", "README.md", "CHANGELOG.md", "LICENSE", "functions.scss", "mixins.scss"],
+        ["package.json", "package-lock.json", "README.md", "CHANGELOG.md", "LICENSE", "functions.scss", "mixins.scss"]
       ],
       "message": "Release <%= nextRelease.version %> - <%= new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) %> [skip ci]\n\n<%= nextRelease.notes %>"
     }]
