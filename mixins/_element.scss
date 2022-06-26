@@ -55,8 +55,8 @@
 /// @param {String} $parent-element
 /// @param {String} $overlay-element
 /// @param {Color} $overlay-bg-color
-/// @param {String} $valite-type [(hover,static)]
-/// @param {String} $valite-size [(full, free)]
+/// @param {String} $valide-type [(hover,static)]
+/// @param {String} $valide-size [(full, free)]
 /// @content Add additional styles
 /// @group Element
 /// @author Felix Scholze
@@ -68,8 +68,10 @@
 	$overlay-element,
 	$overlay-bg-color
 ) {
-	// Validate variables
+	// Types of overlay
 	$valide-type: (hover, static);
+
+	// Sizes available for the overlay
 	$valide-size: (full, free);
 
 	@if not list.index($valide-size, $overlay-size) {
@@ -152,10 +154,10 @@
 	$list-item: li
 ) {
 	// Validate variables
-	$valite-type: (file, data);
+	$valide-type: (file, data);
 
-	@if not list.index($valite-type, $data-type) {
-		@error '❌  ===> #{$data-type} is not a valite option for data-type. Please use: #{$valite-type}';
+	@if not list.index($valide-type, $data-type) {
+		@error '❌  ===> #{$data-type} is not a valide option for data-type. Please use: #{$valide-type}';
 	}
 	@if type-checking.is-number($spacing-multiplier) == false {
 		@error '❌  ===> #{$spacing-multiplier} is not a number.';
