@@ -96,9 +96,6 @@
 	@return math.div($px, $base) * 1rem;
  }" data-collapsed="@function px-to-rem($px, $base: 16) { ... }"><code>@function px-to-rem($px, $base: 16) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convert pixel value to rem value.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$px</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$base</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>16</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@debug px-to-rem(10);
 //=&gt; 0.625rem</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>❌ ===&gt; Pixel: #{$px} has a unit</p></li><li><p>❌ ===&gt; Base Pixel: #{$base} has a unit</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="element"><div class="container">element</div></h1><section class="main__sub-section" id="element-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="element-mixin-line-on-sides"><h3 class="item__heading"><a class="item__name" href="#mixin-line-on-sides">line-on-sides</a></h3><span class="item__since">Since v1.0.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin line-on-sides($space-between-lines: 1.5rem, $line-color: #000, $line-width: 2px) { 
-	display: flex;
-	align-items: center;
-
 	@if meta.type-of($line-color) != color {
 		@error &#39;❌  ===&gt; #{$line-color} is not a color.&#39;;
 	}
@@ -108,6 +105,10 @@
 	@if meta.type-of($line-width) != number {
 		@error &#39;❌  ===&gt; #{$line-width} is not a number.&#39;;
 	}
+
+	display: flex;
+	align-items: center;
+
 	@content;
 
 	&amp;::before,
