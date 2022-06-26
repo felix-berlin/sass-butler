@@ -21,7 +21,8 @@
     "lint": "stylelint \"**/*.{sass,scss}\"",
     "lint:fix": "stylelint \"**/*.{sass,scss}\" --fix",
     "test": "sass tests/tests.scss:tests/dist/tests.css",
-    "test:watch": "sass --watch tests/tests.scss:tests/dist/tests.css"
+    "test:watch": "sass --watch tests/tests.scss:tests/dist/tests.css",
+    "release": "semantic-release --branches master"
   },
   "keywords": [
     "scss",
@@ -34,10 +35,14 @@
     "utilities"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@felix_berlin/stylelint-config-felix-berlin": "^1.0.0",
+    "husky": "^8.0.1",
     "postcss": "8.4.14",
     "postcss-scss": "4.0.4",
     "sassdoc": "2.7.4",
+    "semantic-release": "^19.0.3",
     "stylelint": "14.9.1",
     "stylelint-config-standard": "^26.0.0",
     "stylelint-config-standard-scss": "4.0.0",
