@@ -15,9 +15,6 @@
 	$line-color: #000,
 	$line-width: 2px
 ) {
-	display: flex;
-	align-items: center;
-
 	@if meta.type-of($line-color) != color {
 		@error '❌  ===> #{$line-color} is not a color.';
 	}
@@ -27,6 +24,10 @@
 	@if meta.type-of($line-width) != number {
 		@error '❌  ===> #{$line-width} is not a number.';
 	}
+
+	display: flex;
+	align-items: center;
+
 	@content;
 
 	&::before,
@@ -54,8 +55,8 @@
 /// @param {String} $parent-element
 /// @param {String} $overlay-element
 /// @param {Color} $overlay-bg-color
-/// @param {String} $valite-type [(hover,static)]
-/// @param {String} $valite-size [(full, free)]
+/// @param {String} $valide-type [(hover,static)]
+/// @param {String} $valide-size [(full, free)]
 /// @content Add additional styles
 /// @group Element
 /// @author Felix Scholze
@@ -67,15 +68,17 @@
 	$overlay-element,
 	$overlay-bg-color
 ) {
-	// Validate variables
-	$valite-type: (hover, static);
-	$valite-size: (full, free);
+	// Types of overlay
+	$valide-type: (hover, static);
 
-	@if not list.index($valite-size, $overlay-size) {
-		@error '❌  ===> #{$overlay-size} is not a valite option for overlay-size. Please use: #{$valite-size}';
+	// Sizes available for the overlay
+	$valide-size: (full, free);
+
+	@if not list.index($valide-size, $overlay-size) {
+		@error '❌  ===> #{$overlay-size} is not a valide option for overlay-size. Please use: #{$valide-size}';
 	}
-	@if not list.index($valite-type, $overlay-type) {
-		@error '❌  ===> #{$overlay-type} is not a valite option for overlay-type. Please use: #{$valite-type}';
+	@if not list.index($valide-type, $overlay-type) {
+		@error '❌  ===> #{$overlay-type} is not a valide option for overlay-type. Please use: #{$valide-type}';
 	}
 	@if $overlay-type == hover {
 		.#{$overlay-element} {
@@ -146,18 +149,18 @@
 	$path-and-color-name: '',
 	$data-type: 'file',
 	$bullet-size: 1rem,
-	$spacing-multiplicator: 1.5,
+	$spacing-multiplier: 1.5,
 	$list: ul,
 	$list-item: li
 ) {
-	// Validate varialbes
-	$valite-type: (file, data);
+	// Validate variables
+	$valide-type: (file, data);
 
-	@if not list.index($valite-type, $data-type) {
-		@error '❌  ===> #{$data-type} is not a valite option for data-type. Please use: #{$valite-type}';
+	@if not list.index($valide-type, $data-type) {
+		@error '❌  ===> #{$data-type} is not a valide option for data-type. Please use: #{$valide-type}';
 	}
-	@if type-checking.is-number($spacing-multiplicator) == false {
-		@error '❌  ===> #{$spacing-multiplicator} is not a number.';
+	@if type-checking.is-number($spacing-multiplier) == false {
+		@error '❌  ===> #{$spacing-multiplier} is not a number.';
 	}
 
 	@each $path, $color-mod in $path-and-color-name {
@@ -180,7 +183,7 @@
 		list-style: none;
 		#{$list-item} {
 			position: relative;
-			padding-left: $bullet-size * $spacing-multiplicator;
+			padding-left: $bullet-size * $spacing-multiplier;
 
 			&::before {
 				content: '';

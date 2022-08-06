@@ -2,8 +2,11 @@
 
 ![npm](https://img.shields.io/npm/dm/@felix_berlin/sassy-scss?logo=npm&style=flat-square)
 ![npm (scoped)](https://img.shields.io/npm/v/@felix_berlin/sassy-scss?logo=npm&style=flat-square)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/felix-berlin/scss-collection/CI/master?label=build%20docs%20website&style=flat-square)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/felix-berlin/sassy-scss?label=github&style=flat-square)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/felix-berlin/scss-collection/CI/master?label=build%20docs&style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felix-berlin/scss-collection?style=flat-square)
+![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@felix_berlin/sassy-scss?style=flat-square)
+![npms.io (quality)](https://img.shields.io/npms-io/maintenance-score/@felix_berlin/sassy-scss?style=flat-square)
 
 > A collection of useful SCSS mixins and functions
 
