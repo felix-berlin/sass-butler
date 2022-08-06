@@ -20,8 +20,9 @@
     "sassDoc": "sassdoc mixins/ functions/",
     "lint": "stylelint \"**/*.{sass,scss}\"",
     "lint:fix": "stylelint \"**/*.{sass,scss}\" --fix",
-    "test": "sass tests/tests.scss:tests/dist/tests.css",
-    "test:watch": "sass --watch tests/tests.scss:tests/dist/tests.css",
+    "test": "jest",
+    "test:output": "sass tests/tests.scss:tests/dist/tests.css",
+    "test:output-watch": "sass --watch tests/tests.scss:tests/dist/tests.css",
     "release": "semantic-release --branches master"
   },
   "keywords": [
@@ -51,6 +52,9 @@
     "stylelint-scss": "4.2.0"
   },
   "dependencies": {
-    "sass": "^1.53.0"
+    "glob": "^8.0.3",
+    "jest": "^28.1.3",
+    "sass": "^1.53.0",
+    "sass-true": "^6.1.0"
   }
 }
