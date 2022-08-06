@@ -1,0 +1,41 @@
+@use 'true';
+@use '../mixins' as mx;
+
+@include true.describe('breakpoint()') {
+	@include true.it('should return a css media query in min-width') {
+		@include true.assert {
+			@include true.output {
+				@include mx.breakpoint('lg') {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+			@include true.expect {
+				@media (min-width: 78.75rem) {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+		}
+	}
+	@include true.it('should return a css media query in max-width') {
+		@include true.assert {
+			@include true.output {
+				@include mx.breakpoint('lg', 'max') {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+			@include true.expect {
+				@media (max-width: 77.75rem) {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+		}
+	}
+}

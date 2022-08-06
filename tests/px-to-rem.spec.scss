@@ -7,4 +7,9 @@
 			fn.px-to-rem(16), 1rem
 		);
 	}
+	@include true.it('should not return the value in em') {
+		@include true.assert-unequal(
+			fn.px-to-rem(16), 1em
+		);
+	}
 }
