@@ -2,17 +2,31 @@
   "name": "@felix_berlin/sassy-scss",
   "version": "1.7.4",
   "license": "ISC",
-  "description": "A collection of useful SCSS mixins and functions",
+  "description": "A collection of useful SCSS/SASS: mixins, functions and helpers.",
   "homepage": "https://sassy-scss.kasimir.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/felix-berlin/sassy-scss"
+  },
+  "bugs": {
+    "url" : "https://github.com/felix-berlin/sassy-scss/issues"
   },
   "author": {
     "name": "Felix Scholze",
     "email": "felix@webshaped.de",
     "url": "https://webshaped.de"
   },
+  "funding": [
+    {
+      "type" : "PayPal",
+      "url" : "https://paypal.me/FelixScholze"
+    },
+    {
+      "type" : "Buy me a coffee",
+      "url" : "https://www.buymeacoffee.com/felixberlin"
+    }
+  ],
+  "files": ["*.scss"],
   "engines": {
     "node": ">=12"
   },
@@ -27,13 +41,24 @@
   },
   "keywords": [
     "scss",
-    "mixins",
-    "functions",
-    "helpers",
-    "helper",
-    "utility",
-    "util",
-    "utilities"
+    "sass",
+    "scss collection",
+    "scss mixins",
+    "scss functions",
+    "scss helpers",
+    "scss utilities",
+    "scss map collect function",
+    "scss random number function",
+    "scss type checking functions",
+    "scss px to rem function",
+    "scss breakpoint function",
+    "scss str starts with function",
+    "scss str ends with function",
+    "scss str contains function",
+    "scss str replace function",
+    "scss escape svg function",
+    "scss strip unit function",
+    "scss number invert function"
   ],
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
