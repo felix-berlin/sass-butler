@@ -1,0 +1,10 @@
+@use 'true' as *;
+@use '../functions' as fn;
+
+@include describe('px-to-ren()') {
+	@include it('should return the value in rem') {
+		@include assert-equal(
+			fn.px-to-rem(16), 1rem
+		);
+	}
+}
