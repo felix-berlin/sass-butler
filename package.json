@@ -1,6 +1,6 @@
 {
   "name": "@felix_berlin/sassy-scss",
-  "version": "1.6.1",
+  "version": "1.7.5",
   "license": "ISC",
   "description": "A collection of useful SCSS mixins and functions",
   "homepage": "https://sassy-scss.kasimir.dev",

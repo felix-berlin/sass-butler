@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.5](https://github.com/felix-berlin/sassy-scss/compare/v1.7.4...v1.7.5) (2022-08-06)
+
+
+### Bug Fixes
+
+* author for invert number ([2780144](https://github.com/felix-berlin/sassy-scss/commit/2780144950bfa3f9f5ec25ad121b805c3e312931))
+
 ## [1.7.4](https://github.com/felix-berlin/sassy-scss/compare/v1.7.3...v1.7.4) (2022-06-26)
 
 
