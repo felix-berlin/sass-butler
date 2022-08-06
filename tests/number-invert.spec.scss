@@ -1,10 +1,10 @@
-@use 'true' as *;
+@use 'true';
 @use '../functions' as fn;
 
-@include describe('number-invert()') {
-	@include it('should return the inverse of a number') {
-		@include assert-equal(
-			fn.number-invert(10), -10
+@include true.describe('number-invert()') {
+	@include true.it('should return the inverse of a number') {
+		@include true.assert-equal(
+			fn.number-invert(10), -10,
 		);
 	}
 }

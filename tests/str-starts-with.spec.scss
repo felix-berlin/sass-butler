@@ -1,0 +1,15 @@
+@use 'true';
+@use '../functions' as fn;
+
+@include true.describe('str-starts-with()') {
+	@include true.it('should start with the given substring') {
+		@include true.assert-true(
+			fn.str-starts-with('hello this is a string', 'hello')
+		);
+	}
+	@include true.it('should not start with the given substring') {
+		@include true.assert-false(
+			fn.str-starts-with('hello this is a string', 'helloooo')
+		);
+	}
+}

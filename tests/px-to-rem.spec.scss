@@ -1,9 +1,9 @@
-@use 'true' as *;
+@use 'true';
 @use '../functions' as fn;
 
-@include describe('px-to-ren()') {
-	@include it('should return the value in rem') {
-		@include assert-equal(
+@include true.describe('px-to-ren()') {
+	@include true.it('should return the value in rem') {
+		@include true.assert-equal(
 			fn.px-to-rem(16), 1rem
 		);
 	}
