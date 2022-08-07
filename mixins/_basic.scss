@@ -2,13 +2,13 @@
 @use '../functions/numbers' as numb;
 
 /// Styles for selected elements
-/// @param {Color} $bg-color [$black] Background-color
-/// @param {Color} $color [$white] Text-color
+/// @param {Color} $bg-color Background-color
+/// @param {Color} $color Text-color
 /// @param {String} $selector [*] Selector
 /// @group Basic
 /// @author Felix Scholze
 /// @since v1.0.0
-@mixin select-style($bg-color: #000, $color: #fff, $selector: '*') {
+@mixin select-style($bg-color, $color, $selector: '*') {
 	@if meta.type-of($bg-color) != color {
 		@error '❌  ===> #{$bg-color} is not a color';
 	}
@@ -19,6 +19,7 @@
 		&::selection {
 			background: $bg-color;
 			color: $color;
+			@content;
 		}
 	}
 }
@@ -34,7 +35,8 @@
 			content: '';
 			display: block;
 			height: $offset;
-			margin-top: number-invert($offset);
+			margin-top: numb.number-invert($offset);
+			@content;
 		}
 	}
 }
