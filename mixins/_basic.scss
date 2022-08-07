@@ -35,7 +35,7 @@
 			content: '';
 			display: block;
 			height: $offset;
-			margin-top: number-invert($offset);
+			margin-top: numb.number-invert($offset);
 			@content;
 		}
 	}
