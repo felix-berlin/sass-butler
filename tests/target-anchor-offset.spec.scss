@@ -1,0 +1,22 @@
+@use 'true';
+@use '../mixins' as mx;
+
+@include true.describe('target-anchor-offset()') {
+	@include true.it('should return a offset for target anchor') {
+		@include true.assert {
+			@include true.output {
+				@include mx.target-anchor-offset(150px);
+			}
+			@include true.expect {
+				:target {
+					&::before {
+						content: '';
+						display: block;
+						height: 150px;
+						margin-top: -150px;
+					}
+				}
+			}
+		}
+	}
+}
