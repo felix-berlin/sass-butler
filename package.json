@@ -1,6 +1,6 @@
 {
   "name": "@felix_berlin/sassy-scss",
-  "version": "1.7.5",
+  "version": "1.8.0",
   "license": "ISC",
   "description": "A collection of useful SCSS/SASS: mixins, functions and helpers.",
   "homepage": "https://sassy-scss.kasimir.dev",
@@ -9,7 +9,7 @@
     "url": "https://github.com/felix-berlin/sassy-scss"
   },
   "bugs": {
-    "url" : "https://github.com/felix-berlin/sassy-scss/issues"
+    "url": "https://github.com/felix-berlin/sassy-scss/issues"
   },
   "author": {
     "name": "Felix Scholze",
@@ -18,15 +18,17 @@
   },
   "funding": [
     {
-      "type" : "PayPal",
-      "url" : "https://paypal.me/FelixScholze"
+      "type": "PayPal",
+      "url": "https://paypal.me/FelixScholze"
     },
     {
-      "type" : "Buy me a coffee",
-      "url" : "https://www.buymeacoffee.com/felixberlin"
+      "type": "Buy me a coffee",
+      "url": "https://www.buymeacoffee.com/felixberlin"
     }
   ],
-  "files": ["*.scss"],
+  "files": [
+    "*.scss"
+  ],
   "engines": {
     "node": ">=12"
   },
