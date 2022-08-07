@@ -1,6 +1,18 @@
 @use 'true';
 @use '../mixins' as mx;
 
+// Breakpoint Map
+$breakpoints-px: (
+	'xxs': 375px,
+	'xs': 568px,
+	'sm': 768px,
+	'md': 1024px,
+	'lg': 1260px,
+	'xlg': 1440px,
+	'fhd': 1920px,
+	'uhd': 2560px,
+) !default;
+
 @include true.describe('breakpoint()') {
 	@include true.it('should return a css media query in min-width') {
 		@include true.assert {
@@ -20,6 +32,7 @@
 			}
 		}
 	}
+
 	@include true.it('should return a css media query in max-width') {
 		@include true.assert {
 			@include true.output {
@@ -31,6 +44,25 @@
 			}
 			@include true.expect {
 				@media (max-width: 77.75rem) {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+		}
+	}
+
+	@include true.it('should return a css media query in max-width using own breakpoint map in px') {
+		@include true.assert {
+			@include true.output {
+				@include mx.breakpoint('md', 'max', $breakpoints-px) {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+			@include true.expect {
+				@media (max-width: 1023px) {
 					.test {
 						padding: 12px;
 					}
