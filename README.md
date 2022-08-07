@@ -10,7 +10,65 @@
 ![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@felix_berlin/sassy-scss?style=flat-square)
 ![npms.io (quality)](https://img.shields.io/npms-io/maintenance-score/@felix_berlin/sassy-scss?style=flat-square)
 
-> A collection of useful SCSS mixins and functions
+> Sassy SCSS is a big collection of SASS mixins and functions.
+
+## Whats inside?
+
+Visit <https://sassy-scss.kasimir.dev> for full documentation.
+
+### Functions
+
+- [colors](https://github.com/felix-berlin/sassy-scss/blob/master/functions/_colors.scss)
+  - [hex-to-rgb-values()](https://sassy-scss.kasimir.dev/#color-function-hex-to-rgb-values)
+  - [hex-to-rgb()](https://sassy-scss.kasimir.dev/#function-hex-to-rgb)
+- [converters](https://github.com/felix-berlin/sassy-scss/blob/master/functions/_converters.scss)
+  - [px-to-rem()](https://sassy-scss.kasimir.dev/#converter-function-px-to-rem)
+- [lists](https://github.com/felix-berlin/sassy-scss/blob/master/functions/_lists.scss)
+  - [first-of-list()](https://sassy-scss.kasimir.dev/#list-function-first-of-list)
+  - [last-of-list()](https://sassy-scss.kasimir.dev/#list-function-last-of-list)
+- [maps](https://github.com/felix-berlin/sassy-scss/blob/master/functions/_maps.scss)
+  - [map-collect()](https://sassy-scss.kasimir.dev/#map-function-map-collect)
+- [numbers](https://github.com/felix-berlin/sassy-scss/blob/master/functions/_numbers.scss)
+  - [strip-unit()](https://sassy-scss.kasimir.dev/#number-function-strip-unit)
+  - [number-invert()](https://sassy-scss.kasimir.dev/#number-function-number-invert)
+  - [random-num()](https://sassy-scss.kasimir.dev/#number-function-random-num)
+- [strings](https://github.com/felix-berlin/sassy-scss/blob/master/functions/_strings.scss)
+  - [str-starts-with()](https://sassy-scss.kasimir.dev/#string-function-str-starts-with)
+  - [str-ends-with()](https://sassy-scss.kasimir.dev/#string-function-str-ends-with)
+  - [str-contains()](https://sassy-scss.kasimir.dev/#string-function-str-contains)
+  - [str-replace()](https://sassy-scss.kasimir.dev/#string-function-str-replace)
+  - [escape-svg()](https://sassy-scss.kasimir.dev/#string-function-escape-svg)
+- [typechecking](https://github.com/felix-berlin/sassy-scss/blob/master/functions/_type-checking.scss)
+  - [is-number()](https://sassy-scss.kasimir.dev/#type-checking-function-is-number)
+  - [is-time()](https://sassy-scss.kasimir.dev/#type-checking-function-is-time)
+  - [is-duration()](https://sassy-scss.kasimir.dev/#type-checking-function-is-duration)
+  - [is-angle()](https://sassy-scss.kasimir.dev/#type-checking-function-is-angle)
+  - [is-frequency()](https://sassy-scss.kasimir.dev/#type-checking-function-is-frequency)
+  - [is-integer()](https://sassy-scss.kasimir.dev/#type-checking-function-is-integer)
+  - [relative-length()](https://sassy-scss.kasimir.dev/#type-checking-function-is-relative-length)
+  - [absolute-length()](https://sassy-scss.kasimir.dev/#type-checking-function-is-absolute-length)
+  - [is-percentage()](https://sassy-scss.kasimir.dev/#type-checking-function-is-percentage)
+  - [is-length()](https://sassy-scss.kasimir.dev/#type-checking-function-is-length)
+  - [is-resolution()](https://sassy-scss.kasimir.dev/#type-checking-function-is-resolution)
+  - [is-position()](https://sassy-scss.kasimir.dev/#type-checking-function-is-position)
+
+### Mixins
+
+- [basic](https://github.com/felix-berlin/sassy-scss/blob/master/mixins/_basic.scss)
+  - [select-style()](https://sassy-scss.kasimir.dev/#basic-mixin-select-style)
+  - [target-anchor-offset()](https://sassy-scss.kasimir.dev/#basic-mixin-target-anchor-offset)
+- [breakpoint](https://github.com/felix-berlin/sassy-scss/blob/master/mixins/_breakpoint.scss)
+  - [breakpoint()](https://sassy-scss.kasimir.dev/#breakpoint-mixin-breakpoint)
+  - [feature()](https://sassy-scss.kasimir.dev/#breakpoint-mixin-feature)
+- [element](https://github.com/felix-berlin/sassy-scss/blob/master/mixins/_element.scss)
+  - [line-on-sides()](https://sassy-scss.kasimir.dev/#element-mixin-line-on-sides)
+  - [overlay()](https://sassy-scss.kasimir.dev/#element-mixin-overlay)
+  - [list-style-image()](https://sassy-scss.kasimir.dev/#element-mixin-list-style-image)
+- [typo](https://github.com/felix-berlin/sassy-scss/blob/master/mixins/_font.scss)
+  - [font-smoothing()](https://sassy-scss.kasimir.dev/#typo-mixin-font-smoothing)
+  - [fluid-typo()](https://sassy-scss.kasimir.dev/#typo-mixin-fluid-typo)
+  - [icon-font()](https://sassy-scss.kasimir.dev/#typo-mixin-icon-font)
+  - [font-face()](https://sassy-scss.kasimir.dev/#typo-mixin-font-face)
 
 ## Installation
 
@@ -107,15 +165,11 @@ In the rest of your project you don't add the module via `node_modules` anymore 
 
 ## Documentation
 
-You can find the documention at: [https://sassy-scss.kasimir.dev](https://sassy-scssn.kasimir.dev)
+You can find the documentation at: [https://sassy-scss.kasimir.dev](https://sassy-scssn.kasimir.dev)
 
 > The documentation is updated automatically with each commit on the master branch.
 
-### Build the docu locally
+### Build the docs locally
 
 Run following command:
 `npm run sassDoc`
-
-### Online tools for testing
-
-[Sassmeister](https://www.sassmeister.com) is a great online tool for compiling and testing your Scss/Sass code.
