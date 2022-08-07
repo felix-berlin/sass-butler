@@ -1,0 +1,10 @@
+@use 'true';
+@use '../functions' as fn;
+
+@include true.describe('strip-unit()') {
+	@include true.it('should return the value without unit') {
+		@include true.assert-equal(
+			fn.strip-unit(33rem), 33,
+		);
+	}
+}

@@ -1,8 +1,11 @@
 name: Release
 on:
-  push:
+  workflow_run:
+    workflows: [Unit tests]
+    types: [completed]
     branches:
       - master
+
 jobs:
   release:
     name: Release
