@@ -1,0 +1,18 @@
+@use 'true';
+@use '../mixins' as mx;
+
+@include true.describe('select-style()') {
+	@include true.it('should return a select style for specified selector') {
+		@include true.assert {
+			@include true.output {
+				@include mx.select-style(red, blue);
+			}
+			@include true.expect {
+				*::selection {
+					background: red;
+					color: blue;
+				}
+			}
+		}
+	}
+}
