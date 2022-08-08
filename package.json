@@ -1,6 +1,6 @@
 {
+  "version": "1.8.1",
   "name": "@felix_berlin/sass-butler",
-  "version": "1.8.0",
   "license": "ISC",
   "description": "A collection of useful SCSS/SASS: mixins, functions and helpers.",
   "homepage": "https://sass-butler.kasimir.dev",

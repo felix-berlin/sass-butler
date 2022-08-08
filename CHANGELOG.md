@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/felix-berlin/sassy-scss/compare/v1.8.0...v1.8.1) (2022-08-08)
+
+
+### Bug Fixes
+
+* devidate with math.div ([27c236c](https://github.com/felix-berlin/sassy-scss/commit/27c236cf72306c1ff393afa84e8de4fdebd675cd))
+
 # [1.8.0](https://github.com/felix-berlin/sassy-scss/compare/v1.7.5...v1.8.0) (2022-08-07)
 
 
