@@ -18,7 +18,7 @@
 		@error '❌  ===> #{$number} is not a number';
 	}
 
-	@return $number / ($number * 0 + 1);
+	@return math.div($number, ($number * 0 + 1));
 }
 
 /// Invert a number.
