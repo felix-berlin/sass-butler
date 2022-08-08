@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/felix-berlin/sass-butler/compare/v1.8.1...v1.9.0) (2022-08-08)
+
+
+### Features
+
+* basic implementation of hover mixin ([62ec3c1](https://github.com/felix-berlin/sass-butler/commit/62ec3c124e64ac6059db9d5fa2ec24ae3e598ab4))
+
 ## [1.8.1](https://github.com/felix-berlin/sass-butler/compare/v1.8.0...v1.8.1) (2022-08-08)
 
 ### Bug Fixes
