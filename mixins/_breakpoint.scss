@@ -32,7 +32,7 @@ $breakpoints: (
 /// @param {String} $direction ['min'] Breakpoint direction min or max
 /// @param {Map} $breakpoint-map [$breakpoints] All breakpoint vars in one map
 /// @param {Number} $max-overlap [1] How much should the max-width breakpoint overlap the min-width one?
-/// @group Breakpoint
+/// @group @media
 /// @author Felix Scholze
 /// @since v1.1.0
 ///

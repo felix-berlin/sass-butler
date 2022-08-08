@@ -1,4 +1,19 @@
-@mixin hover(){
+/// Hover using @media hover:hover
+/// @group @media
+/// @author Felix Scholze
+/// @since v1.9.0
+///
+/// @example
+///    .my-selector {
+///      @include hover {...}
+///    }
+///
+/// @example CSS - Output CSS
+///    @media (hover: hover) {
+///       .my-selector:hover {...}
+///    }
+///
+@mixin hover {
   @media (hover: hover) {
     &:hover {
       @content;
