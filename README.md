@@ -61,7 +61,7 @@ Visit <https://sass-butler.kasimir.dev> for full documentation.
 - [@media](https://github.com/felix-berlin/sass-butler/blob/master/mixins/_breakpoint.scss)
   - [breakpoint()](https://sass-butler.kasimir.dev/#@media-mixin-breakpoint)
   - [feature()](https://sass-butler.kasimir.dev/#@media-mixin-feature)
-  - [hover]((https://sass-butler.kasimir.dev/#@media-mixin-hover))
+  - [hover](https://sass-butler.kasimir.dev/#@media-mixin-hover)
 - [element](https://github.com/felix-berlin/sass-butler/blob/master/mixins/_element.scss)
   - [line-on-sides()](https://sass-butler.kasimir.dev/#element-mixin-line-on-sides)
   - [overlay()](https://sass-butler.kasimir.dev/#element-mixin-overlay)
