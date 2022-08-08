@@ -10,7 +10,6 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/felix-berlin/sass-butler/Release?label=release&style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felix-berlin/scss-collection?style=flat-square)
 ![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@felix_berlin/sass-butler?style=flat-square)
-![npms.io (quality)](https://img.shields.io/npms-io/maintenance-score/@felix_berlin/sass-butler?style=flat-square)
 
 > SASS Butler is a big collection of SASS mixins and functions.
 
@@ -97,8 +96,6 @@ This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-
 
 Single import of the used functionalities.
 
-_Recommended for more precise namespaces_.
-
 ```scss
 @use './node_modules/sass-butler/functions/first-of-list' as fol;
 ```
@@ -106,7 +103,7 @@ _Recommended for more precise namespaces_.
 import all functions at once:
 
 ```scss
-@use './node_modules/sass-butler/functions' as functions;
+@use './node_modules/sass-butler/functions' as fn;
 ```
 
 ### How to import
@@ -138,16 +135,27 @@ With `webpack mix`:
 ### Override module config
 
 Some of the module comes with "global" config vars and maps (breakpoint mixin). This may be a problem since you can only overwrite once with `with()`.
-Here is an example how you can deal with it:
+Here is an example how you can deal with it.
+
+#### Example using the breakpoint mixin
 
 Create a new file and load the breakpoint mixin from the `node_modules` with the `@forward` function. Similar to the `@use` function you can overwrite predefined vars with `with()`.
 
 ```scss
 // _custom-breakpoints.scss
 
-// Add your own breakpoints
 @forward 'sass-butler/mixins/breakpoint' with (
-  $lg: 1200px
+  // Add your own breakpoints map
+  $breakpoints: (
+    'xxs': 375px,
+    'xs': 568px,
+    'sm': 768px,
+    'md': 1024px,
+    'lg': 1260px,
+    'xlg': 1440px,
+    'fhd': 1920px,
+    'uhd': 2560px
+  )
 );
 ```
 
@@ -159,7 +167,6 @@ In the rest of your project you don't add the module via `node_modules` anymore 
 @use 'custom-breakpoints' as break;
 
 .my-selector {
-  // lg === 1200px not 1260px
   @include break.breakpoint(lg) {
     padding: 12px 0 1rem 0;
   }
