@@ -42,23 +42,23 @@
   "keywords": [
     "scss",
     "sass",
-    "scss collection",
-    "scss mixins",
-    "scss functions",
-    "scss helpers",
-    "scss utilities",
-    "scss map collect function",
-    "scss random number function",
-    "scss type checking functions",
-    "scss px to rem function",
-    "scss breakpoint function",
-    "scss str starts with function",
-    "scss str ends with function",
-    "scss str contains function",
-    "scss str replace function",
-    "scss escape svg function",
-    "scss strip unit function",
-    "scss number invert function"
+    "sass collection",
+    "sass mixins",
+    "sass functions",
+    "sass helpers",
+    "sass utilities",
+    "sass map collect function",
+    "sass random number function",
+    "sass type checking functions",
+    "sass px to rem function",
+    "sass breakpoint function",
+    "sass str starts with function",
+    "sass str ends with function",
+    "sass str contains function",
+    "sass str replace function",
+    "sass escape svg function",
+    "sass strip unit function",
+    "sass number invert function"
   ],
   "devDependencies": {
     "@commitlint/cli": "17.0.3",
@@ -76,12 +76,12 @@
     "stylelint-config-standard-scss": "5.0.0",
     "stylelint-declaration-block-no-ignored-properties": "2.5.0",
     "stylelint-order": "5.0.0",
-    "stylelint-scss": "4.3.0"
-  },
-  "dependencies": {
+    "stylelint-scss": "4.3.0",
     "glob": "8.0.3",
     "jest": "28.1.3",
-    "sass": "1.54.3",
     "sass-true": "6.1.0"
+  },
+  "dependencies": {
+    "sass": "1.54.3",
   }
 }
