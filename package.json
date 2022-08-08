@@ -26,9 +26,6 @@
       "url": "https://www.buymeacoffee.com/felixberlin"
     }
   ],
-  "files": [
-    "*.scss"
-  ],
   "engines": {
     "node": ">=12"
   },
