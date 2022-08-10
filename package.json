@@ -82,6 +82,6 @@
     "sass-true": "6.1.0"
   },
   "dependencies": {
-    "sass": "1.54.3"
+    "sass": "1.54.4"
   }
 }
