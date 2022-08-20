@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/felix-berlin/sass-butler/compare/v1.9.2...v1.10.0) (2022-08-20)
+
+
+### Bug Fixes
+
+* add hover to mixin main file ([1fd839e](https://github.com/felix-berlin/sass-butler/commit/1fd839efb1ca6045d126a82ff36afaae67f56eac))
+
+
+### Features
+
+* add dark-mode-class mixin ([b3609f0](https://github.com/felix-berlin/sass-butler/commit/b3609f08236a15cb60b00117dc10e912b2264fe1))
+
 ## [1.9.2](https://github.com/felix-berlin/sass-butler/compare/v1.9.1...v1.9.2) (2022-08-20)
 
 
