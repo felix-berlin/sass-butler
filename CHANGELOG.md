@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/felix-berlin/sass-butler/compare/v1.10.0...v1.10.1) (2022-08-20)
+
+
+### Bug Fixes
+
+* dark-mode-class class selector ([e29bb23](https://github.com/felix-berlin/sass-butler/commit/e29bb239055a927e7dd9fce25487af8f779c9ae8))
+
 # [1.10.0](https://github.com/felix-berlin/sass-butler/compare/v1.9.2...v1.10.0) (2022-08-20)
 
 
