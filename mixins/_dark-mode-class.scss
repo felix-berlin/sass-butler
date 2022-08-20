@@ -18,7 +18,7 @@
 ///    }
 ///
 @mixin dark-mode-class($element: 'html', $class: 'dark') {
-	#{$element}[class='#{$class}'] & {
+	#{$element}[class~="#{$class}"] & {
 		@content;
 	}
 }
