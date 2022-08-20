@@ -60,6 +60,7 @@ Visit <https://sass-butler.kasimir.dev> for full documentation.
   - [target-anchor-offset()](https://sass-butler.kasimir.dev/#basic-mixin-target-anchor-offset)
 - [@media](https://github.com/felix-berlin/sass-butler/blob/master/mixins/_breakpoint.scss)
   - [breakpoint()](https://sass-butler.kasimir.dev/#@media-mixin-breakpoint)
+  - [dark-mode-class()](https://sass-butler.kasimir.dev/#@media-mixin-dark-mode-class)
   - [feature()](https://sass-butler.kasimir.dev/#@media-mixin-feature)
   - [hover](https://sass-butler.kasimir.dev/#@media-mixin-hover)
 - [element](https://github.com/felix-berlin/sass-butler/blob/master/mixins/_element.scss)

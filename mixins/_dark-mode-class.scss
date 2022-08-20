@@ -1,0 +1,24 @@
+/// Use a predefined dark mode class to define dark mode styles.
+/// @param {String} $element ['html']
+/// @param {String} $class ['dark']
+/// @group @media
+/// @author Felix Scholze
+/// @since v1.10.0
+///
+/// @example
+///    .button {
+///      @include dark-mode-class('body', 'dark-mode') {
+///        color: #fff;
+///      }
+///    }
+///
+/// @example CSS - Output CSS
+///    body[class=dark-mode] .button {
+///      color: #fff;
+///    }
+///
+@mixin dark-mode-class($element: 'html', $class: 'dark') {
+	#{$element}[class='#{$class}'] & {
+		@content;
+	}
+}
