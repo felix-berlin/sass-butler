@@ -13,7 +13,7 @@
 ///    }
 ///
 /// @example CSS - Output CSS
-///    body[class=dark-mode] .button {
+///    body[class~=dark-mode] .button {
 ///      color: #fff;
 ///    }
 ///
