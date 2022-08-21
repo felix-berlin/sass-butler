@@ -20,6 +20,8 @@ jobs:
         run: npm i
       - name: Run Jest with scss-true 🧪
         run: npm run test
+      - name: create coverage report 📊
+        run: npx jest --coverage
       - name: codecoverage
         uses: codecov/codecov-action@v3
         with:
