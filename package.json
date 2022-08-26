@@ -78,7 +78,7 @@
     "stylelint-order": "5.0.0",
     "stylelint-scss": "4.3.0",
     "glob": "8.0.3",
-    "jest": "29.0.0",
+    "jest": "29.0.1",
     "sass-true": "6.1.0"
   },
   "dependencies": {
