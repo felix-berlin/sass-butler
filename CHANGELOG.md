@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.3](https://github.com/felix-berlin/sass-butler/compare/v1.10.2...v1.10.3) (2022-09-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sass to v1.54.9 ([15cfd9b](https://github.com/felix-berlin/sass-butler/commit/15cfd9b40d1dd3e0ac8ae21f3280fc3a6026d1e0))
+
 ## [1.10.2](https://github.com/felix-berlin/sass-butler/compare/v1.10.1...v1.10.2) (2022-09-02)
 
 
