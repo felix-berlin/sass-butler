@@ -17,8 +17,14 @@
 ///      color: #fff;
 ///    }
 ///
-@mixin dark-mode-class($element: 'html', $class: 'dark') {
-	#{$element}[class~="#{$class}"] & {
+@mixin dark-mode-class($element: 'html', $parent: true, $class: 'dark') {
+    @if ($parent) {
+        #{$element}[class~="#{$class}"] & {
 		@content;
 	}
+    } @else {
+        #{$element}[class~="#{$class}"] {
+		@content;
+	}
+    }
 }
