@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.4](https://github.com/felix-berlin/sass-butler/compare/v1.10.3...v1.10.4) (2022-09-19)
+
+
+### Bug Fixes
+
+* **dark-mode-class:** Top-level selectors may not contain the parent selector "&" ([07f234d](https://github.com/felix-berlin/sass-butler/commit/07f234d1fef72137398d83320311d7627b1155c2))
+
 ## [1.10.3](https://github.com/felix-berlin/sass-butler/compare/v1.10.2...v1.10.3) (2022-09-08)
 
 
