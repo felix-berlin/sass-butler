@@ -74,7 +74,7 @@
     "stylelint": "14.14.0",
     "stylelint-config-standard": "29.0.0",
     "stylelint-config-standard-scss": "5.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "2.5.0",
+    "stylelint-declaration-block-no-ignored-properties": "2.6.0",
     "stylelint-order": "5.0.0",
     "stylelint-scss": "4.3.0",
     "glob": "8.0.3",
