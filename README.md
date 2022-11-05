@@ -81,7 +81,7 @@ npm i @felix_berlin/sass-butler
 
 ## Requirements
 
-This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-module-system-is-launched). Therefore your build tool or taskrunner have to support Dart Sass 1.23.0 or above.
+This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-module-system-is-launched). Therefore your build tool or taskrunner have to support **Dart Sass 1.33.0** or above.
 
 ### Sass support
 
@@ -90,6 +90,10 @@ This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-
 | Dart Sass     | ✅      |
 | Lib Sass      | ❌      |
 | Ruby Sass     | ⚰️      |
+
+### Version support
+
+==>= 1.33.0==
 
 ## Usage
 
@@ -138,7 +142,9 @@ With `webpack mix`:
 Some of the module comes with "global" config vars and maps (breakpoint mixin). This may be a problem since you can only overwrite once with `with()`.
 Here is an example how you can deal with it.
 
-#### Example using the breakpoint mixin
+#### Redefine mixin or function default configs
+
+**Example how to use the breakpoint mixin with own default config:**
 
 Create a new file and load the breakpoint mixin from the `node_modules` with the `@forward` function. Similar to the `@use` function you can overwrite predefined vars with `with()`.
 
@@ -172,6 +178,22 @@ In the rest of your project you don't add the module via `node_modules` anymore 
     padding: 12px 0 1rem 0;
   }
 }
+```
+
+> :warning: **Pay attention to the loading order** when using redefined and package function/mixins!
+
+:x: **Can't be compiled** because the (package) breakpoint mixin is already loaded in ``mixins.scss``.
+
+```scss
+@use 'sass-butler/mixins' as mx;
+@use 'custom-breakpoints' as break;
+```
+
+:white_check_mark: **This will work.** Make sure to load the redefined module first.
+
+```scss
+@use 'custom-breakpoints' as break;
+@use 'sass-butler/mixins' as mx;
 ```
 
 ## Documentation
