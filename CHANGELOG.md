@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/felix-berlin/sass-butler/compare/v1.10.5...v2.0.0) (2022-11-05)
+
+
+### Features
+
+* **font-smooting:** detect retina display via breakpoint ([c7b6c4e](https://github.com/felix-berlin/sass-butler/commit/c7b6c4e72f1fa3dbce326f688a8fc7fb05bd0d7f))
+
+
+### BREAKING CHANGES
+
+* **font-smooting:** the $antialiased param is removed; @media query now makes the condition
+
 ## [1.10.5](https://github.com/felix-berlin/sass-butler/compare/v1.10.4...v1.10.5) (2022-09-23)
 
 
