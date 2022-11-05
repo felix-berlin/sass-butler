@@ -13,6 +13,9 @@
 
 > SASS Butler is a big collection of SASS mixins and functions.
 
+Mixins and functions are unit tested via [Jest](https://jestjs.io/) and [True](https://www.oddbird.net/true/).
+*Unfortunately, it is [not yet possible](https://github.com/oddbird/true/issues/88) to create a coverage report.*
+
 ## Whats inside?
 
 Visit <https://sass-butler.kasimir.dev> for full documentation.
@@ -79,11 +82,17 @@ Visit <https://sass-butler.kasimir.dev> for full documentation.
 npm i @felix_berlin/sass-butler
 ```
 
+If you haven't already, install Sass.
+
+```bash
+npm i -D sass
+```
+
 ## Requirements
 
 This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-module-system-is-launched). Therefore your build tool or taskrunner have to support **Dart Sass 1.33.0** or above.
 
-### Sass support
+### <img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" width="50"> Sass support
 
 | Sass Compiler | Support |
 | ------------- | ------- |
@@ -93,7 +102,7 @@ This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-
 
 ### Version support
 
-==>= 1.33.0==
+Your Dart Sass Version must be: >= 1.33.0
 
 ## Usage
 
