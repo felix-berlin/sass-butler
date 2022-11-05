@@ -4,18 +4,21 @@
 @use '../functions';
 
 /// Font Smoothing
-/// @param {Bool} $antialiased [true]
 /// @group Typo
 /// @author Felix Scholze
 /// @link https://nickbulljs.medium.com/3-css-font-properties-you-need-to-use-in-2020-1e60c415b8a8
 /// @since v1.0.0
-@mixin font-smoothing($antialiased: true) {
+@mixin font-smoothing {
 	-moz-osx-font-smoothing: grayscale; // Firefox
 
-	@if $antialiased == true {
-		-webkit-font-smoothing: antialiased; // Safari | Best of Retina displays
-	} @else {
-		-webkit-font-smoothing: subpixel-antialiased; // Best for non Retina displays
+	@media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi) {
+			-webkit-font-smoothing: antialiased; // Safari | Best of Retina displays
+	}
+
+	@media not screen and (min-device-pixel-ratio: 2),
+    not screen and (min-resolution: 192dpi) {
+			-webkit-font-smoothing: subpixel-antialiased; // Best for non Retina displays
 	}
 }
 
