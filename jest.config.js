@@ -1,4 +1,6 @@
 const config = {
   verbose: true,
-  moduleFileExtensions: ['scss'],
+  moduleFileExtensions: ['scss', 'js'],
 };
+
+module.exports = config;
