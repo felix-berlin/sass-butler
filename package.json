@@ -68,7 +68,7 @@
     "@semantic-release/git": "10.0.1",
     "husky": "8.0.2",
     "postcss": "8.4.19",
-    "postcss-scss": "4.0.5",
+    "postcss-scss": "4.0.6",
     "sass": "1.56.1",
     "sassdoc": "2.7.4",
     "semantic-release": "19.0.5",
