@@ -72,7 +72,7 @@
     "sass": "1.56.1",
     "sassdoc": "2.7.4",
     "semantic-release": "19.0.5",
-    "stylelint": "14.15.0",
+    "stylelint": "14.16.0",
     "stylelint-config-standard": "29.0.0",
     "stylelint-config-standard-scss": "6.1.0",
     "stylelint-declaration-block-no-ignored-properties": "2.6.0",
