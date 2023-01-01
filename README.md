@@ -5,9 +5,9 @@
 ![npm](https://img.shields.io/npm/dm/@felix_berlin/sass-butler?logo=npm&style=flat-square)
 ![npm (scoped)](https://img.shields.io/npm/v/@felix_berlin/sass-butler?logo=npm&style=flat-square)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/felix-berlin/sass-butler?label=github&logo=github&style=flat-square)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/felix-berlin/scss-collection/CI/master?label=build%20docs&logo=github&style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/felix-berlin/sass-butler/Unit%20tests?label=unit-tests&logo=github&style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/felix-berlin/sass-butler/Release?label=release&logo=github&style=flat-square)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/felix-berlin/scss-collection/build-docs.yml?label=build%20docs&logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/felix-berlin/sass-butler/unit-tests.yml?label=unit-tests&logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/felix-berlin/sass-butler/release.yml?label=release&logo=github&style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felix-berlin/scss-collection?style=flat-square&logo=github)
 ![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@felix_berlin/sass-butler?style=flat-square&logo=npm)
 
