@@ -61,7 +61,7 @@
     "sass number invert function"
   ],
   "devDependencies": {
-    "@commitlint/cli": "17.4.4",
+    "@commitlint/cli": "17.5.0",
     "@commitlint/config-conventional": "17.4.4",
     "@felix_berlin/stylelint-config-felix-berlin": "1.0.0",
     "@semantic-release/changelog": "6.0.2",
