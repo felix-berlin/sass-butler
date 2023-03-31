@@ -20,7 +20,7 @@
 	}
 	@media
 	not screen and (-webkit-min-device-pixel-ratio: 2),
-  not screen and (min-resolution: 192dpi)
+  not screen and (min-resolution: 192dpi),
 	not	screen and (min-resolution: 2dppx) {
 			-webkit-font-smoothing: subpixel-antialiased; // Best for non Retina displays
 	}
