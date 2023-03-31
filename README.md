@@ -9,7 +9,6 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/felix-berlin/sass-butler/unit-tests.yml?label=unit-tests&logo=github&style=flat-square)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/felix-berlin/sass-butler/release.yml?label=release&logo=github&style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felix-berlin/scss-collection?style=flat-square&logo=github)
-![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@felix_berlin/sass-butler?style=flat-square&logo=npm)
 
 > SASS Butler is a big collection of SASS mixins and functions.
 
@@ -96,9 +95,9 @@ This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-
 
 | Sass Compiler | Support |
 | ------------- | ------- |
-| Dart Sass     | ✅      |
-| Lib Sass      | ❌      |
-| Ruby Sass     | ⚰️      |
+| Dart Sass     | ✅       |
+| Lib Sass      | ❌       |
+| Ruby Sass     | ⚰️       |
 
 ### Version support
 
