@@ -1,20 +1,14 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-standard-scss"
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-scss"
   ],
-  "plugins": ["stylelint-declaration-block-no-ignored-properties"],
+  "plugins": [
+    "stylelint-declaration-block-no-ignored-properties"
+  ],
   "customSyntax": "postcss-scss",
   "rules": {
-    "indentation": "tab",
-    "string-quotes": "single",
-    "max-line-length": null,
-    "max-empty-lines": [
-      1,
-      {
-        "ignore": ["comments"]
-      }
-    ],
     "selector-class-pattern": null,
     "at-rule-empty-line-before": [
       "always",
@@ -24,14 +18,21 @@
           "blockless-after-blockless",
           "first-nested"
         ],
-        "ignore": ["after-comment"],
-        "ignoreAtRules": ["else"]
+        "ignore": [
+          "after-comment"
+        ],
+        "ignoreAtRules": [
+          "else"
+        ]
       }
     ],
     "selector-type-no-unknown": [
       true,
       {
-        "ignore": ["custom-elements", "default-namespace"]
+        "ignore": [
+          "custom-elements",
+          "default-namespace"
+        ]
       }
     ],
     "no-descending-specificity": null,

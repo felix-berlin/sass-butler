@@ -18,13 +18,13 @@
 ///    }
 ///
 @mixin dark-mode-class($element: 'html', $parent: true, $class: 'dark') {
-    @if ($parent) {
+    @if $parent {
         #{$element}[class~="#{$class}"] & {
-		@content;
-	}
+            @content;
+        }
     } @else {
         #{$element}[class~="#{$class}"] {
-		@content;
-	}
+            @content;
+        }
     }
 }

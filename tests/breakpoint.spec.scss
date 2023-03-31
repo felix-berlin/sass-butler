@@ -32,7 +32,6 @@ $breakpoints-px: (
 			}
 		}
 	}
-
 	@include true.it('should return a css media query in max-width') {
 		@include true.assert {
 			@include true.output {
@@ -51,7 +50,6 @@ $breakpoints-px: (
 			}
 		}
 	}
-
 	@include true.it('should return a css media query in max-width using own breakpoint map in px') {
 		@include true.assert {
 			@include true.output {

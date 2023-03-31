@@ -1,3 +1,4 @@
+/* stylelint-disable media-feature-name-no-vendor-prefix */
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:string';
@@ -11,13 +12,16 @@
 @mixin font-smoothing {
 	-moz-osx-font-smoothing: grayscale; // Firefox
 
-	@media only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi) {
+	@media
+	screen and (-webkit-min-device-pixel-ratio: 2),
+	screen and (min-resolution: 192dpi),
+	screen and (min-resolution: 2dppx) {
 			-webkit-font-smoothing: antialiased; // Safari | Best of Retina displays
 	}
-
-	@media not screen and (min-device-pixel-ratio: 2),
-    not screen and (min-resolution: 192dpi) {
+	@media
+	not screen and (-webkit-min-device-pixel-ratio: 2),
+  not screen and (min-resolution: 192dpi)
+	not	screen and (min-resolution: 2dppx) {
 			-webkit-font-smoothing: subpixel-antialiased; // Best for non Retina displays
 	}
 }
