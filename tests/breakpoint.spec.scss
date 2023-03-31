@@ -32,7 +32,7 @@ $breakpoints-px: (
 			}
 		}
 	}
-	@include true.it('should return a css media query in max-width') {
+	@include true.it('should return a css media query in max-width using default -> $max-overlap: 0.01') {
 		@include true.assert {
 			@include true.output {
 				@include mx.breakpoint('lg', 'max') {
@@ -42,7 +42,25 @@ $breakpoints-px: (
 				}
 			}
 			@include true.expect {
-				@media (max-width: 77.75rem) {
+				@media (max-width: 78.74rem) {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+		}
+	}
+	@include true.it('should return a css media query in max-width using $max-overlap: 2') {
+		@include true.assert {
+			@include true.output {
+				@include mx.breakpoint('lg', 'max', $max-overlap: 2) {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+			@include true.expect {
+				@media (max-width: 76.75rem) {
 					.test {
 						padding: 12px;
 					}
@@ -61,6 +79,24 @@ $breakpoints-px: (
 			}
 			@include true.expect {
 				@media (max-width: 1023px) {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+		}
+	}
+	@include true.it('should return a css media query in max-width using own breakpoint map in px and $max-overlap: 5') {
+		@include true.assert {
+			@include true.output {
+				@include mx.breakpoint('md', 'max', $breakpoints-px, $max-overlap: 5) {
+					.test {
+						padding: 12px;
+					}
+				}
+			}
+			@include true.expect {
+				@media (max-width: 1019px) {
 					.test {
 						padding: 12px;
 					}

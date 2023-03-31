@@ -31,7 +31,7 @@ $breakpoints: (
 /// @param {String} $breakpoint Breakpoint key from the breakpoints map
 /// @param {String} $direction ['min'] Breakpoint direction min or max
 /// @param {Map} $breakpoint-map [$breakpoints] All breakpoint vars in one map
-/// @param {Number} $max-overlap [1] How much should the max-width breakpoint overlap the min-width one?
+/// @param {Number} $max-overlap [null] How much should the max-width breakpoint overlap the min-width one?
 /// @group @media
 /// @author Felix Scholze
 /// @since v1.1.0
@@ -50,22 +50,32 @@ $breakpoints: (
 	$breakpoint,
 	$direction: 'min',
 	$breakpoint-map: $breakpoints,
-	$max-overlap: 1,
+	$max-overlap: null,
 ) {
-	// Error handling
+	/// Error handling
 	$valid-direction: ('min', 'max');
 
-	// Search and return the key from the breakpoints map
+	/// Search and return the key from the breakpoints map
 	$get-breakpoints: map.get($breakpoint-map, $breakpoint);
+	$unit: math.unit($get-breakpoints);
 
-	// Give an error if the breakpoint direction is not correct
+	/// Give an error if the breakpoint direction is not correct
 	@if not list.index($valid-direction, $direction) {
 		@error '❌  ===> #{$direction} is not a valid option for direction. Please use: #{$valid-direction}';
 	}
 
-	// Give an error if the breakpoint does not exist in the map
+	/// Give an error if the breakpoint does not exist in the map
 	@if map.has-key($breakpoint-map, $breakpoint) != true {
 		@error '❌  ===> #{$breakpoint} is not valid breakpoint. Please use: #{map.keys($breakpoint-map)}';
+	}
+
+	/// If $max-overlap is not set, set it to 1px or 0.01rem
+	@if not $max-overlap {
+		@if fn.str-contains($unit, 'rem') or fn.str-contains($unit, 'em') {
+			$max-overlap: 0.01;
+		} @else {
+			$max-overlap: 1;
+		}
 	}
 	@if $direction == 'min' {
 		@media (min-width: $get-breakpoints) {
