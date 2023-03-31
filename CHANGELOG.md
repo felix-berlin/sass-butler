@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/felix-berlin/sass-butler/compare/v2.0.0...v2.0.1) (2023-03-31)
+
+
+### Bug Fixes
+
+* **deps:** upgrade to stylelint 15 and fix lint errors ([7de1a7f](https://github.com/felix-berlin/sass-butler/commit/7de1a7feb94f572cc45c791cc4f459c7266b4938))
+
 # [2.0.0](https://github.com/felix-berlin/sass-butler/compare/v1.10.5...v2.0.0) (2022-11-05)
 
 
