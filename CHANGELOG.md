@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/felix-berlin/sass-butler/compare/v2.0.1...v2.0.2) (2023-03-31)
+
+
+### Bug Fixes
+
+* missing comma ([0c00751](https://github.com/felix-berlin/sass-butler/commit/0c0075192da6c32a4e9fce7bc550e374f9f5aad2))
+
 ## [2.0.1](https://github.com/felix-berlin/sass-butler/compare/v2.0.0...v2.0.1) (2023-03-31)
 
 
