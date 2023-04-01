@@ -78,12 +78,12 @@ $breakpoints: (
 		}
 	}
 	@if $direction == 'min' {
-		@media (min-width: $get-breakpoints) {
+		@media (width >= $get-breakpoints) {
 			@content;
 		}
 	}
 	@if $direction == 'max' {
-		@media (max-width: $get-breakpoints - $max-overlap) {
+		@media (width <= $get-breakpoints - $max-overlap) {
 			@content;
 		}
 	}

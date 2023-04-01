@@ -14,14 +14,14 @@
 
 	@media
 	screen and (-webkit-min-device-pixel-ratio: 2),
-	screen and (min-resolution: 192dpi),
-	screen and (min-resolution: 2dppx) {
+	screen and (resolution >= 192dpi),
+	screen and (resolution >= 2dppx) {
 			-webkit-font-smoothing: antialiased; // Safari | Best of Retina displays
 	}
 	@media
 	not screen and (-webkit-min-device-pixel-ratio: 2),
-  not screen and (min-resolution: 192dpi),
-	not	screen and (min-resolution: 2dppx) {
+  not screen and (resolution >= 192dpi),
+	not	screen and (resolution >= 2dppx) {
 			-webkit-font-smoothing: subpixel-antialiased; // Best for non Retina displays
 	}
 }
