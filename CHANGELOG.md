@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/felix-berlin/sass-butler/compare/v2.1.0...v2.2.0) (2023-04-01)
+
+
+### Features
+
+* **media queries:** with new range syntax ([a0a8a41](https://github.com/felix-berlin/sass-butler/commit/a0a8a41298aa659d7c4e740ec2f54135a4d8d526))
+
 # [2.1.0](https://github.com/felix-berlin/sass-butler/compare/v2.0.2...v2.1.0) (2023-03-31)
 
 

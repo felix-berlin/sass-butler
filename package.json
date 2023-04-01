@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "name": "@felix_berlin/sass-butler",
   "license": "ISC",
   "description": "A collection of useful SCSS/SASS: mixins, functions and helpers.",
