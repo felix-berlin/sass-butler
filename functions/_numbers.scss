@@ -66,3 +66,32 @@
 
 	@return $random-num;
 }
+
+/// Round a number to a specific number of decimal places.
+///
+/// @param {Number} $number
+/// @param {Number} $decimals [0]
+/// @group Number
+/// @author Brecht De Ruyte
+/// @since v2.3.0
+///
+/// @example
+///    .test-round {
+///      padding: fn.round(1.23456789, 2) + px;
+///    }
+///
+///    //=>
+///    .test-round {
+///      padding: 1.23px;
+///    }
+@function round($number, $decimals: 0) {
+	$n: 1;
+
+	@if $decimals > 0 {
+		@for $i from 1 through $decimals {
+			$n: $n * 10;
+		}
+	}
+
+	@return math.div(math.round($number * $n), $n);
+}

@@ -16,12 +16,22 @@
 
 .test-breakpoints-min {
 	@include mx.breakpoint('lg') {
-		padding: 12px;
+		padding: 3rem;
+		margin: 1rem;
 	}
 }
 
 .test-breakpoints-max {
-	@include mx.breakpoint('lg', 'max') {
+	@include mx.breakpoint('lg', 'max', $max-overlap: 2) {
 		padding: 15px;
 	}
+}
+
+.test-fluid {
+	font-size: fn.fluid(16, 31);
+}
+
+.test-round {
+	/* stylelint-disable-next-line number-max-precision */
+	padding: fn.round(1.23456789, 2) + px;
 }

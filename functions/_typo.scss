@@ -1,0 +1,38 @@
+@use 'sass:math';
+@use '../functions/converters';
+@use '../functions/numbers';
+
+/// Calculate fluid typography with clamp.
+///
+/// @param {Number} $min-size
+/// @param {Number} $max-size
+/// @param {Number} $min-breakpoint [320]
+/// @param {Number} $max-breakpoint [960]
+/// @param {Number} $unit [vw]
+/// @group Typo
+/// @author Brecht De Ruyte
+/// @since v2.3.0
+///
+/// @example
+///    .test-fluid {
+///      font-size: fn.fluid(16, 31);
+///    }
+///
+///    //=>
+///    .test-fluid {
+///      font-size: clamp(1rem, 2.34vw + 0.53rem, 1.94rem);
+///    }
+@function fluid(
+  $min-size,
+  $max-size,
+  $min-breakpoint: 320,
+  $max-breakpoint: 960,
+  $unit: vw) {
+  $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+  $slope-to-unit: numbers.round($slope * 100, 2);
+  $intercept-rem: numbers.round(converters.px-to-rem($min-size - $slope * $min-breakpoint), 2);
+  $min-size-rem: numbers.round(converters.px-to-rem($min-size), 2);
+  $max-size-rem: numbers.round(converters.px-to-rem($max-size), 2);
+
+  @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+}
