@@ -17,10 +17,15 @@ jobs:
         with:
           node-version: 16.x
 
+      - name: Setup pnpm 🛠️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Install and Build 🔧
         run: |
-          npm i
-          npm run sassDoc
+          pnpm install
+          pnpm run sassDoc
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.3

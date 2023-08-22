@@ -12,16 +12,26 @@ jobs:
     steps:
       - name: Checkout ✅
         uses: actions/checkout@v3
+
       - name: Setup Node.js 🔧
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
+
+      - name: Setup pnpm 🛠️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Install dependencies 🛠️
-        run: npm i
+        run: pnpm i
+
       - name: Run Jest with scss-true 🧪
-        run: npm run test
+        run: pnpm run test
+
       - name: create coverage report 📊
         run: npx jest --coverage
+
       - name: codecoverage
         uses: codecov/codecov-action@v3
         with:

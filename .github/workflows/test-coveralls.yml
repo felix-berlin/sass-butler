@@ -3,35 +3,38 @@ on: ["push", "pull_request"]
 name: Test Coveralls
 
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
 
-    - uses: actions/checkout@v3
+      - name: Use Node.js LTS
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
 
-    - name: Use Node.js LTS
-      uses: actions/setup-node@v3
-      with:
-        node-version: 'lts/*'
+      - name: Setup pnpm 🛠️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
-    - name: npm install, make test-coverage
-      run: |
-        npm install
-        make test-coverage
+      - name: pnpm install, make test-coverage
+        run: |
+          npm install
+          make test-coverage
 
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GH_TOKEN }}
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
 
   finish:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Coveralls Finished
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GH_TOKEN }}
-        parallel-finished: true
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          parallel-finished: true

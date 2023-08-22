@@ -78,13 +78,21 @@ Visit <https://sass-butler.kasimir.dev> for full documentation.
 ## Installation
 
 ```bash
+pnpm add @felix_berlin/sass-butler
+
 npm i @felix_berlin/sass-butler
+
+yarn add @felix_berlin/sass-butler
 ```
 
 If you haven't already, install Sass.
 
 ```bash
+pnpm add -D sass
+
 npm i -D sass
+
+yarn add -D sass
 ```
 
 ## Requirements
