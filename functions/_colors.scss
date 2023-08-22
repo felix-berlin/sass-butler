@@ -1,5 +1,7 @@
-@use 'sass:color';
-@use 'sass:string';
+@use "sass:map";
+@use "sass:color";
+@use "sass:math";
+@use "sass:string";
 
 /// Convert HEX colors to R, G, B values
 /// @param {Color} $color
@@ -8,7 +10,7 @@
 /// @author Felix Scholze
 /// @since v1.5.0
 @function hex-to-rgb-values($color) {
-	@return color.red($color) + ', ' + color.green($color) + ', ' + color.blue($color);
+  @return color.red($color) + ", " + color.green($color) + ", " + color.blue($color);
 }
 
 /// Convert HEX colors to RGB (space-separated values)
@@ -19,5 +21,63 @@
 /// @author Felix Scholze
 /// @since v1.5.0
 @function hex-to-rgb($color, $alpha: false) {
-	@return string.unquote('rgb') + '(' + (color.red($color) color.green($color) color.blue($color)) + if($alpha, ' / ' + $alpha, '') + ')';
+  @return string.unquote("rgb") + "(" + (color.red($color) color.green($color) color.blue($color)) + if($alpha, " / " + $alpha, "") + ")";
+}
+
+/// Generate shades in light and dark from a base color
+/// @param {Color} $base-color - Base color
+/// @param {Number} $num-shades [5] - Number of shades to generate
+/// @param {Number} $lighten-percent [0.5] - Percent (in decimal places from 0 to 1) to lighten each shade
+/// @param {Number} $darken-percent [0.5] - Percent (in decimal places from 0 to 1) to darken each shade
+/// @param {String} $base-key-name ["base"] - Key name for the base color
+/// @param {String} $light-key-name ["light-"] - Key name for the light shades
+/// @param {String} $dark-key-name ["dark-"] - Key name for the dark shades
+/// @return {Map}
+/// @group Color
+/// @author Felix Scholze
+/// @since v2.4.0
+///
+/// @example
+///    @debug generate-color-shades(#d33030, 5, 0.5, 0.5);
+///
+/// @example CSS - Output CSS
+///    ("light-1000": #d74545, "light-900": #dc5a5a, "light-800": #e06f6f, "light-700": #e58484, "light-600": #e99999, "base": #d33030, "dark-100": #c12929, "dark-200": #ac2424, "dark-300": #972020, "dark-400": #811c1c, "dark-500": #6c1717)
+///
+@function generate-color-shades(
+  $base-color,
+  $num-shades: 5,
+  $lighten-percent: 0.5,
+  $darken-percent: 0.5,
+  $base-key-name: "base",
+  $light-key-name: "light-",
+  $dark-key-name: "dark-"
+) {
+  $shades: ();
+
+  /// Generate shades for light mode
+  @for $i from 1 through $num-shades {
+    $shade: color.adjust(
+      $base-color,
+      $lightness: calc((100% / ($num-shades * 2)) * $i * $lighten-percent)
+    );
+    $shades: map.merge($shades, ($light-key-name + (11 - $i) * 100: $shade));
+  }
+
+  $shades: map.merge(
+    $shades,
+    (
+      $base-key-name: $base-color,
+    )
+  );
+
+  /// Generate shades for dark mode
+  @for $i from 1 through $num-shades {
+    $shade: color.adjust(
+      $base-color,
+      $lightness: calc((100% / ($num-shades * 2)) * $i * -1 * $darken-percent)
+    );
+    $shades: map.merge($shades, ($dark-key-name + $i * 100: $shade));
+  }
+
+  @return $shades;
 }
