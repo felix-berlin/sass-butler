@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.3](https://github.com/felix-berlin/sass-butler/compare/v2.5.2...v2.5.3) (2023-08-26)
+
+
+### Bug Fixes
+
+* add sass-true as dependency (cant import throw) ([f93fb6e](https://github.com/felix-berlin/sass-butler/commit/f93fb6e548ec704efdba663e088bdc6276ac37f2))
+
 ## [2.5.2](https://github.com/felix-berlin/sass-butler/compare/v2.5.1...v2.5.2) (2023-08-26)
 
 
