@@ -87,11 +87,11 @@ $is-test: false !default;
 }
 
 /// Generate a map of colors that are mixed between three colors with a peak point for color2.
-/// @param $color1 - The first color.
-/// @param $color2 - The second color.
-/// @param $color3 - The third color.
-/// @param $steps - The number of steps to generate.
-/// @param $color2-peak - The peak point for color2.
+/// @param {Color} $color1 - The first color.
+/// @param {Color} $color2 - The second color.
+/// @param {Color} $color3 - The third color.
+/// @param {Number} $steps [20] - The number of steps to generate.
+/// @param {Number} $color2-peak [11] - The peak point for color2.
 /// @return {Map} - The map of colors.
 /// @group Color
 /// @author https://github.com/red-freak

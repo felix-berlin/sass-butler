@@ -18,6 +18,14 @@
   },
   "funding": [
     {
+      "type": "GitHub Sponsors",
+      "url": "https://github.com/sponsors/felix-berlin"
+    },
+    {
+      "type": "Ko-fi",
+      "url": "https://ko-fi.com/felixberlin"
+    },
+    {
       "type": "PayPal",
       "url": "https://paypal.me/FelixScholze"
     },
@@ -30,7 +38,7 @@
     "node": ">=12"
   },
   "scripts": {
-    "sassDoc": "sassdoc mixins/ functions/",
+    "sassDoc": "sassdoc -v mixins/ functions/",
     "lint": "stylelint \"**/*.{sass,scss}\"",
     "lint:fix": "stylelint \"**/*.{sass,scss}\" --fix",
     "test": "jest",
