@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/felix-berlin/sass-butler/compare/v2.4.0...v2.5.0) (2023-08-26)
+
+
+### Bug Fixes
+
+* **generate-mixed-colors:** lint errors, write code in sass module style ([9d7f298](https://github.com/felix-berlin/sass-butler/commit/9d7f298983966524f84db93c8da257fe68badf12))
+
+
+### Features
+
+* add generate-mixed-colors function ([71c0492](https://github.com/felix-berlin/sass-butler/commit/71c04926e02c017b68d2665abd42f2492732e564))
+
 # [2.4.0](https://github.com/felix-berlin/sass-butler/compare/v2.3.0...v2.4.0) (2023-08-22)
 
 
