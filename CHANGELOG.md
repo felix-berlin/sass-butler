@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/felix-berlin/sass-butler/compare/v2.5.0...v2.5.1) (2023-08-26)
+
+
+### Bug Fixes
+
+* **generate-mixed-colors:** doc block throws sassdoc error ([5a7bb7c](https://github.com/felix-berlin/sass-butler/commit/5a7bb7cfcbc738bec6633d752ff18dc24e4696c7))
+
 # [2.5.0](https://github.com/felix-berlin/sass-butler/compare/v2.4.0...v2.5.0) (2023-08-26)
 
 
