@@ -3,7 +3,7 @@
 @use "sass:math";
 @use "sass:string";
 @use "./type-checking" as check;
-@use "throw";
+@use "../node_modules/sass-true/sass/throw" as throw;
 
 $is-test: false !default;
 
