@@ -1,51 +1,63 @@
-//@use 'true';
-$_is-test: true;
-@use '../node_modules/sass-true/sass/true' as true;
-@import '../functions/_colors.scss';
-
+@use 'true';
+@use '../functions' as fn with (
+	$is-test: true,
+);
 
 @include true.describe('generate-mixed-colors()') {
 	@include true.it('should throw an error if the step and peak parameters are wrong') {
 		@include true.assert-equal(
-			generate-mixed-colors(1, 1, 1), 'ERROR: ❌  ===> The color1 parameter must be a color.'
+			fn.generate-mixed-colors(1, 1, 1),
+			'ERROR: ❌  ===> The color1 parameter must be a color.'
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, 1, 1), 'ERROR: ❌  ===> The color2 parameter must be a color.'
+			fn.generate-mixed-colors(green, 1, 1),
+			'ERROR: ❌  ===> The color2 parameter must be a color.'
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, 1), 'ERROR: ❌  ===> The color3 parameter must be a color.'
+			fn.generate-mixed-colors(green, yellow, 1),
+			'ERROR: ❌  ===> The color3 parameter must be a color.'
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red, "hallo"), 'ERROR: ❌  ===> The steps parameter must be an integer.'
+			fn.generate-mixed-colors(green, yellow, red, "hallo"),
+			'ERROR: ❌  ===> The steps parameter must be an integer.'
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red, 10, "welt"), 'ERROR: ❌  ===> The color2-peak parameter must be an integer.'
+			fn.generate-mixed-colors(green, yellow, red, 10, "welt"),
+			'ERROR: ❌  ===> The color2-peak parameter must be an integer.'
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red, 0, 2), 'ERROR: ❌  ===> The peak point for color2 must be less than or equal to the number of steps.'
+			fn.generate-mixed-colors(green, yellow, red, 0, 2),
+			'ERROR: ❌  ===> The peak point for color2 must be less than or equal to the number of steps.'
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red, 0, 0), 'ERROR: ❌  ===> The peak point for color2 must be greater than or equal to 1.'
+			fn.generate-mixed-colors(green, yellow, red, 0, 0),
+			'ERROR: ❌  ===> The peak point for color2 must be greater than or equal to 1.'
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red, -1, -1), 'ERROR: ❌  ===> The peak point for color2 must be greater than or equal to 1.'
+			fn.generate-mixed-colors(green, yellow, red, -1, -1),
+			'ERROR: ❌  ===> The peak point for color2 must be greater than or equal to 1.'
 		);
 	}
 	@include true.it('should return expected color maps') {
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red, 1, 1), (1: yellow)
+			fn.generate-mixed-colors(green, yellow, red, 1, 1),
+			(1: yellow)
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red, 3, 2), (1: green, 2: yellow, 3: red)
+			fn.generate-mixed-colors(green, yellow, red, 3, 2),
+			(1: green, 2: yellow, 3: red)
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red, 2, 1), (1: yellow, 2: red)
+			fn.generate-mixed-colors(green, yellow, red, 2, 1),
+			(1: yellow, 2: red)
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(green, yellow, red), (1: green, 2: #2e9700, 3: #46a300, 4: #5dae00, 5: #74ba00, 6: #8bc500, 7: #a2d100, 8: #b9dc00, 9: #d1e800, 10: #e8f300, 11: yellow, 12: #ffe300, 13: #ffc600, 14: #ffaa00, 15: #ff8e00, 16: #ff7100, 17: #ff5500, 18: #ff3900, 19: #ff1c00, 20: red)
+			fn.generate-mixed-colors(green, yellow, red),
+			(1: green, 2: #2e9700, 3: #46a300, 4: #5dae00, 5: #74ba00, 6: #8bc500, 7: #a2d100, 8: #b9dc00, 9: #d1e800, 10: #e8f300, 11: yellow, 12: #ffe300, 13: #ffc600, 14: #ffaa00, 15: #ff8e00, 16: #ff7100, 17: #ff5500, 18: #ff3900, 19: #ff1c00, 20: red)
 		);
 		@include true.assert-equal(
-			generate-mixed-colors(#7ed321, #ffc700, #cc0000), (1: #7ed321, 2: #95d11b, 3: #a1d018, 4: #adcf15, 5: #b9ce12, 6: #c4cc0f, 7: #d0cb0c, 8: #dcca09, 9: #e8c906, 10: #f3c803, 11: #ffc700, 12: #f9b100, 13: #f49b00, 14: #ee8500, 15: #e86f00, 16: #e35800, 17: #dd4200, 18: #d72c00, 19: #d21600, 20: #cc0000)
+			fn.generate-mixed-colors(#7ed321, #ffc700, #cc0000),
+			(1: #7ed321, 2: #95d11b, 3: #a1d018, 4: #adcf15, 5: #b9ce12, 6: #c4cc0f, 7: #d0cb0c, 8: #dcca09, 9: #e8c906, 10: #f3c803, 11: #ffc700, 12: #f9b100, 13: #f49b00, 14: #ee8500, 15: #e86f00, 16: #e35800, 17: #dd4200, 18: #d72c00, 19: #d21600, 20: #cc0000)
 		);
 	}
 }

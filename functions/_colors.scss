@@ -2,11 +2,10 @@
 @use "sass:color";
 @use "sass:math";
 @use "sass:string";
+@use "./type-checking" as check;
+@use "throw";
 
-@use './type-checking' as check;
-
-@use '../node_modules/sass-true/sass/throw' as throw;
-$_is-test: false !default;
+$is-test: false !default;
 
 /// Convert HEX colors to R, G, B values
 /// @param {Color} $color
@@ -111,50 +110,49 @@ $_is-test: false !default;
 	$steps: 20,
 	$color2-peak: 11,
 ) {
-	@if(check.is-color($color1) == false) {
-		@return throw.error("❌  ===> The color1 parameter must be a color.", $catch: $_is-test);
+	@if check.is-color($color1) == false {
+		@return throw.error("❌  ===> The color1 parameter must be a color.", $catch: $is-test);
 	}
-	@if(check.is-color($color2) == false) {
-		@return throw.error("❌  ===> The color2 parameter must be a color.", $catch: $_is-test);
+	@if check.is-color($color2) == false {
+		@return throw.error("❌  ===> The color2 parameter must be a color.", $catch: $is-test);
 	}
-	@if(check.is-color($color3) == false) {
-		@return throw.error("❌  ===> The color3 parameter must be a color.", $catch: $_is-test);
+	@if check.is-color($color3) == false {
+		@return throw.error("❌  ===> The color3 parameter must be a color.", $catch: $is-test);
 	}
-	@if(check.is-integer($steps) == false) {
-		@return throw.error("❌  ===> The steps parameter must be an integer.", $catch: $_is-test);
+	@if check.is-integer($steps) == false {
+		@return throw.error("❌  ===> The steps parameter must be an integer.", $catch: $is-test);
 	}
-	@if(check.is-integer($color2-peak) == false) {
-		@return throw.error("❌  ===> The color2-peak parameter must be an integer.", $catch: $_is-test);
+	@if check.is-integer($color2-peak) == false {
+		@return throw.error("❌  ===> The color2-peak parameter must be an integer.", $catch: $is-test);
 	}
-	@if ($color2-peak > $steps) {
-		@return throw.error("❌  ===> The peak point for color2 must be less than or equal to the number of steps.", $catch: $_is-test);
+	@if $color2-peak > $steps {
+		@return throw.error("❌  ===> The peak point for color2 must be less than or equal to the number of steps.", $catch: $is-test);
 	}
-	@if ($color2-peak < 1) {
-		@return throw.error("❌  ===> The peak point for color2 must be greater than or equal to 1.", $catch: $_is-test);
+	@if  $color2-peak < 1 {
+		@return throw.error("❌  ===> The peak point for color2 must be greater than or equal to 1.", $catch: $is-test);
 	}
 
-	$colorMap: (1: $color1);
+	$color-map: (1: $color1);
 
-	@if($color2-peak > 2) {
+	@if $color2-peak > 2 {
 		@for $i from 2 through $color2-peak - 1 {
 			$percentage: (math.div(1, $color2-peak) * ($color2-peak - $i));
-			$color: mix($color1, $color2, $percentage * 100%);
-			$colorMap: map.merge($colorMap, ($i: $color));
+			$color: color.mix($color1, $color2, $percentage * 100%);
+			$color-map: map.merge($color-map, ($i: $color));
 		}
 	}
 
-	$colorMap: map.merge($colorMap, ($color2-peak: $color2));
+	$color-map: map.merge($color-map, ($color2-peak: $color2));
 
-	@if($color2-peak < $steps) {
-		@for $i from $color2-peak+1 through $steps - 1 {
+	@if $color2-peak < $steps {
+		@for $i from $color2-peak + 1 through $steps - 1 {
 			$percentage: (math.div(1, $steps - $color2-peak) * ($steps - $i));
-			$color: mix($color2, $color3, $percentage * 100%);
-
-			$colorMap: map.merge($colorMap, ($i: $color));
+			$color: color.mix($color2, $color3, $percentage * 100%);
+			$color-map: map.merge($color-map, ($i: $color));
 		}
 
-		$colorMap: map.merge($colorMap, ($steps: $color3))
+		$color-map: map.merge($color-map, ($steps: $color3))
 	}
 
-	@return $colorMap;
+	@return $color-map;
 }
