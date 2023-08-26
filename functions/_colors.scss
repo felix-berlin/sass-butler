@@ -81,3 +81,60 @@
 
   @return $shades;
 }
+
+/// Generate a map of colors that are mixed between three colors with a peak point for color2.
+/// @param $color1 - The first color.
+/// @param $color2 - The second color.
+/// @param $color3 - The third color.
+/// @param $steps - The number of steps to generate.
+/// @param $color2-peak - The peak point for color2.
+/// @return {Map} - The map of colors.
+/// @group Color
+/// @author https://github.com/red-freak
+/// @since v2.5.0
+///
+/// @example
+///    @debug generate-mixed-colors(green, yellow, red, 7, 4);
+///
+/// @example CSS - Output CSS
+///    (1: green, 2: #80c000, 3: #bfdf00, 4: yellow, 5: #ffaa00, 6: #ff5500, 7: red)
+///
+@function generate-mixed-colors(
+	$color1,
+	$color2,
+	$color3,
+	$steps: 20,
+	$color2-peak: 11,
+) {
+	@if ($color2-peak > $steps) {
+		@error "The peak point for color2 must be less than or equal to the number of steps.";
+	}
+	@if ($color2-peak < 1) {
+		@error "The peak point for color2 must be greater than or equal to 1.";
+	}
+
+	$colorMap: (1: $color1);
+
+	@if($color2-peak > 2) {
+		@for $i from 2 through $color2-peak - 1 {
+			$percentage: (math.div(1, $color2-peak) * ($color2-peak - $i));
+			$color: mix($color1, $color2, $percentage * 100%);
+			$colorMap: map.merge($colorMap, ($i: $color));
+		}
+	}
+
+	$colorMap: map.merge($colorMap, ($color2-peak: $color2));
+
+	@if($color2-peak < $steps) {
+		@for $i from $color2-peak+1 through $steps - 1 {
+			$percentage: (math.div(1, $steps - $color2-peak) * ($steps - $i));
+			$color: mix($color2, $color3, $percentage * 100%);
+
+			$colorMap: map.merge($colorMap, ($i: $color));
+		}
+
+		$colorMap: map.merge($colorMap, ($steps: $color3))
+	}
+
+	@return $colorMap;
+}
