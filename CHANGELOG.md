@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.2](https://github.com/felix-berlin/sass-butler/compare/v2.5.1...v2.5.2) (2023-08-26)
+
+
+### Bug Fixes
+
+* broken import of throw ([9886e40](https://github.com/felix-berlin/sass-butler/commit/9886e4072f1d5f1c78a133ad9c1e945a1a99bbf0))
+
 ## [2.5.1](https://github.com/felix-berlin/sass-butler/compare/v2.5.0...v2.5.1) (2023-08-26)
 
 
