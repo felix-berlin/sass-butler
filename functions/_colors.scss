@@ -3,6 +3,11 @@
 @use "sass:math";
 @use "sass:string";
 
+@use './type-checking' as check;
+
+@use '../node_modules/sass-true/sass/throw' as throw;
+$_is-test: false !default;
+
 /// Convert HEX colors to R, G, B values
 /// @param {Color} $color
 /// @return {String}
@@ -106,11 +111,26 @@
 	$steps: 20,
 	$color2-peak: 11,
 ) {
+	@if(check.is-color($color1) == false) {
+		@return throw.error("❌  ===> The color1 parameter must be a color.", $catch: $_is-test);
+	}
+	@if(check.is-color($color2) == false) {
+		@return throw.error("❌  ===> The color2 parameter must be a color.", $catch: $_is-test);
+	}
+	@if(check.is-color($color3) == false) {
+		@return throw.error("❌  ===> The color3 parameter must be a color.", $catch: $_is-test);
+	}
+	@if(check.is-integer($steps) == false) {
+		@return throw.error("❌  ===> The steps parameter must be an integer.", $catch: $_is-test);
+	}
+	@if(check.is-integer($color2-peak) == false) {
+		@return throw.error("❌  ===> The color2-peak parameter must be an integer.", $catch: $_is-test);
+	}
 	@if ($color2-peak > $steps) {
-		@error "The peak point for color2 must be less than or equal to the number of steps.";
+		@return throw.error("❌  ===> The peak point for color2 must be less than or equal to the number of steps.", $catch: $_is-test);
 	}
 	@if ($color2-peak < 1) {
-		@error "The peak point for color2 must be greater than or equal to 1.";
+		@return throw.error("❌  ===> The peak point for color2 must be greater than or equal to 1.", $catch: $_is-test);
 	}
 
 	$colorMap: (1: $color1);

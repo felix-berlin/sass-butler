@@ -126,3 +126,12 @@
 	@return is-length($value) or is-percentage($value) or
 		list.index('top' 'right' 'bottom' 'left' 'center', $value) != null;
 }
+
+/// Check if its a color value
+/// @param {Void} $value - Value to check
+/// @group Type-Checking
+/// @author https://github.com/red-freak
+/// @since v2.5.0
+@function is-color($value) {
+	@return meta.type-of($value) == 'color';
+}
