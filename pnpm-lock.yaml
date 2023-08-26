@@ -6,61 +6,61 @@ settings:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: 17.7.1
+    specifier: ^17.7.1
     version: 17.7.1
   '@commitlint/config-conventional':
-    specifier: 17.7.0
+    specifier: ^17.7.0
     version: 17.7.0
   '@semantic-release/changelog':
-    specifier: 6.0.3
+    specifier: ^6.0.3
     version: 6.0.3(semantic-release@21.1.1)
   '@semantic-release/git':
-    specifier: 10.0.1
+    specifier: ^10.0.1
     version: 10.0.1(semantic-release@21.1.1)
   glob:
-    specifier: 10.3.3
+    specifier: ^10.3.3
     version: 10.3.3
   husky:
-    specifier: 8.0.3
+    specifier: ^8.0.3
     version: 8.0.3
   jest:
-    specifier: 29.6.4
+    specifier: ^29.6.4
     version: 29.6.4(@types/node@20.4.7)(ts-node@10.8.1)
   postcss:
-    specifier: 8.4.28
+    specifier: ^8.4.28
     version: 8.4.28
   postcss-scss:
-    specifier: 4.0.7
+    specifier: ^4.0.7
     version: 4.0.7(postcss@8.4.28)
   sass:
-    specifier: 1.66.1
+    specifier: ^1.66.1
     version: 1.66.1
   sass-true:
-    specifier: 7.0.0
+    specifier: ^7.0.0
     version: 7.0.0(sass@1.66.1)
   sassdoc:
-    specifier: 2.7.4
+    specifier: ^2.7.4
     version: 2.7.4
   semantic-release:
-    specifier: 21.1.1
+    specifier: ^21.1.1
     version: 21.1.1
   stylelint:
-    specifier: 15.10.3
+    specifier: ^15.10.3
     version: 15.10.3
   stylelint-config-recommended-scss:
     specifier: ^12.0.0
     version: 12.0.0(postcss@8.4.28)(stylelint@15.10.3)
   stylelint-config-standard:
-    specifier: 34.0.0
+    specifier: ^34.0.0
     version: 34.0.0(stylelint@15.10.3)
   stylelint-config-standard-scss:
-    specifier: 10.0.0
+    specifier: ^10.0.0
     version: 10.0.0(postcss@8.4.28)(stylelint@15.10.3)
   stylelint-declaration-block-no-ignored-properties:
-    specifier: 2.7.0
+    specifier: ^2.7.0
     version: 2.7.0(stylelint@15.10.3)
   stylelint-order:
-    specifier: 6.0.3
+    specifier: ^6.0.3
     version: 6.0.3(stylelint@15.10.3)
 
 packages:
@@ -2262,11 +2262,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /diff-sequences@29.4.3:
-    resolution: {integrity: sha512-ofrBgwpPhCD85kMKtE9RYFFq6OC1A89oW2vvgWZNCwxrUpRUILopY7lsYyMDSjc8g6U6aiO0Qubg6r4Wgt5ZnA==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    dev: true
-
   /diff-sequences@29.6.3:
     resolution: {integrity: sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -3490,16 +3485,6 @@ packages:
       - supports-color
     dev: true
 
-  /jest-diff@29.6.2:
-    resolution: {integrity: sha512-t+ST7CB9GX5F2xKwhwCf0TAR17uNDiaPTZnVymP9lw0lssa9vG+AFyDZoeIHStU3WowFFwT+ky+er0WVl2yGhA==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    dependencies:
-      chalk: 4.1.2
-      diff-sequences: 29.4.3
-      jest-get-type: 29.4.3
-      pretty-format: 29.6.2
-    dev: true
-
   /jest-diff@29.6.4:
     resolution: {integrity: sha512-9F48UxR9e4XOEZvoUXEHSWY4qC4zERJaOfrbBg9JpbJOO43R1vN76REt/aMGZoY6GD5g84nnJiBIVlscegefpw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -3538,11 +3523,6 @@ packages:
       '@types/node': 20.4.7
       jest-mock: 29.6.3
       jest-util: 29.6.3
-    dev: true
-
-  /jest-get-type@29.4.3:
-    resolution: {integrity: sha512-J5Xez4nRRMjk8emnTpWrlkyb9pfRQQanDrvWHhsR1+VUfbwxi30eVcZFlcdGInRibU4G5LwHXpI7IRHU0CY+gg==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dev: true
 
   /jest-get-type@29.6.3:
@@ -4983,15 +4963,6 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pretty-format@29.6.2:
-    resolution: {integrity: sha512-1q0oC8eRveTg5nnBEWMXAU2qpv65Gnuf2eCQzSjxpWFkPaPARwqZZDGuNE0zPAZfTCHzIk3A8dIjwlQKKLphyg==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    dependencies:
-      '@jest/schemas': 29.6.3
-      ansi-styles: 5.2.0
-      react-is: 18.2.0
-    dev: true
-
   /pretty-format@29.6.3:
     resolution: {integrity: sha512-ZsBgjVhFAj5KeK+nHfF1305/By3lechHQSMWCTl8iHSbfOm2TN5nHEtFc/+W7fAyUeCs2n5iow72gld4gW0xDw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -5409,7 +5380,7 @@ packages:
     dependencies:
       '@types/css': 0.0.33
       css: 3.0.0
-      jest-diff: 29.6.2
+      jest-diff: 29.6.4
       lodash: 4.17.21
       sass: 1.66.1
     dev: true
