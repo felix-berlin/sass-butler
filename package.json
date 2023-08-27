@@ -16,6 +16,17 @@
     "email": "felix@webshaped.de",
     "url": "https://webshaped.de"
   },
+  "contributors": [
+	{
+	  "name": "Felix Scholze",
+	  "email": "felix@webshaped.de",
+	  "url": "https://webshaped.de"
+	},
+	{
+	  "name": "Sven George",
+	  "url": "https://github.com/red-freak"
+	}
+  ],
   "funding": [
     {
       "type": "GitHub Sponsors",
