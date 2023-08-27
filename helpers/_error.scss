@@ -1,0 +1,11 @@
+$is-test: false !default;
+
+/// Use the throw.error() function outside of development mode.
+/// @see node_modules/sass-true/sass/config/_throw.scss:70
+@function error($message, $source: null, $catch: $is-test) {
+	@if $catch {
+		@return '#{if($source, 'ERROR [#{$source}]:', 'ERROR:')} #{$message}';
+	} @else {
+		@error $message;
+	}
+}

@@ -16,6 +16,17 @@
     "email": "felix@webshaped.de",
     "url": "https://webshaped.de"
   },
+  "contributors": [
+	{
+	  "name": "Felix Scholze",
+	  "email": "felix@webshaped.de",
+	  "url": "https://webshaped.de"
+	},
+	{
+	  "name": "Sven George",
+	  "url": "https://github.com/red-freak"
+	}
+  ],
   "funding": [
     {
       "type": "GitHub Sponsors",
@@ -80,6 +91,7 @@
     "postcss": "^8.4.28",
     "postcss-scss": "^4.0.7",
     "sass": "^1.66.1",
+	"sass-true": "^7.0.0",
     "sassdoc": "^2.7.4",
     "semantic-release": "^21.1.1",
     "stylelint": "^15.10.3",
@@ -88,8 +100,5 @@
     "stylelint-config-standard-scss": "^10.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
     "stylelint-order": "^6.0.3"
-  },
-  "dependencies": {
-    "sass-true": "^7.0.0"
   }
 }
