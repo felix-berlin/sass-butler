@@ -154,25 +154,25 @@
   @return $shades;
  }" data-collapsed="@function generate-color-shades($base-color, $num-shades: 5, $lighten-percent: 0.5, $darken-percent: 0.5, $base-key-name: &quot;base&quot;, $light-key-name: &quot;light-&quot;, $dark-key-name: &quot;dark-&quot;) { ... }"><code>@function generate-color-shades($base-color, $num-shades: 5, $lighten-percent: 0.5, $darken-percent: 0.5, $base-key-name: &quot;base&quot;, $light-key-name: &quot;light-&quot;, $dark-key-name: &quot;dark-&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Generate shades in light and dark from a base color</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$base-color</code></th><td data-label="desc"><p>Base color</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$num-shades</code></th><td data-label="desc"><p>Number of shades to generate</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>5</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$lighten-percent</code></th><td data-label="desc"><p>Percent (in decimal places from 0 to 1) to lighten each shade</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0.5</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$darken-percent</code></th><td data-label="desc"><p>Percent (in decimal places from 0 to 1) to darken each shade</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0.5</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$base-key-name</code></th><td data-label="desc"><p>Key name for the base color</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;base&quot;</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$light-key-name</code></th><td data-label="desc"><p>Key name for the light shades</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;light-&quot;</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$dark-key-name</code></th><td data-label="desc"><p>Key name for the dark shades</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;dark-&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Map</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@debug generate-color-shades(#d33030, 5, 0.5, 0.5);</code></pre></div><div class="item__example example"><div class="example__description"><p>Output CSS</p></div><pre class="example__code language-CSS"><code>(&quot;light-1000&quot;: #d74545, &quot;light-900&quot;: #dc5a5a, &quot;light-800&quot;: #e06f6f, &quot;light-700&quot;: #e58484, &quot;light-600&quot;: #e99999, &quot;base&quot;: #d33030, &quot;dark-100&quot;: #c12929, &quot;dark-200&quot;: #ac2424, &quot;dark-300&quot;: #972020, &quot;dark-400&quot;: #811c1c, &quot;dark-500&quot;: #6c1717)</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Felix Scholze</p></li></ul></section><section class="main__item container item" id="color-function-generate-mixed-colors"><h3 class="item__heading"><a class="item__name" href="#function-generate-mixed-colors">generate-mixed-colors</a></h3><span class="item__since">Since v2.5.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function generate-mixed-colors($color1, $color2, $color3, $steps: 20, $color2-peak: 11) { 
 	@if check.is-color($color1) == false {
-		@return throw.error(&quot;❌  ===&gt; The color1 parameter must be a color.&quot;, $catch: $is-test);
+		@return helpers.error(&quot;❌  ===&gt; The color1 parameter must be a color.&quot;, $catch: $is-test);
 	}
 	@if check.is-color($color2) == false {
-		@return throw.error(&quot;❌  ===&gt; The color2 parameter must be a color.&quot;, $catch: $is-test);
+		@return helpers.error(&quot;❌  ===&gt; The color2 parameter must be a color.&quot;, $catch: $is-test);
 	}
 	@if check.is-color($color3) == false {
-		@return throw.error(&quot;❌  ===&gt; The color3 parameter must be a color.&quot;, $catch: $is-test);
+		@return helpers.error(&quot;❌  ===&gt; The color3 parameter must be a color.&quot;, $catch: $is-test);
 	}
 	@if check.is-integer($steps) == false {
-		@return throw.error(&quot;❌  ===&gt; The steps parameter must be an integer.&quot;, $catch: $is-test);
+		@return helpers.error(&quot;❌  ===&gt; The steps parameter must be an integer.&quot;, $catch: $is-test);
 	}
 	@if check.is-integer($color2-peak) == false {
-		@return throw.error(&quot;❌  ===&gt; The color2-peak parameter must be an integer.&quot;, $catch: $is-test);
+		@return helpers.error(&quot;❌  ===&gt; The color2-peak parameter must be an integer.&quot;, $catch: $is-test);
 	}
 	@if $color2-peak &gt; $steps {
-		@return throw.error(&quot;❌  ===&gt; The peak point for color2 must be less than or equal to the number of steps.&quot;, $catch: $is-test);
+		@return helpers.error(&quot;❌  ===&gt; The peak point for color2 must be less than or equal to the number of steps.&quot;, $catch: $is-test);
 	}
 	@if  $color2-peak &lt; 1 {
-		@return throw.error(&quot;❌  ===&gt; The peak point for color2 must be greater than or equal to 1.&quot;, $catch: $is-test);
+		@return helpers.error(&quot;❌  ===&gt; The peak point for color2 must be greater than or equal to 1.&quot;, $catch: $is-test);
 	}
 
 	$color-map: (1: $color1);
