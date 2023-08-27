@@ -52,6 +52,10 @@
 			(1: yellow, 2: red)
 		);
 		@include true.assert-equal(
+			fn.generate-mixed-colors(green, yellow, red, 2, 2),
+			(1: green, 2: yellow)
+		);
+		@include true.assert-equal(
 			fn.generate-mixed-colors(green, yellow, red),
 			(1: green, 2: #2e9700, 3: #46a300, 4: #5dae00, 5: #74ba00, 6: #8bc500, 7: #a2d100, 8: #b9dc00, 9: #d1e800, 10: #e8f300, 11: yellow, 12: #ffe300, 13: #ffc600, 14: #ffaa00, 15: #ff8e00, 16: #ff7100, 17: #ff5500, 18: #ff3900, 19: #ff1c00, 20: red)
 		);

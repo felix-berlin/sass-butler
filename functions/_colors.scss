@@ -3,7 +3,7 @@
 @use "sass:math";
 @use "sass:string";
 @use "./type-checking" as check;
-@use "../node_modules/sass-true/sass/throw" as throw;
+@use "../helpers" as helpers;
 
 $is-test: false !default;
 
@@ -111,25 +111,25 @@ $is-test: false !default;
 	$color2-peak: 11,
 ) {
 	@if check.is-color($color1) == false {
-		@return throw.error("❌  ===> The color1 parameter must be a color.", $catch: $is-test);
+		@return helpers.error("❌  ===> The color1 parameter must be a color.", $catch: $is-test);
 	}
 	@if check.is-color($color2) == false {
-		@return throw.error("❌  ===> The color2 parameter must be a color.", $catch: $is-test);
+		@return helpers.error("❌  ===> The color2 parameter must be a color.", $catch: $is-test);
 	}
 	@if check.is-color($color3) == false {
-		@return throw.error("❌  ===> The color3 parameter must be a color.", $catch: $is-test);
+		@return helpers.error("❌  ===> The color3 parameter must be a color.", $catch: $is-test);
 	}
 	@if check.is-integer($steps) == false {
-		@return throw.error("❌  ===> The steps parameter must be an integer.", $catch: $is-test);
+		@return helpers.error("❌  ===> The steps parameter must be an integer.", $catch: $is-test);
 	}
 	@if check.is-integer($color2-peak) == false {
-		@return throw.error("❌  ===> The color2-peak parameter must be an integer.", $catch: $is-test);
+		@return helpers.error("❌  ===> The color2-peak parameter must be an integer.", $catch: $is-test);
 	}
 	@if $color2-peak > $steps {
-		@return throw.error("❌  ===> The peak point for color2 must be less than or equal to the number of steps.", $catch: $is-test);
+		@return helpers.error("❌  ===> The peak point for color2 must be less than or equal to the number of steps.", $catch: $is-test);
 	}
 	@if  $color2-peak < 1 {
-		@return throw.error("❌  ===> The peak point for color2 must be greater than or equal to 1.", $catch: $is-test);
+		@return helpers.error("❌  ===> The peak point for color2 must be greater than or equal to 1.", $catch: $is-test);
 	}
 
 	$color-map: (1: $color1);
