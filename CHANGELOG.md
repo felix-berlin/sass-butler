@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/felix-berlin/sass-butler/compare/v2.5.3...v2.6.0) (2023-08-27)
+
+
+### Bug Fixes
+
+* updated lock file ([c1ef6de](https://github.com/felix-berlin/sass-butler/commit/c1ef6de3c6711060878acd15308b731a802ac5a1))
+
+
+### Features
+
+* replaced the throw.error function by an own to not have to use sass-true as prod-dependency ([8a0b9fd](https://github.com/felix-berlin/sass-butler/commit/8a0b9fd3bc683e1095abfa16c46b1e91939af540))
+
 ## [2.5.3](https://github.com/felix-berlin/sass-butler/compare/v2.5.2...v2.5.3) (2023-08-26)
 
 

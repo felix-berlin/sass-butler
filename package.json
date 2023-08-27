@@ -1,5 +1,5 @@
 {
-  "version": "2.5.3",
+  "version": "2.6.0",
   "name": "@felix_berlin/sass-butler",
   "license": "ISC",
   "description": "A collection of useful SCSS/SASS: mixins, functions and helpers.",
@@ -17,15 +17,15 @@
     "url": "https://webshaped.de"
   },
   "contributors": [
-	{
-	  "name": "Felix Scholze",
-	  "email": "felix@webshaped.de",
-	  "url": "https://webshaped.de"
-	},
-	{
-	  "name": "Sven George",
-	  "url": "https://github.com/red-freak"
-	}
+    {
+      "name": "Felix Scholze",
+      "email": "felix@webshaped.de",
+      "url": "https://webshaped.de"
+    },
+    {
+      "name": "Sven George",
+      "url": "https://github.com/red-freak"
+    }
   ],
   "funding": [
     {
@@ -91,7 +91,7 @@
     "postcss": "^8.4.28",
     "postcss-scss": "^4.0.7",
     "sass": "^1.66.1",
-	"sass-true": "^7.0.0",
+    "sass-true": "^7.0.0",
     "sassdoc": "^2.7.4",
     "semantic-release": "^21.1.1",
     "stylelint": "^15.10.3",
