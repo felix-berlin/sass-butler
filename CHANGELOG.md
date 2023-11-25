@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.2](https://github.com/felix-berlin/sass-butler/compare/v2.6.1...v2.6.2) (2023-11-25)
+
+
+### Bug Fixes
+
+* **generate-color-shades:** no more duplicated colors ([561b527](https://github.com/felix-berlin/sass-butler/commit/561b5270a17fc6cea3add51b37b0a8640c0354e4))
+
 ## [2.6.1](https://github.com/felix-berlin/sass-butler/compare/v2.6.0...v2.6.1) (2023-11-25)
 
 
