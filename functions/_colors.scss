@@ -45,7 +45,7 @@ $is-test: false !default;
 ///    @debug generate-color-shades(#d33030, 5, 0.5, 0.5);
 ///
 /// @example CSS - Output CSS
-///    ("light-1000": #d74545, "light-900": #dc5a5a, "light-800": #e06f6f, "light-700": #e58484, "light-600": #e99999, "base": #d33030, "dark-100": #c12929, "dark-200": #ac2424, "dark-300": #972020, "dark-400": #811c1c, "dark-500": #6c1717)
+///    ("light-100": #d74545, "light-200": #dc5a5a, "light-300": #e06f6f, "light-400": #e58484, "light-500": #e99999, "base": #d33030, "dark-1000": #c12929, "dark-900": #ac2424, "dark-800": #972020, "dark-700": #811c1c, "dark-600": #6c1717)
 ///
 @function generate-color-shades(
   $base-color,
@@ -64,7 +64,7 @@ $is-test: false !default;
       $base-color,
       $lightness: calc((100% / ($num-shades * 2)) * $i * $lighten-percent)
     );
-    $shades: map.merge($shades, ($light-key-name + (11 - $i) * 100: $shade));
+    $shades: map.merge($shades, ($light-key-name + $i * 100: $shade));
   }
 
   $shades: map.merge(
@@ -80,7 +80,7 @@ $is-test: false !default;
       $base-color,
       $lightness: calc((100% / ($num-shades * 2)) * $i * -1 * $darken-percent)
     );
-    $shades: map.merge($shades, ($dark-key-name + $i * 100: $shade));
+    $shades: map.merge($shades, ($dark-key-name + (11 - $i) * 100: $shade));
   }
 
   @return $shades;
