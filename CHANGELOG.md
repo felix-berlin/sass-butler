@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/felix-berlin/sass-butler/compare/v2.6.0...v2.6.1) (2023-11-25)
+
+
+### Bug Fixes
+
+* **generate-color-shades:** bright colors now start with the smaller numbers ([76f09d2](https://github.com/felix-berlin/sass-butler/commit/76f09d25aefa39a26b87e72931c9fc7137bb3d02))
+
 # [2.6.0](https://github.com/felix-berlin/sass-butler/compare/v2.5.3...v2.6.0) (2023-08-27)
 
 
