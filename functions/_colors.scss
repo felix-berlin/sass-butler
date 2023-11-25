@@ -28,7 +28,10 @@ $is-test: false !default;
   @return string.unquote("rgb") + "(" + (color.red($color) color.green($color) color.blue($color)) + if($alpha, " / " + $alpha, "") + ")";
 }
 
-/// Generate shades in light and dark from a base color
+/// Generate shades in light and dark from a base color.
+/// The base color is the starting point, light shades starting from 100, dark shades following when the light shades are finished.
+/// If on one of the both sides the shades are the same, the loop will break and the duplicate will be removed.
+///
 /// @param {Color} $base-color - Base color
 /// @param {Number} $num-shades [5] - Number of shades to generate
 /// @param {Number} $lighten-percent [0.5] - Percent (in decimal places from 0 to 1) to lighten each shade
@@ -57,14 +60,23 @@ $is-test: false !default;
   $dark-key-name: "dark-"
 ) {
   $shades: ();
+  $previous-shade: null;
+  $i: 1;
 
   /// Generate shades for light mode
-  @for $i from 1 through $num-shades {
+  @while $i <= $num-shades {
     $shade: color.adjust(
       $base-color,
       $lightness: calc((100% / ($num-shades * 2)) * $i * $lighten-percent)
     );
-    $shades: map.merge($shades, ($light-key-name + $i * 100: $shade));
+    // Break the loop and remove the duplicate
+    @if $shade == $previous-shade {
+      $i: $num-shades + 1;
+    } @else {
+      $shades: map.merge($shades, ($light-key-name + $i * 100: $shade));
+      $previous-shade: $shade;
+      $i: $i + 1;
+    }
   }
 
   $shades: map.merge(
@@ -74,13 +86,22 @@ $is-test: false !default;
     )
   );
 
+  $i: 1;
+  $previous-shade: null;
   /// Generate shades for dark mode
-  @for $i from 1 through $num-shades {
+  @while $i <= $num-shades {
     $shade: color.adjust(
       $base-color,
       $lightness: calc((100% / ($num-shades * 2)) * $i * -1 * $darken-percent)
     );
-    $shades: map.merge($shades, ($dark-key-name + (11 - $i) * 100: $shade));
+    // Break the loop and remove the duplicate
+    @if $shade == $previous-shade {
+      $i: $num-shades + 1;
+    } @else {
+      $shades: map.merge($shades, ($dark-key-name + (11 - $i) * 100: $shade));
+      $previous-shade: $shade;
+      $i: $i + 1;
+    }
   }
 
   @return $shades;
