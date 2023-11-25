@@ -30,78 +30,57 @@ $is-test: false !default;
 
 /// Generate shades in light and dark from a base color.
 /// The base color is the starting point, light shades starting from 100, dark shades following when the light shades are finished.
-/// If on one of the both sides the shades are the same, the loop will break and the duplicate will be removed.
 ///
 /// @param {Color} $base-color - Base color
 /// @param {Number} $num-shades [5] - Number of shades to generate
 /// @param {Number} $lighten-percent [0.5] - Percent (in decimal places from 0 to 1) to lighten each shade
 /// @param {Number} $darken-percent [0.5] - Percent (in decimal places from 0 to 1) to darken each shade
-/// @param {String} $base-key-name ["base"] - Key name for the base color
-/// @param {String} $light-key-name ["light-"] - Key name for the light shades
-/// @param {String} $dark-key-name ["dark-"] - Key name for the dark shades
+/// @param {String} $color-key-name ["color"] - Key name for the base color
+/// @param {String} $color-key-separator ["-"] - Key separator for the base color
 /// @return {Map}
 /// @group Color
 /// @author Felix Scholze
 /// @since v2.4.0
 ///
 /// @example
-///    @debug generate-color-shades(#d33030, 5, 0.5, 0.5);
+///    @debug generate-color-shades(#d33030, 5, 0.5, 0.5, "red");
 ///
 /// @example CSS - Output CSS
-///    ("light-100": #d74545, "light-200": #dc5a5a, "light-300": #e06f6f, "light-400": #e58484, "light-500": #e99999, "base": #d33030, "dark-1000": #c12929, "dark-900": #ac2424, "dark-800": #972020, "dark-700": #811c1c, "dark-600": #6c1717)
+///    ("red-500": #d74545, "red-400": #dc5a5a, "red-300": #e06f6f, "red-200": #e58484, "red-100": #e99999, "red": #d33030, "red-600": #c12929, "red-700": #ac2424, "red-800": #972020, "red-900": #811c1c, "red-1000": #6c1717)
 ///
 @function generate-color-shades(
   $base-color,
   $num-shades: 5,
   $lighten-percent: 0.5,
   $darken-percent: 0.5,
-  $base-key-name: "base",
-  $light-key-name: "light-",
-  $dark-key-name: "dark-"
+  $color-key-name: "color",
+	$color-key-separator: "-",
 ) {
   $shades: ();
-  $previous-shade: null;
-  $i: 1;
 
   /// Generate shades for light mode
-  @while $i <= $num-shades {
+  @for $i from 1 through $num-shades {
     $shade: color.adjust(
       $base-color,
       $lightness: calc((100% / ($num-shades * 2)) * $i * $lighten-percent)
     );
-    // Break the loop and remove the duplicate
-    @if $shade == $previous-shade {
-      $i: $num-shades + 1;
-    } @else {
-      $shades: map.merge($shades, ($light-key-name + $i * 100: $shade));
-      $previous-shade: $shade;
-      $i: $i + 1;
-    }
+    $shades: map.merge($shades, ($color-key-name + $color-key-separator + (($num-shades + 1) - $i) * 100: $shade));
   }
 
   $shades: map.merge(
     $shades,
     (
-      $base-key-name: $base-color,
+      $color-key-name: $base-color,
     )
   );
 
-  $i: 1;
-  $previous-shade: null;
   /// Generate shades for dark mode
-  @while $i <= $num-shades {
+  @for $i from 1 through $num-shades {
     $shade: color.adjust(
       $base-color,
       $lightness: calc((100% / ($num-shades * 2)) * $i * -1 * $darken-percent)
     );
-    // Break the loop and remove the duplicate
-    @if $shade == $previous-shade {
-      $i: $num-shades + 1;
-    } @else {
-      $shades: map.merge($shades, ($dark-key-name + (11 - $i) * 100: $shade));
-      $previous-shade: $shade;
-      $i: $i + 1;
-    }
+    $shades: map.merge($shades, ($color-key-name + $color-key-separator + ($i + $num-shades) * 100: $shade));
   }
 
   @return $shades;
