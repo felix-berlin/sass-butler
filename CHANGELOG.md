@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/felix-berlin/sass-butler/compare/v2.6.3...v3.0.0) (2024-01-07)
+
+
+### Code Refactoring
+
+* **dark-mode-class:** rewrite of the mixin ([49f2a29](https://github.com/felix-berlin/sass-butler/commit/49f2a292abe1cb724e8c10a311fa1659708ea643))
+
+
+### BREAKING CHANGES
+
+* **dark-mode-class:** the complete dark-mode-class mixin api has changes (see docs)
+
 ## [2.6.3](https://github.com/felix-berlin/sass-butler/compare/v2.6.2...v2.6.3) (2023-11-25)
 
 
