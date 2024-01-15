@@ -56,7 +56,7 @@
     "test:watch": "jest --watch",
     "test:output": "sass tests/tests.scss:tests/dist/tests.css",
     "test:output-watch": "sass --watch tests/tests.scss:tests/dist/tests.css",
-    "release": "semantic-release --branches master",
+    "release": "semantic-release --branches master"
   },
   "keywords": [
     "scss",
