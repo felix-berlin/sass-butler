@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/felix-berlin/sass-butler/compare/v3.0.0...v3.0.1) (2024-01-15)
+
+
+### Bug Fixes
+
+* json syntax error ([b8411d0](https://github.com/felix-berlin/sass-butler/commit/b8411d04f0624772b7f24925a1bded12ca2ed579))
+* remove only allow pnpm ([59356d2](https://github.com/felix-berlin/sass-butler/commit/59356d2d1efd3d2a7e97a06f21d882ea44865d27))
+
 # [3.0.0](https://github.com/felix-berlin/sass-butler/compare/v2.6.3...v3.0.0) (2024-01-07)
 
 
