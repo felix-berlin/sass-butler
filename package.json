@@ -57,7 +57,6 @@
     "test:output": "sass tests/tests.scss:tests/dist/tests.css",
     "test:output-watch": "sass --watch tests/tests.scss:tests/dist/tests.css",
     "release": "semantic-release --branches master",
-    "preinstall": "npx only-allow pnpm"
   },
   "keywords": [
     "scss",
