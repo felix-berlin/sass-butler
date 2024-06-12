@@ -37,10 +37,10 @@ importers:
         version: 4.0.9(postcss@8.4.38)
       sass:
         specifier: ^1.69.7
-        version: 1.77.3
+        version: 1.77.5
       sass-true:
         specifier: ^7.0.1
-        version: 7.0.1(sass@1.77.3)
+        version: 7.0.1(sass@1.77.5)
       sassdoc:
         specifier: ^2.7.4
         version: 2.7.4(chokidar@3.6.0)
@@ -2864,6 +2864,10 @@ packages:
   q@1.5.1:
     resolution: {integrity: sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==}
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
+    deprecated: |-
+      You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+
+      (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -3023,8 +3027,8 @@ packages:
     peerDependencies:
       sass: '>=1.45.0'
 
-  sass@1.77.3:
-    resolution: {integrity: sha512-WJHo+jmFp0dwRuymPmIovuxHaBntcCyja5hCB0yYY9wWrViEp4kF5Cdai98P72v6FzroPuABqu+ddLMbQWmwzA==}
+  sass@1.77.5:
+    resolution: {integrity: sha512-oDfX1mukIlxacPdQqNb6mV2tVCrnE+P3nVYioy72V5tlk56CPNcO4TCuFcaCRKKfJ1M3lH95CleRS+dVKL2qMg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -7008,14 +7012,14 @@ snapshots:
       through2: 2.0.5
       which: 1.3.1
 
-  sass-true@7.0.1(sass@1.77.3):
+  sass-true@7.0.1(sass@1.77.5):
     dependencies:
       '@adobe/css-tools': 4.3.2
       jest-diff: 29.7.0
       lodash: 4.17.21
-      sass: 1.77.3
+      sass: 1.77.5
 
-  sass@1.77.3:
+  sass@1.77.5:
     dependencies:
       chokidar: 3.6.0
       immutable: 4.3.6
