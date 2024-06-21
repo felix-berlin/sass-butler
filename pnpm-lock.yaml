@@ -37,10 +37,10 @@ importers:
         version: 4.0.9(postcss@8.4.38)
       sass:
         specifier: ^1.69.7
-        version: 1.77.5
+        version: 1.77.6
       sass-true:
         specifier: ^7.0.1
-        version: 7.0.1(sass@1.77.5)
+        version: 7.0.1(sass@1.77.6)
       sassdoc:
         specifier: ^2.7.4
         version: 2.7.4(chokidar@3.6.0)
@@ -3030,8 +3030,8 @@ packages:
     peerDependencies:
       sass: '>=1.45.0'
 
-  sass@1.77.5:
-    resolution: {integrity: sha512-oDfX1mukIlxacPdQqNb6mV2tVCrnE+P3nVYioy72V5tlk56CPNcO4TCuFcaCRKKfJ1M3lH95CleRS+dVKL2qMg==}
+  sass@1.77.6:
+    resolution: {integrity: sha512-ByXE1oLD79GVq9Ht1PeHWCPMPB8XHpBuz1r85oByKHjZY6qV6rWnQovQzXJXuQ/XyE1Oj3iPk3lo28uzaRA2/Q==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -7018,14 +7018,14 @@ snapshots:
       through2: 2.0.5
       which: 1.3.1
 
-  sass-true@7.0.1(sass@1.77.5):
+  sass-true@7.0.1(sass@1.77.6):
     dependencies:
       '@adobe/css-tools': 4.3.2
       jest-diff: 29.7.0
       lodash: 4.17.21
-      sass: 1.77.5
+      sass: 1.77.6
 
-  sass@1.77.5:
+  sass@1.77.6:
     dependencies:
       chokidar: 3.6.0
       immutable: 4.3.6
