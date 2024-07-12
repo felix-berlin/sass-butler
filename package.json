@@ -90,7 +90,7 @@
     "postcss": "^8.4.33",
     "postcss-scss": "^4.0.9",
     "sass": "^1.69.7",
-    "sass-true": "^7.0.1",
+    "sass-true": "^8.0.0",
     "sassdoc": "^2.7.4",
     "semantic-release": "^23.0.0",
     "stylelint": "^16.1.0",
