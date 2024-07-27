@@ -3,6 +3,7 @@
 > Stands by your side with plenty of features and mixins.
 
 ![npm](https://img.shields.io/npm/dm/@felix_berlin/sass-butler?logo=npm&style=flat-square)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/felix-berlin/sass-butler/total?style=flat-square&logo=github)
 ![npm (scoped)](https://img.shields.io/npm/v/@felix_berlin/sass-butler?logo=npm&style=flat-square)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/felix-berlin/sass-butler?label=github&logo=github&style=flat-square)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/felix-berlin/scss-collection/build-docs.yml?label=build%20docs&logo=github&style=flat-square)
