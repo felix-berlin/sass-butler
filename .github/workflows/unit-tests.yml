@@ -31,6 +31,6 @@ jobs:
         run: npx jest --coverage
 
       - name: codecoverage
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
