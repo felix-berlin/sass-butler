@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/felix-berlin/sass-butler/compare/v3.0.1...v3.1.0) (2024-12-13)
+
+
+### Features
+
+* upgrade to new sass colors functions ([b624ef8](https://github.com/felix-berlin/sass-butler/commit/b624ef817852482b58fde8eed9312eb5229f7774))
+
 ## [3.0.1](https://github.com/felix-berlin/sass-butler/compare/v3.0.0...v3.0.1) (2024-01-15)
 
 
