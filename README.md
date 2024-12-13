@@ -98,7 +98,7 @@ yarn add -D sass
 
 ## Requirements
 
-This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-module-system-is-launched). Therefore your build tool or taskrunner have to support **Dart Sass 1.33.0** or above.
+This project uses the "new" [Sass Module system](https://sass-lang.com/blog/the-module-system-is-launched). Therefore your build tool or taskrunner have to support **Dart Sass 1.79.0** or above.
 
 ### <img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" width="50"> Sass support
 
