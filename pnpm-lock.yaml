@@ -54,8 +54,8 @@ importers:
         specifier: ^14.1.0
         version: 14.1.0(postcss@8.4.49)(stylelint@16.12.0(typescript@5.4.5))
       stylelint-config-standard:
-        specifier: ^36.0.1
-        version: 36.0.1(stylelint@16.12.0(typescript@5.4.5))
+        specifier: ^37.0.0
+        version: 37.0.0(stylelint@16.12.0(typescript@5.4.5))
       stylelint-config-standard-scss:
         specifier: ^14.0.0
         version: 14.0.0(postcss@8.4.49)(stylelint@16.12.0(typescript@5.4.5))
@@ -3192,6 +3192,12 @@ packages:
     peerDependencies:
       stylelint: ^16.1.0
 
+  stylelint-config-recommended@15.0.0:
+    resolution: {integrity: sha512-9LejMFsat7L+NXttdHdTq94byn25TD+82bzGRiV1Pgasl99pWnwipXS5DguTpp3nP1XjvLXVnEJIuYBfsRjRkA==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      stylelint: ^16.13.0
+
   stylelint-config-standard-scss@14.0.0:
     resolution: {integrity: sha512-6Pa26D9mHyi4LauJ83ls3ELqCglU6VfCXchovbEqQUiEkezvKdv6VgsIoMy58i00c854wVmOw0k8W5FTpuaVqg==}
     engines: {node: '>=18.12.0'}
@@ -3207,6 +3213,12 @@ packages:
     engines: {node: '>=18.12.0'}
     peerDependencies:
       stylelint: ^16.1.0
+
+  stylelint-config-standard@37.0.0:
+    resolution: {integrity: sha512-+6eBlbSTrOn/il2RlV0zYGQwRTkr+WtzuVSs1reaWGObxnxLpbcspCUYajVQHonVfxVw2U+h42azGhrBvcg8OA==}
+    engines: {node: '>=18.12.0'}
+    peerDependencies:
+      stylelint: ^16.13.0
 
   stylelint-declaration-block-no-ignored-properties@2.8.0:
     resolution: {integrity: sha512-Ws8Cav7Y+SPN0JsV407LrnNXWOrqGjxShf+37GBtnU/C58Syve9c0+I/xpLcFOosST3ternykn3Lp77f3ITnFw==}
@@ -6990,6 +7002,10 @@ snapshots:
     dependencies:
       stylelint: 16.12.0(typescript@5.4.5)
 
+  stylelint-config-recommended@15.0.0(stylelint@16.12.0(typescript@5.4.5)):
+    dependencies:
+      stylelint: 16.12.0(typescript@5.4.5)
+
   stylelint-config-standard-scss@14.0.0(postcss@8.4.49)(stylelint@16.12.0(typescript@5.4.5)):
     dependencies:
       stylelint: 16.12.0(typescript@5.4.5)
@@ -7002,6 +7018,11 @@ snapshots:
     dependencies:
       stylelint: 16.12.0(typescript@5.4.5)
       stylelint-config-recommended: 14.0.1(stylelint@16.12.0(typescript@5.4.5))
+
+  stylelint-config-standard@37.0.0(stylelint@16.12.0(typescript@5.4.5)):
+    dependencies:
+      stylelint: 16.12.0(typescript@5.4.5)
+      stylelint-config-recommended: 15.0.0(stylelint@16.12.0(typescript@5.4.5))
 
   stylelint-declaration-block-no-ignored-properties@2.8.0(stylelint@16.12.0(typescript@5.4.5)):
     dependencies:
