@@ -1,4 +1,6 @@
 name: Release
+permissions:
+  contents: read
 on:
   workflow_run:
     workflows: [Unit tests]
@@ -10,14 +12,19 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for trusted publishing and npm provenance
     steps:
-      - name: Checkout
+      - name: Checkout ✅
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
 
-      - name: Setup Node.js
+      - name: Setup Node.js 🛠️
         uses: actions/setup-node@v6
         with:
           node-version: "lts/*"
@@ -25,11 +32,10 @@ jobs:
       - name: Setup pnpm 🛠️
         uses: pnpm/action-setup@v4
 
-      - name: Install dependencies
+      - name: Install dependencies 🔧
         run: pnpm install --ignore-scripts
 
-      - name: Release
+      - name: Release 🚀
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: pnpm exec semantic-release
