@@ -25,7 +25,7 @@ $is-test: false !default;
 /// @author Felix Scholze
 /// @since v1.5.0
 @function hex-to-rgb($color, $alpha: false) {
-  @return string.unquote("rgb") + "(" + (color.channel($color, 'red', $space: rgb) color.channel($color, 'green', $space: rgb) color.channel($color, 'blue', $space: rgb)) + if($alpha, " / " + $alpha, "") + ")";
+  @return string.unquote("rgb") + "(" + (color.channel($color, 'red', $space: rgb) color.channel($color, 'green', $space: rgb) color.channel($color, 'blue', $space: rgb)) + if(sass($alpha): " / " + $alpha; else: "") + ")";
 }
 
 /// Generate shades in light and dark from a base color.

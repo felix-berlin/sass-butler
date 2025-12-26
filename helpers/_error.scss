@@ -4,7 +4,7 @@ $is-test: false !default;
 /// @see node_modules/sass-true/sass/config/_throw.scss:70
 @function error($message, $source: null, $catch: $is-test) {
 	@if $catch {
-		@return '#{if($source, 'ERROR [#{$source}]:', 'ERROR:')} #{$message}';
+		@return '#{if(sass($source): 'ERROR [#{$source}]:'; else: 'ERROR:')} #{$message}';
 	} @else {
 		@error $message;
 	}
