@@ -94,7 +94,7 @@
     "sass-true": "^10.1.0",
     "sassdoc": "^2.7.4",
     "semantic-release": "^25.0.2",
-    "stylelint": "^16.26.1",
+    "stylelint": "^17.0.0",
     "stylelint-config-recommended-scss": "^16.0.2",
     "stylelint-config-standard": "^39.0.1",
     "stylelint-config-standard-scss": "^16.0.0",
