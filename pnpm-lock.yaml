@@ -49,22 +49,22 @@ importers:
         version: 25.0.3(typescript@5.4.5)
       stylelint:
         specifier: ^17.0.0
-        version: 17.5.0(typescript@5.4.5)
+        version: 17.6.0(typescript@5.4.5)
       stylelint-config-recommended-scss:
         specifier: ^16.0.2
-        version: 16.0.2(postcss@8.5.8)(stylelint@17.5.0(typescript@5.4.5))
+        version: 16.0.2(postcss@8.5.8)(stylelint@17.6.0(typescript@5.4.5))
       stylelint-config-standard:
         specifier: ^39.0.1
-        version: 39.0.1(stylelint@17.5.0(typescript@5.4.5))
+        version: 39.0.1(stylelint@17.6.0(typescript@5.4.5))
       stylelint-config-standard-scss:
         specifier: ^16.0.0
-        version: 16.0.0(postcss@8.5.8)(stylelint@17.5.0(typescript@5.4.5))
+        version: 16.0.0(postcss@8.5.8)(stylelint@17.6.0(typescript@5.4.5))
       stylelint-declaration-block-no-ignored-properties:
         specifier: ^2.8.0
-        version: 2.8.0(stylelint@17.5.0(typescript@5.4.5))
+        version: 2.8.0(stylelint@17.6.0(typescript@5.4.5))
       stylelint-order:
         specifier: ^7.0.0
-        version: 7.0.1(stylelint@17.5.0(typescript@5.4.5))
+        version: 7.0.1(stylelint@17.6.0(typescript@5.4.5))
 
 packages:
 
@@ -349,8 +349,8 @@ packages:
     peerDependencies:
       '@csstools/css-tokenizer': ^4.0.0
 
-  '@csstools/css-syntax-patches-for-csstree@1.1.1':
-    resolution: {integrity: sha512-BvqN0AMWNAnLk9G8jnUT77D+mUbY/H2b3uDTvg2isJkHaOufUE2R3AOwxWo7VBQKT1lOdwdvorddo2B/lk64+w==}
+  '@csstools/css-syntax-patches-for-csstree@1.1.2':
+    resolution: {integrity: sha512-5GkLzz4prTIpoyeUiIu3iV6CSG3Plo7xRVOFPKI7FVEJ3mZ0A8SwK0XU3Gl7xAkiQ+mDyam+NNp875/C5y+jSA==}
     peerDependencies:
       css-tree: ^3.2.1
     peerDependenciesMeta:
@@ -1840,8 +1840,8 @@ packages:
     resolution: {integrity: sha512-UqBRqi4ju7T+TqGNdqAO0PaSVGsDGJUBQvk9eUWNGRY1CFGDzYhLWoM7JQEemnlvVcv/YEmc2wNW8BC24EnUsw==}
     engines: {node: '>=8'}
 
-  hashery@1.5.0:
-    resolution: {integrity: sha512-nhQ6ExaOIqti2FDWoEMWARUqIKyjr2VcZzXShrI+A3zpeiuPWzx6iPftt44LhP74E5sW36B75N6VHbvRtpvO6Q==}
+  hashery@1.5.1:
+    resolution: {integrity: sha512-iZyKG96/JwPz1N55vj2Ie2vXbhu440zfUfJvSwEqEbeLluk7NnapfGqa7LH0mOsnDxTF85Mx8/dyR6HfqcbmbQ==}
     engines: {node: '>=20'}
 
   hasown@2.0.2:
@@ -2941,12 +2941,12 @@ packages:
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
-  picomatch@2.3.1:
-    resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
+  picomatch@2.3.2:
+    resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.3:
-    resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
+  picomatch@4.0.4:
+    resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
 
   pify@3.0.0:
@@ -3463,8 +3463,8 @@ packages:
     peerDependencies:
       stylelint: ^16.8.2
 
-  stylelint@17.5.0:
-    resolution: {integrity: sha512-o/NS6zhsPZFmgUm5tXX4pVNg1XDOZSlucLdf2qow/lVn4JIyzZIQ5b3kad1ugqUj3GSIgr2u5lQw7X8rjqw33g==}
+  stylelint@17.6.0:
+    resolution: {integrity: sha512-tokrsMIVAR9vAQ/q3UVEr7S0dGXCi7zkCezPRnS2kqPUulvUh5Vgfwngrk4EoAoW7wnrThqTdnTFN5Ra7CaxIg==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -4058,7 +4058,7 @@ snapshots:
 
   '@cacheable/utils@2.4.0':
     dependencies:
-      hashery: 1.5.0
+      hashery: 1.5.1
       keyv: 5.6.0
 
   '@colors/colors@1.5.0':
@@ -4196,7 +4196,7 @@ snapshots:
     dependencies:
       '@csstools/css-tokenizer': 4.0.0
 
-  '@csstools/css-syntax-patches-for-csstree@1.1.1(css-tree@3.2.1)':
+  '@csstools/css-syntax-patches-for-csstree@1.1.2(css-tree@3.2.1)':
     optionalDependencies:
       css-tree: 3.2.1
 
@@ -4450,7 +4450,7 @@ snapshots:
 
   '@keyv/bigmap@1.3.1(keyv@5.6.0)':
     dependencies:
-      hashery: 1.5.0
+      hashery: 1.5.1
       hookified: 1.15.1
       keyv: 5.6.0
 
@@ -4916,7 +4916,7 @@ snapshots:
   anymatch@3.1.3:
     dependencies:
       normalize-path: 3.0.0
-      picomatch: 2.3.1
+      picomatch: 2.3.2
 
   append-buffer@1.0.2:
     dependencies:
@@ -5562,9 +5562,9 @@ snapshots:
     dependencies:
       bser: 2.1.1
 
-  fdir@6.5.0(picomatch@4.0.3):
+  fdir@6.5.0(picomatch@4.0.4):
     optionalDependencies:
-      picomatch: 4.0.3
+      picomatch: 4.0.4
 
   figures@2.0.0:
     dependencies:
@@ -5836,7 +5836,7 @@ snapshots:
 
   has-yarn@2.1.0: {}
 
-  hashery@1.5.0:
+  hashery@1.5.1:
     dependencies:
       hookified: 1.15.1
 
@@ -6211,7 +6211,7 @@ snapshots:
       jest-regex-util: 30.0.1
       jest-util: 30.3.0
       jest-worker: 30.3.0
-      picomatch: 4.0.3
+      picomatch: 4.0.4
       walker: 1.0.8
     optionalDependencies:
       fsevents: 2.3.3
@@ -6235,7 +6235,7 @@ snapshots:
       '@types/stack-utils': 2.0.3
       chalk: 4.1.2
       graceful-fs: 4.2.11
-      picomatch: 4.0.3
+      picomatch: 4.0.4
       pretty-format: 30.3.0
       slash: 3.0.0
       stack-utils: 2.0.6
@@ -6357,7 +6357,7 @@ snapshots:
       chalk: 4.1.2
       ci-info: 4.4.0
       graceful-fs: 4.2.11
-      picomatch: 4.0.3
+      picomatch: 4.0.4
 
   jest-validate@30.3.0:
     dependencies:
@@ -6674,7 +6674,7 @@ snapshots:
   micromatch@4.0.8:
     dependencies:
       braces: 3.0.3
-      picomatch: 2.3.1
+      picomatch: 2.3.2
 
   mime@4.1.0: {}
 
@@ -6946,9 +6946,9 @@ snapshots:
 
   picocolors@1.1.1: {}
 
-  picomatch@2.3.1: {}
+  picomatch@2.3.2: {}
 
-  picomatch@4.0.3: {}
+  picomatch@4.0.4: {}
 
   pify@3.0.0: {}
 
@@ -7108,7 +7108,7 @@ snapshots:
 
   readdirp@3.6.0:
     dependencies:
-      picomatch: 2.3.1
+      picomatch: 2.3.2
     optional: true
 
   readdirp@4.1.2: {}
@@ -7471,43 +7471,43 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  stylelint-config-recommended-scss@16.0.2(postcss@8.5.8)(stylelint@17.5.0(typescript@5.4.5)):
+  stylelint-config-recommended-scss@16.0.2(postcss@8.5.8)(stylelint@17.6.0(typescript@5.4.5)):
     dependencies:
       postcss-scss: 4.0.9(postcss@8.5.8)
-      stylelint: 17.5.0(typescript@5.4.5)
-      stylelint-config-recommended: 17.0.0(stylelint@17.5.0(typescript@5.4.5))
-      stylelint-scss: 6.13.0(stylelint@17.5.0(typescript@5.4.5))
+      stylelint: 17.6.0(typescript@5.4.5)
+      stylelint-config-recommended: 17.0.0(stylelint@17.6.0(typescript@5.4.5))
+      stylelint-scss: 6.13.0(stylelint@17.6.0(typescript@5.4.5))
     optionalDependencies:
       postcss: 8.5.8
 
-  stylelint-config-recommended@17.0.0(stylelint@17.5.0(typescript@5.4.5)):
+  stylelint-config-recommended@17.0.0(stylelint@17.6.0(typescript@5.4.5)):
     dependencies:
-      stylelint: 17.5.0(typescript@5.4.5)
+      stylelint: 17.6.0(typescript@5.4.5)
 
-  stylelint-config-standard-scss@16.0.0(postcss@8.5.8)(stylelint@17.5.0(typescript@5.4.5)):
+  stylelint-config-standard-scss@16.0.0(postcss@8.5.8)(stylelint@17.6.0(typescript@5.4.5)):
     dependencies:
-      stylelint: 17.5.0(typescript@5.4.5)
-      stylelint-config-recommended-scss: 16.0.2(postcss@8.5.8)(stylelint@17.5.0(typescript@5.4.5))
-      stylelint-config-standard: 39.0.1(stylelint@17.5.0(typescript@5.4.5))
+      stylelint: 17.6.0(typescript@5.4.5)
+      stylelint-config-recommended-scss: 16.0.2(postcss@8.5.8)(stylelint@17.6.0(typescript@5.4.5))
+      stylelint-config-standard: 39.0.1(stylelint@17.6.0(typescript@5.4.5))
     optionalDependencies:
       postcss: 8.5.8
 
-  stylelint-config-standard@39.0.1(stylelint@17.5.0(typescript@5.4.5)):
+  stylelint-config-standard@39.0.1(stylelint@17.6.0(typescript@5.4.5)):
     dependencies:
-      stylelint: 17.5.0(typescript@5.4.5)
-      stylelint-config-recommended: 17.0.0(stylelint@17.5.0(typescript@5.4.5))
+      stylelint: 17.6.0(typescript@5.4.5)
+      stylelint-config-recommended: 17.0.0(stylelint@17.6.0(typescript@5.4.5))
 
-  stylelint-declaration-block-no-ignored-properties@2.8.0(stylelint@17.5.0(typescript@5.4.5)):
+  stylelint-declaration-block-no-ignored-properties@2.8.0(stylelint@17.6.0(typescript@5.4.5)):
     dependencies:
-      stylelint: 17.5.0(typescript@5.4.5)
+      stylelint: 17.6.0(typescript@5.4.5)
 
-  stylelint-order@7.0.1(stylelint@17.5.0(typescript@5.4.5)):
+  stylelint-order@7.0.1(stylelint@17.6.0(typescript@5.4.5)):
     dependencies:
       postcss: 8.5.8
       postcss-sorting: 9.1.0(postcss@8.5.8)
-      stylelint: 17.5.0(typescript@5.4.5)
+      stylelint: 17.6.0(typescript@5.4.5)
 
-  stylelint-scss@6.13.0(stylelint@17.5.0(typescript@5.4.5)):
+  stylelint-scss@6.13.0(stylelint@17.6.0(typescript@5.4.5)):
     dependencies:
       css-tree: 3.2.1
       is-plain-object: 5.0.0
@@ -7517,13 +7517,13 @@ snapshots:
       postcss-resolve-nested-selector: 0.1.6
       postcss-selector-parser: 7.1.1
       postcss-value-parser: 4.2.0
-      stylelint: 17.5.0(typescript@5.4.5)
+      stylelint: 17.6.0(typescript@5.4.5)
 
-  stylelint@17.5.0(typescript@5.4.5):
+  stylelint@17.6.0(typescript@5.4.5):
     dependencies:
       '@csstools/css-calc': 3.1.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
-      '@csstools/css-syntax-patches-for-csstree': 1.1.1(css-tree@3.2.1)
+      '@csstools/css-syntax-patches-for-csstree': 1.1.2(css-tree@3.2.1)
       '@csstools/css-tokenizer': 4.0.0
       '@csstools/media-query-list-parser': 5.0.0(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/selector-resolve-nested': 4.0.0(postcss-selector-parser@7.1.1)
@@ -7542,7 +7542,6 @@ snapshots:
       html-tags: 5.1.0
       ignore: 7.0.5
       import-meta-resolve: 4.2.0
-      imurmurhash: 0.1.4
       is-plain-object: 5.0.0
       mathml-tag-names: 4.0.0
       meow: 14.1.0
@@ -7656,8 +7655,8 @@ snapshots:
 
   tinyglobby@0.2.15:
     dependencies:
-      fdir: 6.5.0(picomatch@4.0.3)
-      picomatch: 4.0.3
+      fdir: 6.5.0(picomatch@4.0.4)
+      picomatch: 4.0.4
 
   tmpl@1.0.5: {}
 
