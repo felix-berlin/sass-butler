@@ -36,11 +36,11 @@ importers:
         specifier: ^4.0.9
         version: 4.0.9(postcss@8.5.28)
       sass:
-        specifier: 1.104.0
-        version: 1.104.0
+        specifier: 1.104.1
+        version: 1.104.1
       sass-true:
         specifier: ^10.1.0
-        version: 10.1.0(sass@1.104.0)
+        version: 10.1.0(sass@1.104.1)
       sassdoc:
         specifier: ^2.7.4
         version: 2.7.4(chokidar@3.6.0)
@@ -3203,8 +3203,8 @@ packages:
       sass-embedded:
         optional: true
 
-  sass@1.104.0:
-    resolution: {integrity: sha512-btHMApW2bgolvClhRW8AlQJzgI9lUB3pPSofBQQT+E46GWvf9o0TVQ13SYv5riWZVFyPN+JNz3TKW9XhBlc10w==}
+  sass@1.104.1:
+    resolution: {integrity: sha512-yDA+1aIG3EHgN4V/BvuhCvu61FF6hEd4e+9DxikUm9U0CAGuvdIZ/UYy7qbOxjhbbWQraoyLlMuzdRGOSV5Bmw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -7176,16 +7176,16 @@ snapshots:
       through2: 2.0.5
       which: 1.3.1
 
-  sass-true@10.1.0(sass@1.104.0):
+  sass-true@10.1.0(sass@1.104.1):
     dependencies:
       '@prettier/sync': 0.6.1(prettier@3.7.4)
       jest-diff: 30.2.0
       postcss: 8.5.28
       prettier: 3.7.4
     optionalDependencies:
-      sass: 1.104.0
+      sass: 1.104.1
 
-  sass@1.104.0:
+  sass@1.104.1:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.5
