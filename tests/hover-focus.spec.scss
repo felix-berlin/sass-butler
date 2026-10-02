@@ -1,0 +1,27 @@
+@use 'true';
+@use '../mixins' as mx;
+
+@include true.describe('hover-focus()') {
+	@include true.it('should output hover (media-gated) and focus-visible') {
+		@include true.assert {
+			@include true.output {
+				.a {
+					@include mx.hover-focus {
+						color: red;
+					}
+				}
+			}
+			@include true.expect {
+				@media (hover: hover) {
+					.a:hover {
+						color: red;
+					}
+				}
+
+				.a:focus-visible {
+					color: red;
+				}
+			}
+		}
+	}
+}

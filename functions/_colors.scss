@@ -28,6 +28,20 @@ $is-test: false !default;
   @return string.unquote("rgb") + "(" + (color.channel($color, 'red', $space: rgb) color.channel($color, 'green', $space: rgb) color.channel($color, 'blue', $space: rgb)) + if(sass($alpha): " / " + $alpha; else: "") + ")";
 }
 
+/// Round the RGB channels of a color to integers, so it is output as hex instead of `rgb(47.94%, ...)`.
+/// @param {Color} $color
+/// @return {Color}
+/// @access private
+@function -round-rgb($color) {
+  @return color.change(
+    $color,
+    $red: math.round(color.channel($color, 'red', $space: rgb)),
+    $green: math.round(color.channel($color, 'green', $space: rgb)),
+    $blue: math.round(color.channel($color, 'blue', $space: rgb)),
+    $space: rgb
+  );
+}
+
 /// Generate shades in light and dark from a base color.
 /// The base color is the starting point, light shades starting from 100, dark shades following when the light shades are finished.
 ///
@@ -41,6 +55,7 @@ $is-test: false !default;
 /// @group Color
 /// @author Felix Scholze
 /// @since v2.4.0
+/// @changed v4.0.0 shades are rounded to integer RGB channels and output as hex
 ///
 /// @example
 ///    @debug generate-color-shades(#d33030, 5, 0.5, 0.5, "red");
@@ -64,6 +79,7 @@ $is-test: false !default;
       $base-color,
       $lightness: calc((100% / ($num-shades * 2)) * $i * $lighten-percent)
     );
+    $shade: -round-rgb($shade);
     $shades: map.merge($shades, ($color-key-name + $color-key-separator + (($num-shades + 1) - $i) * 100: $shade));
   }
 
@@ -80,6 +96,7 @@ $is-test: false !default;
       $base-color,
       $lightness: calc((100% / ($num-shades * 2)) * $i * -1 * $darken-percent)
     );
+    $shade: -round-rgb($shade);
     $shades: map.merge($shades, ($color-key-name + $color-key-separator + ($i + $num-shades) * 100: $shade));
   }
 

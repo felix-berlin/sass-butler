@@ -1,6 +1,7 @@
 /// Use a predefined dark mode class to define dark mode styles.
 /// @param {Boolean} $parent [true] - If true, the dark mode class will be root
 /// @param {String} $class ['dark'] - The dark mode class, could be any selector
+/// @param {Boolean} $zero-specificity [false] - If true, wraps the class in `:where()` so it adds no specificity
 /// @group @media
 /// @author Felix Scholze
 /// @since v1.10.0
@@ -17,13 +18,18 @@
 ///      color: #fff;
 ///    }
 ///
-@mixin dark-mode-class($parent: true, $class: '.dark') {
+@mixin dark-mode-class($parent: true, $class: '.dark', $zero-specificity: false) {
+    $sel: $class;
+
+    @if $zero-specificity {
+        $sel: ':where(#{$class})';
+    }
     @if $parent {
-        #{$class} & {
+        #{$sel} & {
             @content;
         }
     } @else {
-        #{$class} {
+        #{$sel} {
             @content;
         }
     }

@@ -20,3 +20,31 @@
 		}
 	}
 }
+
+/// Hover (only on hover-capable devices) and `:focus-visible` with the same styles
+/// @group @media
+/// @author Felix Scholze
+/// @since v4.0.0
+///
+/// @example
+///    .my-selector {
+///      @include hover-focus {...}
+///    }
+///
+/// @example CSS - Output CSS
+///    @media (hover: hover) {
+///       .my-selector:hover {...}
+///    }
+///    .my-selector:focus-visible {...}
+///
+@mixin hover-focus {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	&:focus-visible {
+		@content;
+	}
+}
