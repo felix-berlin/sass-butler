@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/felix-berlin/sass-butler/compare/v3.1.1...v4.0.0) (2026-10-02)
+
+
+* feat(breakpoint)!: use exclusive range for max, deprecate $max-overlap ([9edbc94](https://github.com/felix-berlin/sass-butler/commit/9edbc9458d4e0ad41b10843e51b7b8ea43d06691))
+* feat(colors)!: output generate-color-shades as rounded hex ([c07994f](https://github.com/felix-berlin/sass-butler/commit/c07994f7cdad95f285c254ebba1527aacd91baac))
+* feat(select-style)!: allow CSS variables, default to ::selection ([cb687ec](https://github.com/felix-berlin/sass-butler/commit/cb687ec8fc74c40a246d1b94e6ab52f38087ff2d))
+
+
+### Features
+
+* **dark-mode-class:** add $zero-specificity option ([666e455](https://github.com/felix-berlin/sass-butler/commit/666e455ea56a740cd59f3bfd779d311c985275c8))
+* **feature:** add hover and forced-colors ([4c2fb60](https://github.com/felix-berlin/sass-butler/commit/4c2fb607c8583fab8c3ba37a88e97ed9f597e635))
+* **hover:** add hover-focus mixin ([22c2547](https://github.com/felix-berlin/sass-butler/commit/22c2547fea1dc6e00b7c8f8221a72d7b6c953864))
+
+
+### BREAKING CHANGES
+
+* shades are rounded to integer RGB channels and output as hex instead of rgb(%).
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+* the default selector is ::selection instead of *::selection and colors are no longer type-checked.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+* max breakpoints now output (width < x) instead of (width <= x - 0.01rem); $max-overlap is ignored with a warning.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+
 ## [3.1.1](https://github.com/felix-berlin/sass-butler/compare/v3.1.0...v3.1.1) (2025-12-26)
 
 
