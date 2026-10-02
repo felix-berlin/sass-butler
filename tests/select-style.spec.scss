@@ -2,15 +2,28 @@
 @use '../mixins' as mx;
 
 @include true.describe('select-style()') {
-	@include true.it('should return a select style for specified selector') {
+	@include true.it('should style ::selection without a selector') {
 		@include true.assert {
 			@include true.output {
 				@include mx.select-style(red, blue);
 			}
 			@include true.expect {
-				*::selection {
+				::selection {
 					background: red;
 					color: blue;
+				}
+			}
+		}
+	}
+	@include true.it('should accept CSS variables and a selector') {
+		@include true.assert {
+			@include true.output {
+				@include mx.select-style(var(--bg), var(--fg), '.a');
+			}
+			@include true.expect {
+				.a::selection {
+					background: var(--bg);
+					color: var(--fg);
 				}
 			}
 		}

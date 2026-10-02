@@ -1,26 +1,22 @@
-@use 'sass:meta';
 @use '../functions/numbers' as numb;
 
 /// Styles for selected elements
-/// @param {Color} $bg-color Background-color
-/// @param {Color} $color Text-color
-/// @param {String} $selector [*] Selector
+/// @param {Color} $bg-color Background-color, may be a `var()`
+/// @param {Color} $color Text-color, may be a `var()`
+/// @param {String} $selector [null] Optional selector, defaults to `::selection`
 /// @group Basic
 /// @author Felix Scholze
 /// @since v1.0.0
-@mixin select-style($bg-color, $color, $selector: '*') {
-	@if meta.type-of($bg-color) != color {
-		@error '❌  ===> #{$bg-color} is not a color';
+@mixin select-style($bg-color, $color, $selector: null) {
+	$sel: '::selection';
+
+	@if $selector {
+		$sel: '#{$selector}::selection';
 	}
-	@if meta.type-of($color) != color {
-		@error '❌  ===> #{$color} is not a color';
-	}
-	#{$selector} {
-		&::selection {
-			background: $bg-color;
-			color: $color;
-			@content;
-		}
+	#{$sel} {
+		background: $bg-color;
+		color: $color;
+		@content;
 	}
 }
 
