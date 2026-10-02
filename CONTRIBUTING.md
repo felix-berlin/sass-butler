@@ -10,4 +10,4 @@
 
 ### Running tests
 
-- `npm run test` or `npm i run test:watch` will run the jest tests with [true](https://github.com/oddbird/true)
+- `pnpm test` or `pnpm test:watch` will run the Vitest tests with [true](https://github.com/oddbird/true)

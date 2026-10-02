@@ -52,8 +52,8 @@
     "sassDoc": "sassdoc -v mixins/ functions/",
     "lint": "stylelint \"**/*.{sass,scss}\"",
     "lint:fix": "stylelint \"**/*.{sass,scss}\" --fix",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "test:output": "sass tests/tests.scss:tests/dist/tests.css",
     "test:output-watch": "sass --watch tests/tests.scss:tests/dist/tests.css",
     "release": "semantic-release --branches master"
@@ -87,7 +87,6 @@
     "@semantic-release/git": "^11.0.1",
     "glob": "^13.0.6",
     "husky": "^9.1.7",
-    "jest": "^30.5.2",
     "postcss": "^8.5.28",
     "postcss-scss": "^4.0.9",
     "sass": "1.105.1",
@@ -99,7 +98,8 @@
     "stylelint-config-standard": "^40.0.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^3.0.0",
-    "stylelint-order": "^8.1.1"
+    "stylelint-order": "^8.1.1",
+    "vitest": "^5.0.3"
   },
   "peerDependencies": {
     "sass": ">=1.95.0"
