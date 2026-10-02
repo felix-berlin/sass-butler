@@ -31,10 +31,11 @@ $breakpoints: (
 /// @param {String} $breakpoint Breakpoint key from the breakpoints map
 /// @param {String} $direction ['min'] Breakpoint direction min or max
 /// @param {Map} $breakpoint-map [$breakpoints] All breakpoint vars in one map
-/// @param {Number} $max-overlap [null] How much should the max-width breakpoint overlap the min-width one?
+/// @param {Number} $max-overlap [null] Deprecated and ignored, `max` uses an exclusive range (`width < x`)
 /// @group @media
 /// @author Felix Scholze
 /// @since v1.1.0
+/// @deprecated `$max-overlap` is ignored since v4.0.0
 ///
 /// @example
 ///    .my-selector {
@@ -68,14 +69,8 @@ $breakpoints: (
 	@if map.has-key($breakpoint-map, $breakpoint) != true {
 		@error '❌  ===> #{$breakpoint} is not valid breakpoint. Please use: #{map.keys($breakpoint-map)}';
 	}
-
-	/// If $max-overlap is not set, set it to 1px or 0.01rem
-	@if not $max-overlap {
-		@if fn.str-contains($unit, 'rem') or fn.str-contains($unit, 'em') {
-			$max-overlap: 0.01;
-		} @else {
-			$max-overlap: 1;
-		}
+	@if $max-overlap {
+		@warn '$max-overlap is deprecated and ignored: max breakpoints now use an exclusive range (width < x).';
 	}
 	@if $direction == 'min' {
 		@media (width >= $get-breakpoints) {
@@ -83,7 +78,7 @@ $breakpoints: (
 		}
 	}
 	@if $direction == 'max' {
-		@media (width <= $get-breakpoints - $max-overlap) {
+		@media (width < $get-breakpoints) {
 			@content;
 		}
 	}
