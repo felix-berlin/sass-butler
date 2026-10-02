@@ -1,0 +1,33 @@
+@use 'true';
+@use '../mixins' as mx;
+
+@include true.describe('dark-mode-class()') {
+	@include true.it('should output the dark class') {
+		@include true.assert {
+			@include true.output {
+				@include mx.dark-mode-class($parent: false) {
+					color: red;
+				}
+			}
+			@include true.expect {
+				.dark {
+					color: red;
+				}
+			}
+		}
+	}
+	@include true.it('should wrap the class in :where() with $zero-specificity') {
+		@include true.assert {
+			@include true.output {
+				@include mx.dark-mode-class($parent: false, $zero-specificity: true) {
+					color: red;
+				}
+			}
+			@include true.expect {
+				:where(.dark) {
+					color: red;
+				}
+			}
+		}
+	}
+}
