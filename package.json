@@ -79,7 +79,7 @@
     "sass strip unit function",
     "sass number invert function"
   ],
-  "packageManager": "pnpm@10.26.2",
+  "packageManager": "pnpm@12.8.1",
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
