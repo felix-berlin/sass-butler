@@ -1,0 +1,12 @@
+@use 'true';
+@use 'sass:map';
+@use '../functions' as fn;
+
+@include true.describe('generate-color-shades()') {
+	@include true.it('should output integer-rounded hex shades') {
+		@include true.assert-equal(
+			fn.generate-color-shades(#7a8c9e, 2, 0.5, 0.5, 'blue'),
+			('blue-200': #9facb9, 'blue-100': #c4ccd4, 'blue': #7a8c9e, 'blue-300': #5b6c7d, 'blue-400': #404c58)
+		);
+	}
+}
