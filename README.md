@@ -66,6 +66,7 @@ Visit <https://sass-butler.kasimir.dev> for full documentation.
   - [dark-mode-class()](https://sass-butler.kasimir.dev/#@media-mixin-dark-mode-class)
   - [feature()](https://sass-butler.kasimir.dev/#@media-mixin-feature)
   - [hover](https://sass-butler.kasimir.dev/#@media-mixin-hover)
+  - [hover-focus](https://sass-butler.kasimir.dev/#@media-mixin-hover-focus)
 - [element](https://github.com/felix-berlin/sass-butler/blob/master/mixins/_element.scss)
   - [line-on-sides()](https://sass-butler.kasimir.dev/#element-mixin-line-on-sides)
   - [overlay()](https://sass-butler.kasimir.dev/#element-mixin-overlay)
