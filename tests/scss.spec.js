@@ -1,14 +1,13 @@
-const path = require('path')
-const sassTrue = require('sass-true')
-const glob = require('glob')
+import path from 'node:path';
+import { globSync } from 'glob';
+import { describe, it } from 'vitest';
+import sassTrue from 'sass-true';
 
 describe('Sass', () => {
   // Find all of the Sass files that end in `*.spec.scss` in any directory of this project.
-  // I use path.resolve because True requires absolute paths to compile test files.
-  const sassTestFiles = glob.sync(path.resolve(process.cwd(), 'tests/**/*.spec.scss'))
+  // True requires absolute paths to compile test files.
+  const sassTestFiles = globSync('tests/**/*.spec.scss').map(file => path.resolve(file));
 
   // Run True on every file found with the describe and it methods provided
-  sassTestFiles.forEach(file =>
-    sassTrue.runSass({ describe, it }, file)
-  )
-})
+  sassTestFiles.forEach(file => sassTrue.runSass({ describe, it }, file));
+});

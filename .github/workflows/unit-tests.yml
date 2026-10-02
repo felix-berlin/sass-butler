@@ -24,13 +24,5 @@ jobs:
       - name: Install dependencies 🛠️
         run: pnpm i
 
-      - name: Run Jest with scss-true 🧪
+      - name: Run Vitest with scss-true 🧪
         run: pnpm run test
-
-      - name: create coverage report 📊
-        run: npx jest --coverage
-
-      - name: codecoverage
-        uses: codecov/codecov-action@v7
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}

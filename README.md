@@ -13,7 +13,7 @@
 
 > SASS Butler is a big collection of SASS mixins and functions.
 
-Mixins and functions are unit tested via [Jest](https://jestjs.io/) and [True](https://www.oddbird.net/true/).
+Mixins and functions are unit tested via [Vitest](https://vitest.dev/) and [True](https://www.oddbird.net/true/).
 *Unfortunately, it is [not yet possible](https://github.com/oddbird/true/issues/88) to create a coverage report.*
 
 ## Whats inside?
