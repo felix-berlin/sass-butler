@@ -1,0 +1,33 @@
+@use 'true';
+@use '../mixins' as mx;
+
+@include true.describe('feature()') {
+	@include true.it('should support hover') {
+		@include true.assert {
+			@include true.output {
+				@include mx.feature('hover') {
+					.a { color: red; }
+				}
+			}
+			@include true.expect {
+				@media (hover: hover) {
+					.a { color: red; }
+				}
+			}
+		}
+	}
+	@include true.it('should support forced-colors') {
+		@include true.assert {
+			@include true.output {
+				@include mx.feature('forced-colors') {
+					.a { color: red; }
+				}
+			}
+			@include true.expect {
+				@media (forced-colors: active) {
+					.a { color: red; }
+				}
+			}
+		}
+	}
+}

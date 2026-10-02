@@ -14,7 +14,7 @@
 ///
 @mixin feature($feature: '') {
 	// Error handling
-	$valid-feature: ('motion', 'no-motion', 'dark', 'light');
+	$valid-feature: ('motion', 'no-motion', 'dark', 'light', 'hover', 'forced-colors');
 
 	// Give an error if the feature is not present
 	@if not list.index($valid-feature, $feature) {
@@ -37,6 +37,16 @@
 	}
 	@if $feature == 'light' {
 		@media (prefers-color-scheme: light) {
+			@content;
+		}
+	}
+	@if $feature == 'hover' {
+		@media (hover: hover) {
+			@content;
+		}
+	}
+	@if $feature == 'forced-colors' {
+		@media (forced-colors: active) {
 			@content;
 		}
 	}
